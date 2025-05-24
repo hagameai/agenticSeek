@@ -13,6 +13,7 @@ function App() {
     const [responseData, setResponseData] = useState(null);
     const [isOnline, setIsOnline] = useState(false);
     const [status, setStatus] = useState('Agents ready');
+    const [expandedReasoning, setExpandedReasoning] = useState(new Set());
     const messagesEndRef = useRef(null);
 
     useEffect(() => {
@@ -73,6 +74,18 @@ function App() {
 
     const scrollToBottom = () => {
         messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    };
+
+    const toggleReasoning = (messageIndex) => {
+        setExpandedReasoning(prev => {
+            const newSet = new Set(prev);
+            if (newSet.has(messageIndex)) {
+                newSet.delete(messageIndex);
+            } else {
+                newSet.add(messageIndex);
+            }
+            return newSet;
+        });
     };
 
     const fetchLatestAnswer = async () => {
@@ -186,8 +199,6 @@ function App() {
             </header>
             <main className="main">
                 <div className="app-sections">
-
-
                     <div className="chat-section">
                         <h2>Chat Interface</h2>
                         <div className="messages">
@@ -205,10 +216,28 @@ function App() {
                                                 : 'error-message'
                                         }`}
                                     >
-                                        {msg.type === 'agent' && (
-                                            <span className="agent-name">{msg.agentName}</span>
-                                        )}
-                                        <ReactMarkdown>{msg.content}</ReactMarkdown>
+                                        <div className="message-header">
+                                            {msg.type === 'agent' && (
+                                                <span className="agent-name">{msg.agentName}</span>
+                                            )}
+                                            {msg.type === 'agent' && msg.reasoning && expandedReasoning.has(index) && (
+                                                <div className="reasoning-content">
+                                                    <ReactMarkdown>{msg.reasoning}</ReactMarkdown>
+                                                </div>
+                                            )}
+                                            {msg.type === 'agent' && (
+                                                <button 
+                                                    className="reasoning-toggle"
+                                                    onClick={() => toggleReasoning(index)}
+                                                    title={expandedReasoning.has(index) ? "Hide reasoning" : "Show reasoning"}
+                                                >
+                                                    {expandedReasoning.has(index) ? '▼' : '▶'} Reasoning
+                                                </button>
+                                            )}
+                                        </div>
+                                        <div className="message-content">
+                                            <ReactMarkdown>{msg.content}</ReactMarkdown>
+                                        </div>
                                     </div>
                                 ))
                             )}
@@ -248,12 +277,6 @@ function App() {
                             >
                                 Browser View
                             </button>
-                            <button
-                                className={currentView === 'thinking' ? 'active' : ''}
-                                onClick={() => setCurrentView('thinking')}
-                            >
-                                Reasoning view
-                            </button>
                         </div>
                         <div className="content">
                             {error && <p className="error">{error}</p>}
@@ -278,33 +301,6 @@ function App() {
                                             <pre>No file opened</pre>
                                         </div>
                                     )}
-                                </div>
-                            ) : currentView == 'thinking' ? (
-                                <div className="thinking">
-                                    <div className="messages">
-                                        {messages.length === 0 ? (
-                                            <p className="placeholder">No thinking yet.</p>
-                                        ) : (
-                                            messages.map((msg, index) => (
-                                                <div
-                                                    key={index}
-                                                    className={`message ${
-                                                        msg.type === 'user'
-                                                            ? 'user-message'
-                                                            : msg.type === 'agent'
-                                                            ? 'agent-message'
-                                                            : 'error-message'
-                                                    }`}
-                                                >
-                                                    {msg.type === 'agent' && (
-                                                        <span className="agent-name">{msg.agentName}</span>
-                                                    )}
-                                                    <ReactMarkdown>{msg.reasoning}</ReactMarkdown>
-                                                </div>
-                                            ))
-                                        )}
-                                <div ref={messagesEndRef} />
-                        </div>
                                 </div>
                             ) : (
                                 <div className="screenshot">

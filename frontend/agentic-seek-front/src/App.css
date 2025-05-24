@@ -167,6 +167,88 @@ body {
   margin-bottom: 8px;
 }
 
+/* Message header layout */
+.message-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.reasoning-toggle {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    color: #fff;
+    padding: 4px 8px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    align-self: flex-start;
+}
+
+.reasoning-toggle:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.reasoning-toggle:active {
+    transform: translateY(1px);
+}
+
+/* Reasoning content container */
+.reasoning-content {
+    margin-top: 12px;
+    padding: 12px;
+    background: rgba(0, 0, 0, 0.2);
+    border-left: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 0 4px 4px 0;
+    font-size: 0.9em;
+    line-height: 1.4;
+}
+
+.reasoning-content h1,
+.reasoning-content h2,
+.reasoning-content h3,
+.reasoning-content h4,
+.reasoning-content h5,
+.reasoning-content h6 {
+    font-size: 1em;
+    margin: 8px 0 4px 0;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.reasoning-content p {
+    margin: 6px 0;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Alternative light theme styles */
+.message.user-message .reasoning-toggle {
+    background: rgba(0, 0, 0, 0.05);
+    border-color: rgba(0, 0, 0, 0.1);
+    color: #333;
+}
+
+.message.user-message .reasoning-toggle:hover {
+    background: rgba(0, 0, 0, 0.1);
+    border-color: rgba(0, 0, 0, 0.2);
+}
+
+.message.user-message .reasoning-content {
+    background: rgba(0, 0, 0, 0.03);
+    border-left-color: rgba(0, 0, 0, 0.2);
+}
+
+.message.user-message .reasoning-content p {
+    color: rgba(0, 0, 0, 0.7);
+}
+
 .placeholder {
   text-align: center;
   color: #64748b; /* lighter gray */
