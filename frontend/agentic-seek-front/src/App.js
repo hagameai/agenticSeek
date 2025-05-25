@@ -13,6 +13,7 @@ function App() {
     const [responseData, setResponseData] = useState(null);
     const [isOnline, setIsOnline] = useState(false);
     const [status, setStatus] = useState('Agents ready');
+    const [expandedReasoning, setExpandedReasoning] = useState(new Set());
     const messagesEndRef = useRef(null);
 
     useEffect(() => {
@@ -75,6 +76,18 @@ function App() {
         messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
     };
 
+    const toggleReasoning = (messageIndex) => {
+        setExpandedReasoning(prev => {
+            const newSet = new Set(prev);
+            if (newSet.has(messageIndex)) {
+                newSet.delete(messageIndex);
+            } else {
+                newSet.add(messageIndex);
+            }
+            return newSet;
+        });
+    };
+
     const fetchLatestAnswer = async () => {
         try {
             const res = await axios.get('http://127.0.0.1:8000/latest_answer');
@@ -94,6 +107,7 @@ function App() {
                     {
                         type: 'agent',
                         content: data.answer,
+                        reasoning: data.reasoning,
                         agentName: data.agent_name,
                         status: data.status,
                         uid: data.uid,
@@ -120,6 +134,19 @@ function App() {
             uid: data.uid,
         }));
     };
+
+    const handleStop = async (e) => {
+        e.preventDefault();
+        checkHealth();
+        setIsLoading(false);
+        setError(null);
+        try {
+            const res = await axios.get('http://127.0.0.1:8000/stop');
+            setStatus("Requesting stop...");
+        } catch (err) {
+            console.error('Error stopping the agent:', err);
+        }
+    }
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -172,8 +199,6 @@ function App() {
             </header>
             <main className="main">
                 <div className="app-sections">
-
-
                     <div className="chat-section">
                         <h2>Chat Interface</h2>
                         <div className="messages">
@@ -191,10 +216,28 @@ function App() {
                                                 : 'error-message'
                                         }`}
                                     >
-                                        {msg.type === 'agent' && (
-                                            <span className="agent-name">{msg.agentName}</span>
-                                        )}
-                                        <ReactMarkdown>{msg.content}</ReactMarkdown>
+                                        <div className="message-header">
+                                            {msg.type === 'agent' && (
+                                                <span className="agent-name">{msg.agentName}</span>
+                                            )}
+                                            {msg.type === 'agent' && msg.reasoning && expandedReasoning.has(index) && (
+                                                <div className="reasoning-content">
+                                                    <ReactMarkdown>{msg.reasoning}</ReactMarkdown>
+                                                </div>
+                                            )}
+                                            {msg.type === 'agent' && (
+                                                <button 
+                                                    className="reasoning-toggle"
+                                                    onClick={() => toggleReasoning(index)}
+                                                    title={expandedReasoning.has(index) ? "Hide reasoning" : "Show reasoning"}
+                                                >
+                                                    {expandedReasoning.has(index) ? '▼' : '▶'} Reasoning
+                                                </button>
+                                            )}
+                                        </div>
+                                        <div className="message-content">
+                                            <ReactMarkdown>{msg.content}</ReactMarkdown>
+                                        </div>
                                     </div>
                                 ))
                             )}
@@ -212,6 +255,9 @@ function App() {
                             />
                             <button type="submit" disabled={isLoading}>
                                 Send
+                            </button>
+                            <button onClick={handleStop}>
+                                Stop
                             </button>
                         </form>
                     </div>

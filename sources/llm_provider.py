@@ -58,6 +58,38 @@ class Provider:
             exit(1)
         return api_key
 
+    def anthropic_fn(self, history, verbose=False):
+        """
+        Use Anthropic to generate text.
+        """
+        from anthropic import Anthropic
+
+        client = Anthropic(api_key=self.api_key)
+        system_message = None
+        messages = []
+        for message in history:
+            clean_message = {'role': message['role'], 'content': message['content']}
+            if message['role'] == 'system':
+                system_message = message['content']
+            else:
+                messages.append(clean_message)
+
+        try:
+            response = client.messages.create(
+                model=self.model,
+                max_tokens=1024,
+                messages=messages,
+                system=system_message
+            )
+            if response is None:
+                raise Exception("Anthropic response is empty.")
+            thought = response.content[0].text
+            if verbose:
+                print(thought)
+            return thought
+        except Exception as e:
+            raise Exception(f"Anthropic API error: {str(e)}") from e
+
     def respond(self, history, verbose=True):
         """
         Use the choosen provider to generate text.
