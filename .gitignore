@@ -18,6 +18,7 @@ agentic_seek_env/*
 .env
 */.env
 dsk/
+chrome136/
 
 ### react ###
 .DS_*

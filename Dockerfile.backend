@@ -1,44 +1,85 @@
 FROM ubuntu:22.04
-# Warning: doesn't work yet, backend is run on host machine for now
 
 WORKDIR /app
 
-RUN apt-get update -qq -y && \
-apt-get install -y \
-        gcc \
-        g++ \
-        gfortran \
-        libportaudio2 \
-        portaudio19-dev \
-        ffmpeg \
-        libavcodec-dev \
-        libavformat-dev \
-        libavutil-dev \
-        gnupg2 \
-        wget \
-        unzip \
-        python3 \
-        python3-pip \
-        libasound2 \
-        libatk-bridge2.0-0 \
-        libgtk-4-1 \
-        libnss3 \
-        xdg-utils \
-        wget && \
+# Install essential packages and Chrome dependencies
+RUN apt-get update && apt-get install -y \
+    wget \
+    unzip \
+    curl \
+    gnupg \
+    python3-dev \
+    python3-pip \
+    python3-wheel \
+    build-essential \
+    # Chrome dependencies - comprehensive list
+    fonts-liberation \
+    libasound2 \
+    libatk-bridge2.0-0 \
+    libdrm2 \
+    libxcomposite1 \
+    libxdamage1 \
+    libxrandr2 \
+    libgbm1 \
+    libxss1 \
+    libnss3 \
+    libnspr4 \
+    libxshmfence1 \
+    libgconf-2-4 \
+    libxfixes3 \
+    libxinerama1 \
+    libgtk-3-0 \
+    libgdk-pixbuf2.0-0 \
+    libatspi2.0-0 \
+    libdrm2 \
+    libxkbcommon0 \
+    libepoxy0 \
+    libgtk-3-0 \
+    libharfbuzz0b \
+    libegl1-mesa \
+    libgles2-mesa \
+    # Virtual display for headless operation
+    xvfb \
+    && rm -rf /var/lib/apt/lists/*
 
-RUN chmod +x /opt/chrome/chrome
+RUN pip3 install --upgrade pip setuptools wheel && \
+pip3 install selenium
+
 # Install dependencies
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy application code
 COPY api.py .
+COPY chrome_bundle/ ./chrome_bundle/
 COPY sources/ ./sources/
 COPY prompts/ ./prompts/
 COPY crx/ crx/
 COPY llm_router/ llm_router/
 COPY .env .
 COPY config.ini .
+
+# Install Chrome and ChromeDriver from chrome-for-testing
+RUN wget -O chrome-linux64.zip https://storage.googleapis.com/chrome-for-testing-public/136.0.7103.113/linux64/chrome-linux64.zip && \
+    wget -O chromedriver-linux64.zip https://storage.googleapis.com/chrome-for-testing-public/136.0.7103.113/linux64/chromedriver-linux64.zip && \
+    unzip chrome-linux64.zip && \
+    unzip chromedriver-linux64.zip && \
+    mkdir -p /opt/google && \
+    ls -la && \
+    mv chrome-linux64 /opt/google/chrome && \
+    mv chromedriver-linux64/chromedriver /usr/local/bin/chromedriver && \
+    chmod +x /opt/google/chrome/chrome && \
+    chmod +x /usr/local/bin/chromedriver
+
+RUN ln -s /opt/google/chrome/chrome /usr/local/bin/chrome
+
+# Verify Chrome and ChromeDriver installation
+RUN google-chrome --version
+RUN chromedriver --version > /dev/null 2>&1
+
+ENV CHROME_BIN=/opt/google/chrome/chrome
+ENV CHROMEDRIVER_PATH=/usr/local/bin/chromedriver
+ENV DISPLAY=:99
 
 # Expose port
 EXPOSE 8000

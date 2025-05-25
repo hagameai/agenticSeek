@@ -42,7 +42,14 @@ def get_chrome_path() -> str:
         paths = ["/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
                  "/Applications/Google Chrome Beta.app/Contents/MacOS/Google Chrome Beta"]
     else:  # Linux
-        paths = ["/usr/bin/google-chrome", "/usr/bin/chromium-browser", "/usr/bin/chromium", "/opt/chrome/chrome", "/usr/local/bin/chrome"]
+        paths = ["/usr/bin/google-chrome",
+                 "/usr/bin/chromium-browser",
+                 "/usr/bin/chromium",
+                 "/opt/chrome/chrome",
+                 "opt/google/chrome/chrome",
+                 "/usr/local/bin/chrome",
+                 #"/app/chrome_bundle/chrome136/chrome-linux64"
+                ]
 
     for path in paths:
         if os.path.exists(path) and os.access(path, os.X_OK):
@@ -73,8 +80,13 @@ def install_chromedriver() -> str:
     Install the ChromeDriver if not already installed. Return the path.
     """
     chromedriver_path = shutil.which("chromedriver")
+    #if not chromedriver_path:
+    #    if os.path.exists("/app/chrome_bundle/chrome136/chromedriver"):
+    #        print("Using bundled ChromeDriver from /app/chrome_bundle/chrome136/chromedriver")
+    #        chromedriver_path = "/app/chrome_bundle/chrome136/chromedriver"
     if not chromedriver_path:
         try:
+            print("ChromeDriver not found, attempting to install automatically...")
             chromedriver_path = chromedriver_autoinstaller.install()
         except Exception as e:
             raise FileNotFoundError(
