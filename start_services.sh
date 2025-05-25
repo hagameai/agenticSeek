@@ -62,26 +62,27 @@ if [ ! -f "docker-compose.yml" ]; then
     exit 1
 fi
 
+# bundle based approach, commented out in favor of direct download for now
 # Download and extract Chrome bundle if not present
-echo "Checking Chrome bundle..."
-if [ ! -d "chrome_bundle/chrome136" ]; then
-    echo "Chrome bundle not found. Downloading..."
-    mkdir -p chrome_bundle
-    curl -L https://github.com/tcsenpai/agenticSeek/releases/download/utility/chrome136.zip -o /tmp/chrome136.zip
-    if [ $? -ne 0 ]; then
-        echo "Error: Failed to download Chrome bundle"
-        exit 1
-    fi
-    unzip -q /tmp/chrome136.zip -d chrome_bundle/
-    if [ $? -ne 0 ]; then
-        echo "Error: Failed to extract Chrome bundle"
-        exit 1
-    fi
-    rm /tmp/chrome136.zip
-    echo "Chrome bundle downloaded and extracted successfully"
-else
-    echo "Chrome bundle already exists"
-fi
+#echo "Checking Chrome bundle..."
+#if [ ! -d "chrome_bundle/chrome136" ]; then
+#    echo "Chrome bundle not found. Downloading..."
+#    mkdir -p chrome_bundle
+#    curl -L https://github.com/Fosowl/agenticSeek/releases/download/utility/chrome136.zip -o /tmp/chrome136.zip
+#    if [ $? -ne 0 ]; then
+#        echo "Error: Failed to download Chrome bundle"
+#        exit 1
+#    fi
+#    unzip -q /tmp/chrome136.zip -d chrome_bundle/
+#    if [ $? -ne 0 ]; then
+#        echo "Error: Failed to extract Chrome bundle"
+#        exit 1
+#    fi
+#    rm /tmp/chrome136.zip
+#    echo "Chrome bundle downloaded and extracted successfully"
+#else
+#    echo "Chrome bundle already exists"
+#fi
 
 # Stop all running containers to ensure a clean state
 echo "Warning: stopping all docker containers (t-4 seconds)..."
