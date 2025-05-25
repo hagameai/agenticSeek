@@ -51,7 +51,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy application code
 COPY api.py .
-COPY chrome_bundle/ ./chrome_bundle/
+# Chrome bundle approach, commented out opting for direct download
+#COPY chrome_bundle/ ./chrome_bundle/
 COPY sources/ ./sources/
 COPY prompts/ ./prompts/
 COPY crx/ crx/
