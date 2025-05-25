@@ -559,3 +559,7 @@ We’re looking for developers to improve AgenticSeek! Check out open issues or 
  > [antoineVIVIES](https://github.com/antoineVIVIES) | Taipei Time 
 
  > [steveh8758](https://github.com/steveh8758) | Taipei Time 
+
+## Special Thanks:
+
+ > [tcsenpai](https://github.com/tcsenpai) For dockerization of backend

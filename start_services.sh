@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source .env
+
 command_exists() {
     command -v "$1" &> /dev/null
 }
@@ -60,11 +62,57 @@ if [ ! -f "docker-compose.yml" ]; then
     exit 1
 fi
 
-# start docker compose for searxng, redis, frontend services
+# Download and extract Chrome bundle if not present
+echo "Checking Chrome bundle..."
+if [ ! -d "chrome_bundle/chrome136" ]; then
+    echo "Chrome bundle not found. Downloading..."
+    mkdir -p chrome_bundle
+    curl -L https://github.com/tcsenpai/agenticSeek/releases/download/utility/chrome136.zip -o /tmp/chrome136.zip
+    if [ $? -ne 0 ]; then
+        echo "Error: Failed to download Chrome bundle"
+        exit 1
+    fi
+    unzip -q /tmp/chrome136.zip -d chrome_bundle/
+    if [ $? -ne 0 ]; then
+        echo "Error: Failed to extract Chrome bundle"
+        exit 1
+    fi
+    rm /tmp/chrome136.zip
+    echo "Chrome bundle downloaded and extracted successfully"
+else
+    echo "Chrome bundle already exists"
+fi
+
+# Stop all running containers to ensure a clean state
 echo "Warning: stopping all docker containers (t-4 seconds)..."
 sleep 4
 docker stop $(docker ps -a -q)
 echo "All containers stopped"
+
+# First start backend and wait for it to be healthy
+echo "Starting backend service..."
+if ! $COMPOSE_CMD up -d backend; then
+    echo "Error: Failed to start backend container."
+    exit 1
+fi
+
+# Wait for backend to be healthy (check if it's running and not restarting)
+echo "Waiting for backend to be ready..."
+for i in {1..30}; do
+    if [ "$(docker inspect -f '{{.State.Running}}' backend)" = "true" ] && \
+       [ "$(docker inspect -f '{{.State.Restarting}}' backend)" = "false" ]; then
+        echo "backend is ready!"
+        break
+    fi
+    if [ $i -eq 30 ]; then
+        echo "Error: backend failed to start properly after 30 seconds"
+        $COMPOSE_CMD logs backend 
+        exit 1
+    fi
+    sleep 1
+done
+
+# start remaining services for searxng, redis, frontend services
 
 if ! $COMPOSE_CMD up; then
     echo "Error: Failed to start containers. Check Docker logs with '$COMPOSE_CMD logs'."
