@@ -90,34 +90,38 @@ sleep 4
 docker stop $(docker ps -a -q)
 echo "All containers stopped"
 
-# First start backend and wait for it to be healthy
-echo "Starting backend service..."
-if ! $COMPOSE_CMD up -d backend; then
-    echo "Error: Failed to start backend container."
-    exit 1
-fi
-
-# Wait for backend to be healthy (check if it's running and not restarting)
-echo "Waiting for backend to be ready..."
-for i in {1..30}; do
-    if [ "$(docker inspect -f '{{.State.Running}}' backend)" = "true" ] && \
-       [ "$(docker inspect -f '{{.State.Restarting}}' backend)" = "false" ]; then
-        echo "backend is ready!"
-        break
-    fi
-    if [ $i -eq 30 ]; then
-        echo "Error: backend failed to start properly after 30 seconds"
-        $COMPOSE_CMD logs backend 
+if [ "$1" = "full" ]; then
+    # First start backend and wait for it to be healthy
+    echo "Full docker deployement. Starting backend service..."
+    if ! $COMPOSE_CMD up -d backend; then
+        echo "Error: Failed to start backend container."
         exit 1
     fi
-    sleep 1
-done
-
-# start remaining services for searxng, redis, frontend services
-
-if ! $COMPOSE_CMD up; then
-    echo "Error: Failed to start containers. Check Docker logs with '$COMPOSE_CMD logs'."
-    echo "Possible fixes: Run with sudo or ensure port 8080 is free."
-    exit 1
+    # Wait for backend to be healthy (check if it's running and not restarting)
+    echo "Waiting for backend to be ready..."
+    for i in {1..30}; do
+        if [ "$(docker inspect -f '{{.State.Running}}' backend)" = "true" ] && \
+           [ "$(docker inspect -f '{{.State.Restarting}}' backend)" = "false" ]; then
+            echo "backend is ready!"
+            break
+        fi
+        if [ $i -eq 30 ]; then
+            echo "Error: backend failed to start properly after 30 seconds"
+            $COMPOSE_CMD logs backend 
+            exit 1
+        fi
+        sleep 1
+    done
+    if ! $COMPOSE_CMD --profile full up; then
+        echo "Error: Failed to start containers. Check Docker logs with '$COMPOSE_CMD logs'."
+        echo "Possible fixes: Run with sudo or ensure port 8080 is free."
+        exit 1
+    fi
+else
+    if ! $COMPOSE_CMD --profile core up; then
+        echo "Error: Failed to start containers. Check Docker logs with '$COMPOSE_CMD logs'."
+        echo "Possible fixes: Run with sudo or ensure port 8080 is free."
+        exit 1
+    fi
 fi
 sleep 10
