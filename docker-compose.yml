@@ -82,35 +82,6 @@ services:
       - WORK_DIR=${WORK_DIR}
     network_mode: "host"
   
-  # NOTE: backend service is not working yet due to issue with chromedriver on docker.
-  # Therefore backend is run on host machine.
-
-  #backend:
-  #  container_name: backend
-  #  build:
-  #    context: ./
-  #    dockerfile: Dockerfile.backend
-  #  stdin_open: true
-  #  tty: true
-  #  shm_size: 8g
-  #  ports:
-  #    - "8000:8000"
-  #  volumes:
-  #    - ./:/app
-  #  environment:
-  #    - NODE_ENV=development
-  #    - REDIS_URL=redis://redis:6379/0
-  #    - SEARXNG_URL=http://searxng:8080
-  #    - OLLAMA_URL=http://localhost:11434
-  #    - LM_STUDIO_URL=http://localhost:1234
-  #  extra_hosts:
-  #    - "host.docker.internal:host-gateway"
-  #  depends_on:
-  #    - redis
-  #    - searxng
-  #  networks:
-  #    - agentic-seek-net
-  
 volumes:
   redis-data:
   chrome_profiles:
