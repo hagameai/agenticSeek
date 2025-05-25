@@ -565,6 +565,6 @@ AgenticSeekを改善するための開発者を募集しています！オープ
 
  > [Fosowl](https://github.com/Fosowl) | パリ時間
 
- > [https://github.com/antoineVIVIES](antoineVIVIES) | 台北時間
+ > [antoineVIVIES](https://github.com/antoineVIVIES) | Taipei Time 
 
  > [steveh8758](https://github.com/steveh8758) | 台北時間 |（常に忙しい）

@@ -552,8 +552,8 @@ We’re looking for developers to improve AgenticSeek! Check out open issues or 
 
 ## Maintainers:
 
- > [Fosowl](https://github.com/Fosowl) | Paris Time | (Sometime busy)
+ > [Fosowl](https://github.com/Fosowl) | Paris Time 
 
- > [https://github.com/antoineVIVIES](antoineVIVIES) | Taipei Time | (Often busy)
+ > [antoineVIVIES](https://github.com/antoineVIVIES) | Taipei Time 
 
- > [steveh8758](https://github.com/steveh8758) | Taipei Time | (Always busy)
+ > [steveh8758](https://github.com/steveh8758) | Taipei Time 

@@ -564,8 +564,8 @@ DeepSeek R1 天生会说中文
 
 ## 维护者:
 
- > [Fosowl](https://github.com/Fosowl) | 巴黎时间 | （有时很忙）
+ > [Fosowl](https://github.com/Fosowl) | 巴黎时间
 
- > [https://github.com/antoineVIVIES](https://github.com/antoineVIVIES) | 台北时间 | （经常很忙）
+ > [antoineVIVIES](https://github.com/antoineVIVIES) | Taipei Time 
 
- > [steveh8758](https://github.com/steveh8758) | 台北时间 | （总是很忙）
+ > [steveh8758](https://github.com/steveh8758) | 台北时间
