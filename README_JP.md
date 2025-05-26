@@ -4,7 +4,7 @@
 <img align="center" src="./media/agentic_seek_logo.png" width="300" height="300" alt="Agentic Seek ロゴ">
 <p>
 
-[English](./README.md) | [中文](./README_CHS.md) | [繁體中文](./README_CHT.md) | [Français](./README_FR.md) | 日本語
+[English](./README.md) | [中文](./README_CHS.md) | [繁體中文](./README_CHT.md) | [Français](./README_FR.md) | 日本語 | [Português (Brasil)](./README_PTBR.md)
 
 *Manus AIの**100%ローカルな代替**となるこの音声対応AIアシスタントは、自律的にウェブを閲覧し、コードを書き、タスクを計画しながら、すべてのデータをあなたのデバイスに保持します。ローカル推論モデルに合わせて調整されており、完全にあなたのハードウェア上で動作するため、完全なプライバシーとクラウドへの依存ゼロを保証します。*
 
