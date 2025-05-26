@@ -8,15 +8,15 @@
 [English](./README.md) | 繁體中文 | [日本語](./README_JP.md)
 
 
-*一个 **100% 本地替代 Manus AI** 的方案，这款支持语音的 AI 助理能够自主浏览网页、编写代码和规划任务，同时将所有数据保留在您的设备上。专为本地推理模型量身打造，完全在您自己的硬件上运行，确保完全的隐私保护和零云端依赖。*
+*一个 **100% 本地替代 Manus AI** 的方案，這款支持语音的 AI 助理能够自主瀏覽網頁、编写代码和規劃任務，同时将所有用戶資料保留在您的裝置上。專門為本地推理模型量身打造，完全在您自己的硬體上執行，确保完全的隐私保护和零雲端依賴。*
 
 [![Visit AgenticSeek](https://img.shields.io/static/v1?label=Website&message=AgenticSeek&color=blue&style=flat-square)](https://fosowl.github.io/agenticSeek.html) ![License](https://img.shields.io/badge/license-GPL--3.0-green) [![Discord](https://img.shields.io/badge/Discord-Join%20Us-7289DA?logo=discord&logoColor=white)](https://discord.gg/8hGDaME3TC) [![Twitter](https://img.shields.io/twitter/url/https/twitter.com/fosowl.svg?style=social&label=Update%20%40Fosowl)](https://x.com/Martin993886460)
 
-### 为什么选择 AgenticSeek？
+### 为什么選擇 AgenticSeek？
 
 * 🔒 完全本地化与隐私保护 - 所有功能都在您的设备上运行 — 无云端服务，无数据共享。您的文件、对话和搜索始终保持私密。
 
-* 🌐 智能网页浏览 - AgenticSeek 能够自主浏览互联网 — 搜索、阅读、提取信息、填写网页表单 — 全程无需人工操作。
+* 🌐 智能網頁浏览 - AgenticSeek 能够自主瀏覽網頁 — 搜索、阅读、提取信息、填写网页表单 — 全程无需人工操作。
 
 * 💻 自主编码助手 - 需要代码？它可以编写、调试并运行 Python、C、Go、Java 等多种语言的程序 — 全程无需监督。
 
