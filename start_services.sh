@@ -6,6 +6,12 @@ command_exists() {
     command -v "$1" &> /dev/null
 }
 
+if [ "$1" = "full" ]; then
+    echo "Starting full deployment with backend and all services..."
+else
+    echo "Starting core deployment with frontend and search services only..."
+fi
+
 #
 # Check if Docker is installed é running
 #
