@@ -1,7 +1,7 @@
 import unittest
 import os
 import sys
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))  # Add project root to Python path
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from sources.tools.tools import Tools
 
@@ -13,7 +13,6 @@ class TestToolsParsing(unittest.TestCase):
 
     def setUp(self):
         """Set up test fixtures before each test method."""
-        # Create a concrete implementation of the abstract Tools class for testing
         class TestTool(Tools):
             def execute(self, blocks, safety=False):
                 return "test execution"
@@ -79,8 +78,6 @@ print("Hello with save path")
         
         self.assertIsNotNone(blocks)
         self.assertEqual(len(blocks), 1)
-        # The save path logic only works when the first line (after newline) contains a colon
-        # In this case, the first line is empty, so save_path parsing doesn't trigger
         self.assertEqual(blocks[0], '\nsave_path: test_file.py\nimport os\nprint("Hello with save path")\n')
         self.assertIsNone(save_path)
 
@@ -132,7 +129,6 @@ x = 42"""
         
         blocks, save_path = self.tool.load_exec_block(llm_text)
         
-        # Function returns empty list and None for incomplete blocks
         self.assertEqual(blocks, [])
         self.assertIsNone(save_path)
 
@@ -206,7 +202,6 @@ print("test")
 
     def test_found_executable_blocks_flag(self):
         """Test that the executable blocks found flag is set correctly."""
-        # Initially should be False
         self.assertFalse(self.tool.found_executable_blocks())
         
         llm_text = """```python
@@ -215,10 +210,8 @@ print("test")
         
         blocks, save_path = self.tool.load_exec_block(llm_text)
         
-        # After finding blocks, should be True
         self.assertTrue(self.tool.found_executable_blocks())
         
-        # After calling found_executable_blocks(), should reset to False
         self.assertFalse(self.tool.found_executable_blocks())
 
     def test_get_parameter_value(self):
