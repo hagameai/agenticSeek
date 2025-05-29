@@ -24,7 +24,7 @@
   Precisa de código? Ele escreve, depura e executa programas em Python, C, Go, Java e muito mais — sem supervisão constante.
 
 * 🧠 **Seleção Inteligente de Agentes**  
-  Você faz a pergunta, ele escolhe automaticamente o melhor “agente” para a tarefa. É como ter uma equipe de especialistas sempre à disposição.
+  Você faz a pergunta, ele escolhe automaticamente o melhor "agente" para a tarefa. É como ter uma equipe de especialistas sempre à disposição.
 
 * 📋 **Planeja e Executa Tarefas Complexas**  
   De roteiros de viagem a projetos grandes — divide grandes objetivos em etapas e realiza tudo usando múltiplos agentes de IA.
@@ -38,7 +38,7 @@
 
 > **Exemplo de uso**  
 >
-> _“Pode buscar na web informações sobre o projeto AgenticSeek, identificar requisitos, abrir o arquivo `CV_candidates.zip` e me dizer qual currículo se adequa melhor?”_
+> _"Pode buscar na web informações sobre o projeto AgenticSeek, identificar requisitos, abrir o arquivo `CV_candidates.zip` e me dizer qual currículo se adequa melhor?"_
 
 https://github.com/user-attachments/assets/b8ca60e9-7b3b-4533-840e-08f9ac426316
 
@@ -263,4 +263,49 @@ Se você tem um servidor potente e quer acessá-lo do laptop:
    provider_model = deepseek-r1:70b
    provider_server_address = <IP_DO_SERVIDOR>:3333
    ```
+   
+## FAQ
+
+**P: Que hardware eu preciso?**  
+
+| Tamanho do Modelo  | GPU  | Comentário                                               |
+|-----------|--------|-----------------------------------------------------------|
+| 7B        | 8GB VRAM | ⚠️ Não recomendado. Performance ruim, alucinações frequentes, e agentes planejadores provavelmente falharão. |
+| 14B        | 12 GB VRAM (ex: RTX 3060) | ✅ Usável para tarefas simples. Pode ter dificuldades com navegação web e tarefas de planejamento. |
+| 32B        | 24+ GB VRAM (ex: RTX 4090) | 🚀 Sucesso com a maioria das tarefas, ainda pode ter dificuldades com planejamento de tarefas |
+| 70B+        | 48+ GB VRAM (ex: mac studio) | 💪 Excelente. Recomendado para casos de uso avançados. |
+
+**P: Por que Deepseek R1 em vez de outros modelos?**  
+
+Deepseek R1 se destaca em raciocínio e uso de ferramentas para seu tamanho. Achamos que é uma escolha sólida para nossas necessidades, outros modelos funcionam bem, mas Deepseek é nossa escolha principal.
+
+**P: Recebo um erro ao executar `cli.py`. O que faço?**  
+
+Certifique-se de que o local está rodando (`ollama serve`), seu `config.ini` corresponde ao seu provedor, e as dependências estão instaladas. Se nada funcionar, sinta-se à vontade para abrir uma issue.
+
+**P: Pode realmente rodar 100% localmente?**  
+
+Sim, com provedores Ollama, lm-studio ou server, todos os modelos de fala para texto, LLM e texto para fala rodam localmente. Opções não-locais (OpenAI ou outras APIs) são opcionais.
+
+**P: Por que devo usar AgenticSeek quando tenho Manus?**
+
+Isso começou como um Projeto Paralelo que fizemos por interesse em agentes de IA. O que é especial sobre isso é que queremos usar modelos locais e evitar APIs.
+Nos inspiramos em Jarvis e Friday (filmes do Homem de Ferro) para torná-lo "legal", mas para funcionalidade nos inspiramos mais no Manus, porque é isso que as pessoas querem em primeiro lugar: uma alternativa local ao Manus.
+Ao contrário do Manus, o AgenticSeek prioriza a independência de sistemas externos, dando a você mais controle, privacidade e evitando custos de API.
+
+## Contribuir
+
+Estamos procurando desenvolvedores para melhorar o AgenticSeek! Confira issues abertas ou discussões.
+
+[Guia de contribuição](./docs/CONTRIBUTING.md)
+
+[![Star History Chart](https://api.star-history.com/svg?repos=Fosowl/agenticSeek&type=Date)](https://www.star-history.com/#Fosowl/agenticSeek&Date)
+
+## Mantenedores:
+
+ > [Fosowl](https://github.com/Fosowl) | Horário de Paris | (Às vezes ocupado)
+
+ > [https://github.com/antoineVIVIES](antoineVIVIES) | Horário de Taipei | (Frequentemente ocupado)
+
+ > [steveh8758](https://github.com/steveh8758) | Horário de Taipei | (Sempre ocupado)
    
