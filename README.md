@@ -34,7 +34,7 @@ Disclaimer: This demo, including all the files that appear (e.g: CV_candidates.z
 
 > 🛠⚠️️ **Active Work in Progress** – Please note that Code/Bash is not dockerized yet but will be soon (see docker_deployement branch) - Do not deploy over network or production.
 
-> 🙏 Please also understand that this project began as a side experiment, with no roadmap and no expectations, we didn't expect to end in Github trending. Financial backing is exactly $1/month (shoutout to my single sponsor). Contributions, feedback, and patience are deeply appreciated.
+> 🙏 This project started as a side-project with zero roadmap and zero funding. It's grown way beyond what I expected by ending in GitHub Trending. Contributions, feedback, and patience are deeply appreciated.
 
 ## Installation
 
