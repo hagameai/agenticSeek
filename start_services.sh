@@ -96,6 +96,9 @@ sleep 4
 docker stop $(docker ps -a -q)
 echo "All containers stopped"
 
+# export searxng secret key
+export SEARXNG_SECRET_KEY=$(openssl rand -hex 32)
+
 if [ "$1" = "full" ]; then
     # First start backend and wait for it to be healthy
     echo "Full docker deployement. Starting backend service..."
