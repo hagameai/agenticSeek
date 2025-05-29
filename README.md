@@ -32,7 +32,9 @@ https://github.com/user-attachments/assets/b8ca60e9-7b3b-4533-840e-08f9ac426316
 
 Disclaimer: This demo, including all the files that appear (e.g: CV_candidates.zip), are entirely fictional. We are not a corporation, we seek open-source contributors not candidates.
 
-> 🛠️ **Work in Progress** – Looking for contributors!
+> 🛠⚠️️ **Active Work in Progress** – Please note that Code/Bash is not dockerized yet but will be soon (see docker_deployement branch) - Do not deploy over network or production.
+
+> 🙏 Please also understand that this project began as a side experiment, with no roadmap and no expectations, we didn't expect to end in Github trending. Financial backing is exactly $1/month (shoutout to my single sponsor). Contributions, feedback, and patience are deeply appreciated.
 
 ## Installation
 
