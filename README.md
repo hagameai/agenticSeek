@@ -210,7 +210,7 @@ Example: export `TOGETHER_API_KEY="xxxxx"`
 | togetherAI | No    | Use together AI API (non-private)                         |
 | google | No    | Use google gemini API (non-private)                         |
 
-*We advice against using gpt-4o or other closedAI models*, performance are poor for web browsing and task planning.
+*We advise against using gpt-4o or other closedAI models*, performance are poor for web browsing and task planning.
 
 Please also note that coding/bash might fail with gemini, it seems to ignore our prompt for format to respect, which are optimized for deepseek r1.
 
@@ -245,7 +245,7 @@ start ./start_services.cmd # Window
 python3 cli.py
 ```
 
-We advice you set `headless_browser` to False in the config.ini for CLI mode.
+We advise you set `headless_browser` to False in the config.ini for CLI mode.
 
 **Options 2:** Run with the Web interface.
 
