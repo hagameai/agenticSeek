@@ -41,7 +41,7 @@ class BrowserAgent(Agent):
         self.memory = Memory(self.load_prompt(prompt_path),
                         recover_last_session=False, # session recovery in handled by the interaction class
                         memory_compression=False,
-                        model_provider=provider.get_model_name())
+                        model_provider=provider.get_model_name() if provider else None)
     
     def get_today_date(self) -> str:
         """Get the date"""
@@ -77,14 +77,14 @@ class BrowserAgent(Agent):
     def get_unvisited_links(self) -> List[str]:
         return "\n".join([f"[{i}] {link}" for i, link in enumerate(self.navigable_links) if link not in self.search_history])
 
-    def make_newsearch_prompt(self, user_prompt: str, search_result: dict) -> str:
+    def make_newsearch_prompt(self, prompt: str, search_result: dict) -> str:
         search_choice = self.stringify_search_results(search_result)
         self.logger.info(f"Search results: {search_choice}")
         return f"""
         Based on the search result:
         {search_choice}
         Your goal is to find accurate and complete information to satisfy the user’s request.
-        User request: {user_prompt}
+        User request: {prompt}
         To proceed, choose a relevant link from the search results. Announce your choice by saying: "I will navigate to <link>"
         Do not explain your choice.
         """
@@ -235,13 +235,17 @@ class BrowserAgent(Agent):
         return links
     
     def select_link(self, links: List[str]) -> str | None:
+        """
+        Select the first unvisited link that is not the current page.
+        Preference is given to links not in search_history.
+        """
         for lk in links:
-            if lk == self.current_page:
-                self.logger.info(f"Already visited {lk}. Skipping.")
+            if lk == self.current_page or lk in self.search_history:
+                self.logger.info(f"Skipping already visited or current link: {lk}")
                 continue
             self.logger.info(f"Selected link: {lk}")
             return lk
-        self.logger.warning("No link selected.")
+        self.logger.warning("No suitable link selected.")
         return None
     
     def get_page_text(self, limit_to_model_ctx = False) -> str:
@@ -396,7 +400,10 @@ class BrowserAgent(Agent):
             if (link == None and len(extracted_form) < 3) or Action.GO_BACK.value in answer or link in self.search_history:
                 pretty_print(f"Going back to results. Still {len(unvisited)}", color="status")
                 self.status_message = "Going back to search results..."
-                prompt = self.make_newsearch_prompt(user_prompt, unvisited)
+                request_prompt = user_prompt
+                if link is None:
+                    request_prompt += f"\nYou previously choosen:\n{self.last_answer} but the website is unavailable. Consider other options."
+                prompt = self.make_newsearch_prompt(request_prompt, unvisited)
                 self.search_history.append(link)
                 self.current_page = link
                 continue

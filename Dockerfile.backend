@@ -60,33 +60,35 @@ COPY sources/ ./sources/
 COPY prompts/ ./prompts/
 COPY crx/ crx/
 COPY llm_router/ llm_router/
-COPY .env .
-COPY config.ini .
+RUN ls
+COPY .env.example .env
 
 # Install Chrome and ChromeDriver from chrome-for-testing
-RUN wget -O chrome-headless-shell-linux64.zip https://storage.googleapis.com/chrome-for-testing-public/137.0.7151.55/linux64/chrome-headless-shell-linux64.zip && \ 
-    wget -O chromedriver-linux64.zip https://storage.googleapis.com/chrome-for-testing-public/137.0.7151.55/linux64/chromedriver-linux64.zip && \
-    unzip chrome-headless-shell-linux64.zip && \
-    unzip chromedriver-linux64.zip && \
-    mkdir -p /opt/google && \
-    ls -la && \
-    mv chrome-headless-shell-linux64 /opt/google/chrome && \
-    mv chromedriver-linux64/chromedriver /usr/local/bin/chromedriver && \
-    chmod +x /opt/google/chrome/chrome-headless-shell && \
-    chmod +x /usr/local/bin/chromedriver
+#RUN wget -O chrome-headless-shell-linux64.zip https://storage.googleapis.com/chrome-for-testing-public/137.0.7151.55/linux64/chrome-headless-shell-linux64.zip && \ 
+#    wget -O chromedriver-linux64.zip https://storage.googleapis.com/chrome-for-testing-public/137.0.7151.55/linux64/chromedriver-linux64.zip && \
+#    unzip chrome-headless-shell-linux64.zip && \
+#    unzip chromedriver-linux64.zip && \
+#    mkdir -p /opt/google && \
+#    ls -la && \
+#    mv chrome-headless-shell-linux64 /opt/google/chrome && \
+#    mv chromedriver-linux64/chromedriver /usr/local/bin/chromedriver && \
+#    chmod +x /opt/google/chrome/chrome-headless-shell && \
+#    chmod +x /usr/local/bin/chromedriver
 
-RUN ln -s /opt/google/chrome/chrome /usr/local/bin/chrome
+RUN wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | apt-key add - && \
+    echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google-chrome.list && \
+    apt-get update && \
+    apt-get install -y google-chrome-stable && \
+    rm -rf /var/lib/apt/lists/*
 
-# Debug ChromeDriver
-RUN echo "=== ChromeDriver Debug ===" && \
-    /usr/local/bin/chromedriver --version && \
-    echo "Chrome binary:" && \
-    /opt/google/chrome/chrome --version && \
-    echo "Testing ChromeDriver startup:" && \
-    timeout 5 /usr/local/bin/chromedriver --port=9999 || echo "ChromeDriver failed to start"
+# Install matching ChromeDriver
+RUN CHROME_VERSION=$(google-chrome --version | grep -oP '\d+\.\d+\.\d+') && \
+    wget -O chromedriver.zip "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_${CHROME_VERSION%%.*}/chromedriver_linux64.zip" && \
+    unzip chromedriver.zip && \
+    mv chromedriver /usr/local/bin/ && \
+    chmod +x /usr/local/bin/chromedriver && \
+    rm chromedriver.zip
 
-ENV CHROME_BIN=/opt/google/chrome/chrome
-ENV CHROMEDRIVER_PATH=/usr/local/bin/chromedriver
 ENV DISPLAY=:99
 
 # Expose port
