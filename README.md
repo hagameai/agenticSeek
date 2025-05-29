@@ -32,7 +32,9 @@ https://github.com/user-attachments/assets/b8ca60e9-7b3b-4533-840e-08f9ac426316
 
 Disclaimer: This demo, including all the files that appear (e.g: CV_candidates.zip), are entirely fictional. We are not a corporation, we seek open-source contributors not candidates.
 
-> 🛠️ **Work in Progress** – Looking for contributors!
+> 🛠⚠️️ **Active Work in Progress** – Please note that Code/Bash is not dockerized yet but will be soon (see docker_deployement branch) - Do not deploy over network or production.
+
+> 🙏 This project started as a side-project with zero roadmap and zero funding. It's grown way beyond what I expected by ending in GitHub Trending. Contributions, feedback, and patience are deeply appreciated.
 
 ## Installation
 
@@ -552,8 +554,8 @@ We’re looking for developers to improve AgenticSeek! Check out open issues or 
 
 ## Maintainers:
 
- > [Fosowl](https://github.com/Fosowl) | Paris Time | (Sometime busy)
+ > [Fosowl](https://github.com/Fosowl) | Paris Time 
 
- > [https://github.com/antoineVIVIES](antoineVIVIES) | Taipei Time | (Often busy)
+ > [antoineVIVIES](https://github.com/antoineVIVIES) | Taipei Time 
 
- > [steveh8758](https://github.com/steveh8758) | Taipei Time | (Always busy)
+ > [steveh8758](https://github.com/steveh8758) | Taipei Time 

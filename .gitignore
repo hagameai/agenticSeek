@@ -9,6 +9,7 @@ test_agent.py
 config.ini
 .voices/
 experimental/
+chrome_bundle/
 .logs/
 .screenshots/*.png
 .screenshots/*.jpg

@@ -140,8 +140,10 @@ class Agent():
         Remove the reasoning block of reasoning model like deepseek.
         """
         end_tag = "</think>"
-        end_idx = text.rfind(end_tag)+8
-        return text[end_idx:]
+        end_idx = text.rfind(end_tag)
+        if end_idx == -1:
+            return text
+        return text[end_idx+8:]
     
     def extract_reasoning_text(self, text: str) -> None:
         """
