@@ -29,7 +29,7 @@ services:
     ports:
       - "8080:8080"
     volumes:
-      - ./searxng:/etc/searxng:rw
+      - ./searxng:/etc/searxng:rw,z
     environment:
       - SEARXNG_BASE_URL=http://localhost:8080/
       - SEARXNG_SECRET_KEY=$(openssl rand -hex 32)
@@ -57,7 +57,7 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - ./frontend/agentic-seek-front/src:/app/src
+      - ./frontend/agentic-seek-front/src:/app/src:rw,z
       - ./screenshots:/app/screenshots
     environment:
       - NODE_ENV=development
