@@ -292,7 +292,7 @@ python3 api.py
 
 > *2025年の最新AIニュース記事をウェブで検索し、3つ選択して、それらのタイトルと要約をスクレイピングするPythonスクリプトを書いて。スクリプトをnews_scraper.pyとして、要約を/home/projectsのai_news.txtに保存して。*
 
-> *金曜日、無料の株価APIをウェブで検索し、supersuper7434567@gmail.comで登録し、そのAPIを使用してテスラの日々の価格を取得するPythonスクリプトを書いて、結果をstock_prices.csvに保存して。*
+> *フライデー、無料の株価APIをウェブで検索し、supersuper7434567@gmail.comで登録し、そのAPIを使用してテスラの日々の価格を取得するPythonスクリプトを書いて、結果をstock_prices.csvに保存して。*
 
 *フォーム入力機能はまだ実験的であり、失敗する可能性があることに注意してください。*
 
