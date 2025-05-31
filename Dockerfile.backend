@@ -2,7 +2,8 @@
 FROM --platform=linux/amd64 python:3.11-slim
 ENV DEBIAN_FRONTEND=noninteractive
 
-WORKDIR /app
+RUN groupadd -r chrome && useradd -r -g chrome -G audio,video chrome
+
 
 # Install essential packages and Chrome dependencies
 RUN apt-get update -y && apt-get install -y \
@@ -59,6 +60,8 @@ apt-get install -y \
 ENV CHROME_TESTING_VERSION=134.0.6998.88
 ENV DISPLAY=:99
 
+WORKDIR /app
+
 RUN set -eux; \
     wget -qO /tmp/chrome.zip \
       "https://storage.googleapis.com/chrome-for-testing-public/${CHROME_TESTING_VERSION}/linux64/chrome-linux64.zip"; \
@@ -87,6 +90,7 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 RUN mkdir -p /opt/workspace
+RUN mkdir -p /tmp && chmod 1777 /tmp
 
 # Copy application code
 COPY api.py .
@@ -96,32 +100,10 @@ COPY crx/ crx/
 COPY llm_router/ llm_router/
 COPY config.ini .
 
-# Install Chrome and ChromeDriver from chrome-for-testing
-#RUN wget -O chrome-headless-shell-linux64.zip https://storage.googleapis.com/chrome-for-testing-public/137.0.7151.55/linux64/chrome-headless-shell-linux64.zip && \ 
-#    wget -O chromedriver-linux64.zip https://storage.googleapis.com/chrome-for-testing-public/137.0.7151.55/linux64/chromedriver-linux64.zip && \
-#    unzip chrome-headless-shell-linux64.zip && \
-#    unzip chromedriver-linux64.zip && \
-#    mkdir -p /opt/google && \
-#    ls -la && \
-#    mv chrome-headless-shell-linux64 /opt/google/chrome && \
-#    mv chromedriver-linux64/chromedriver /usr/local/bin/chromedriver && \
-#    chmod +x /opt/google/chrome/chrome-headless-shell && \
-#    chmod +x /usr/local/bin/chromedriver
-
-#RUN wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | apt-key add - && \
-#    echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google-chrome.list && \
-#    apt-get update && \
-#    apt-get install -y google-chrome-stable && \
-#    rm -rf /var/lib/apt/lists/*
-#
-## Install matching ChromeDriver
-#RUN CHROME_VERSION=$(google-chrome --version | grep -oP '\d+\.\d+\.\d+') && \
-#    wget -O chromedriver.zip "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_${CHROME_VERSION%%.*}/chromedriver_linux64.zip" && \
-#    unzip chromedriver.zip && \
-#    mv chromedriver /usr/local/bin/ && \
-#    chmod +x /usr/local/bin/chromedriver && \
-#    rm chromedriver.zip
-
 EXPOSE 8000
+# Switch to non-root user
+USER chrome
+RUN chown -R chrome:chrome /app
+RUN chown -R chrome:chrome /tmp
 # Run the application
 CMD ["python3", "api.py"]

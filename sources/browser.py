@@ -19,6 +19,7 @@ import time
 import random
 import os
 import shutil
+import uuid
 import tempfile
 import markdownify
 import sys
@@ -43,12 +44,11 @@ def get_chrome_path() -> str:
                  "/Applications/Google Chrome Beta.app/Contents/MacOS/Google Chrome Beta"]
     else:  # Linux
         paths = ["/usr/bin/google-chrome",
+                 "/opt/chrome/chrome",
                  "/usr/bin/chromium-browser",
                  "/usr/bin/chromium",
-                 "/opt/chrome/chrome",
                  "/usr/local/bin/chrome",
                  "/opt/google/chrome/chrome-headless-shell",
-                 "/opt/google/chrome/chrome",
                  #"/app/chrome_bundle/chrome136/chrome-linux64"
                 ]
 
@@ -81,11 +81,6 @@ def install_chromedriver() -> str:
     Install the ChromeDriver if not already installed. Return the path.
     """
     chromedriver_path = shutil.which("chromedriver")
-    #if not chromedriver_path:
-    #    if os.path.exists("/app/chrome_bundle/chrome136/chromedriver"):
-    #        print("Using bundled ChromeDriver from /app/chrome_bundle/chrome136/chromedriver")
-    #        chromedriver_path = "/app/chrome_bundle/chrome136/chromedriver"
-    print("path:", chromedriver_path)
     if not chromedriver_path:
         try:
             print("ChromeDriver not found, attempting to install automatically...")
@@ -136,27 +131,28 @@ def create_driver(headless=False, stealth_mode=True, crx_path="./crx/nopecha.crx
     if headless:
         #chrome_options.add_argument("--headless")
         chrome_options.add_argument("--headless=new")
-        chrome_options.add_argument("--disable-dev-shm-usage")
         chrome_options.add_argument("--disable-gpu")
         chrome_options.add_argument("--disable-webgl")
-        chrome_options.add_argument("--remote-debugging-port=9222")
     user_data_dir = tempfile.mkdtemp()
     user_agent = get_random_user_agent()
     width, height = (1920, 1080)
-    #chrome_options.add_argument(f"--user-data-dir={user_data_dir}")
+    user_data_dir = tempfile.mkdtemp(prefix="chrome_profile_")
+    import os
+    print(f"Running as UID: {os.getuid()}")  # Will show 0 if root
+    chrome_options.add_argument("--no-sandbox")
+    chrome_options.add_argument('--disable-dev-shm-usage')
+    profile_dir = f"/tmp/chrome_profile_{uuid.uuid4().hex[:8]}"
+    chrome_options.add_argument(f'--user-data-dir={profile_dir}')
     chrome_options.add_argument(f"--accept-lang={lang}-{lang.upper()},{lang};q=0.9")
     chrome_options.add_argument("--disable-extensions")
     chrome_options.add_argument("--disable-background-timer-throttling")
     chrome_options.add_argument("--timezone=Europe/Paris")
-    chrome_options.add_argument("--no-sandbox")
-    chrome_options.add_argument('--disable-dev-shm-usage')
     chrome_options.add_argument('--remote-debugging-port=9222')
     chrome_options.add_argument('--disable-background-timer-throttling')
     chrome_options.add_argument('--disable-backgrounding-occluded-windows')
     chrome_options.add_argument('--disable-renderer-backgrounding')
     chrome_options.add_argument('--disable-features=TranslateUI')
     chrome_options.add_argument('--disable-ipc-flooding-protection')
-    chrome_options.add_argument("--disable-dev-shm-usage")
     chrome_options.add_argument("--mute-audio")
     chrome_options.add_argument("--disable-notifications")
     chrome_options.add_argument("--autoplay-policy=user-gesture-required")
