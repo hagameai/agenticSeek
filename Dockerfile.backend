@@ -2,9 +2,6 @@
 FROM --platform=linux/amd64 python:3.11-slim
 ENV DEBIAN_FRONTEND=noninteractive
 
-#RUN groupadd -r chrome && useradd -r -g chrome -G audio,video chrome
-#USER chrome
-
 # Install essential packages and Chrome dependencies
 RUN apt-get update -y && apt-get install -y \
     wget \
@@ -102,7 +99,5 @@ COPY config.ini .
 
 EXPOSE 8000
 
-#RUN chown -R chrome:chrome /app
-#RUN chown -R chrome:chrome /tmp
 # Run the application
 CMD ["python3", "api.py"]

@@ -84,7 +84,7 @@ services:
     environment:
       - SEARXNG_URL=${SEARXNG_BASE_URL:-http://searxng:8080}
       - REDIS_URL=${REDIS_BASE_URL:-redis://redis:6379/0}
-      - WORK_DIR_HOST=${WORK_DIR_HOST:-.}
+      - WORK_DIR=/opt/workspace
       - OPENAI_API_KEY=${OPENAI_API_KEY}
       - DEEPSEEK_API_KEY=${DEEPSEEK_API_KEY}
       - OPENROUTER_API_KEY=${OPENROUTER_API_KEY}
