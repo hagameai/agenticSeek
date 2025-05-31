@@ -143,7 +143,7 @@ def create_driver(headless=False, stealth_mode=True, crx_path="./crx/nopecha.crx
     user_data_dir = tempfile.mkdtemp()
     user_agent = get_random_user_agent()
     width, height = (1920, 1080)
-    chrome_options.add_argument(f"--user-data-dir={user_data_dir}")
+    #chrome_options.add_argument(f"--user-data-dir={user_data_dir}")
     chrome_options.add_argument(f"--accept-lang={lang}-{lang.upper()},{lang};q=0.9")
     chrome_options.add_argument("--disable-extensions")
     chrome_options.add_argument("--disable-background-timer-throttling")

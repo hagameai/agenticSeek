@@ -73,7 +73,7 @@ class Tools():
         default_path = os.path.dirname(os.getcwd())
         if self.config_exists():
             self.config.read('./config.ini')
-            config_path = self.config['MAIN']['work_dir']
+            config_path = self.config['MAIN']['work_dir'] or os.getenv('WORK_DIR')
             dir_path = default_path if not self.check_config_dir_validity() else config_path
         else:
             dir_path = default_path

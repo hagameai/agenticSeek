@@ -79,11 +79,18 @@ services:
       - ${BACKEND_PORT:-8000}:${BACKEND_PORT:-8000}
     volumes:
       - ./:/app
-      - ${WORK_DIR}:${WORK_DIR}
+      - ${WORK_DIR_HOST:-.}:/opt/workspace
     command: python3 api.py
     environment:
-      - SEARXNG_URL=http://localhost:8080
-      - WORK_DIR=${WORK_DIR}
+      - SEARXNG_URL=${SEARXNG_BASE_URL:-http://searxng:8080}
+      - REDIS_URL=${REDIS_BASE_URL:-redis://redis:6379/0}
+      - WORK_DIR_HOST=${WORK_DIR_HOST:-.}
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - DEEPSEEK_API_KEY=${DEEPSEEK_API_KEY}
+      - OPENROUTER_API_KEY=${OPENROUTER_API_KEY}
+      - TOGETHER_API_KEY=${TOGETHER_API_KEY}
+      - GOOGLE_API_KEY=${GOOGLE_API_KEY}
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
     network_mode: "host"
   
 volumes:
