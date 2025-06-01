@@ -4,7 +4,7 @@
 <img align="center" src="./media/agentic_seek_logo.png" width="300" height="300" alt="Agentic Seek Logo">
 <p>
 
-  English | [中文](./README_CHS.md) | [繁體中文](./README_CHT.md) | [Français](./README_FR.md) | [日本語](./README_JP.md)
+  English | [中文](./README_CHS.md) | [繁體中文](./README_CHT.md) | [Français](./README_FR.md) | [日本語](./README_JP.md) | [Português (Brasil)](./README_PTBR.md)
 
 *A **100% local alternative to Manus AI**, this voice-enabled AI assistant autonomously browses the web, writes code, and plans tasks while keeping all data on your device. Tailored for local reasoning models, it runs entirely on your hardware, ensuring complete privacy and zero cloud dependency.*
 
@@ -34,7 +34,7 @@ Disclaimer: This demo, including all the files that appear (e.g: CV_candidates.z
 
 > 🛠⚠️️ **Active Work in Progress** – Please note that Code/Bash is not dockerized yet but will be soon (see docker_deployement branch) - Do not deploy over network or production.
 
-> 🙏 Please also understand that this project began as a side experiment, with no roadmap and no expectations, we didn't expect to end in Github trending. Financial backing is exactly $1/month (shoutout to my single sponsor). Contributions, feedback, and patience are deeply appreciated.
+> 🙏 This project started as a side-project with zero roadmap and zero funding. It's grown way beyond what I expected by ending in GitHub Trending. Contributions, feedback, and patience are deeply appreciated.
 
 ## Installation
 
