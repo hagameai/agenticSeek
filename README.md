@@ -40,7 +40,7 @@ Disclaimer: This demo, including all the files that appear (e.g: CV_candidates.z
 
 Make sure you have chrome driver, docker and python3.10 installed.
 
-We highly advice you use exactly python3.10 for the setup. Dependencies error might happen otherwise.
+We highly advise you use exactly python3.10 for the setup. Dependencies error might happen otherwise.
 
 For issues related to chrome driver, see the **Chromedriver** section.
 
@@ -64,9 +64,9 @@ source agentic_seek_env/bin/activate
 
 Ensure Python, Docker and docker compose, and Google chrome are installed.
 
-We recommand Python 3.10.0.
+We recommend Python 3.10.0.
 
-**Automatic Installation (Recommanded):**
+**Automatic Installation (recommended):**
 
 For Linux/Macos:
 ```sh
@@ -140,7 +140,7 @@ See below for a list of local supported provider.
 
 **Update the config.ini**
 
-Change the config.ini file to set the provider_name to a supported provider and provider_model to a LLM supported by your provider. We recommand reasoning model such as *Qwen* or *Deepseek*.
+Change the config.ini file to set the provider_name to a supported provider and provider_model to a LLM supported by your provider. We recommend reasoning model such as *Qwen* or *Deepseek*.
 
 See the **FAQ** at the end of the README for required hardware.
 
@@ -159,7 +159,7 @@ work_dir =  /Users/mlg/Documents/workspace # The workspace for AgenticSeek.
 jarvis_personality = False # Whenever to use a more "Jarvis" like personality (experimental)
 languages = en zh # The list of languages, Text to speech will default to the first language on the list
 [BROWSER]
-headless_browser = True # Whenever to use headless browser, recommanded only if you use web interface.
+headless_browser = True # Whenever to use headless browser, recommended only if you use web interface.
 stealth_mode = True # Use undetected selenium to reduce browser detection
 ```
 
@@ -212,9 +212,9 @@ Example: export `TOGETHER_API_KEY="xxxxx"`
 | togetherAI | No    | Use together AI API (non-private)                         |
 | google | No    | Use google gemini API (non-private)                         |
 
-*We advice against using gpt-4o or other closedAI models*, performance are poor for web browsing and task planning.
+*We advise against using gpt-4o or other closedAI models*, performance are poor for web browsing and task planning.
 
-Please also note that coding/bash might fail with gemini, it seem to ignore our prompt for format to respect, which are optimized for deepseek r1.
+Please also note that coding/bash might fail with gemini, it seems to ignore our prompt for format to respect, which are optimized for deepseek r1.
 
 Next step: [Start services and run AgenticSeek](#Start-services-and-Run)
 
@@ -247,7 +247,7 @@ start ./start_services.cmd # Window
 python3 cli.py
 ```
 
-We advice you set `headless_browser` to False in the config.ini for CLI mode.
+We advise you set `headless_browser` to False in the config.ini for CLI mode.
 
 **Options 2:** Run with the Web interface.
 
@@ -541,7 +541,7 @@ Yes with Ollama, lm-studio or server providers, all speech to text, LLM and text
 **Q: Why should I use AgenticSeek when I have Manus?**
 
 This started as Side-Project we did out of interest about AI agents. What’s special about it is that we want to use local model and avoid APIs.
-We draw inspiration from Jarvis and Friday (Iron man movies) to make it "cool" but for functionnality we take more inspiration from Manus, because that's what people want in the first place: a local manus alternative.
+We draw inspiration from Jarvis and Friday (Iron man movies) to make it "cool" but for functionality we take more inspiration from Manus, because that's what people want in the first place: a local manus alternative.
 Unlike Manus, AgenticSeek prioritizes independence from external systems, giving you more control, privacy and avoid api cost.
 
 ## Contribute
@@ -559,3 +559,7 @@ We’re looking for developers to improve AgenticSeek! Check out open issues or 
  > [antoineVIVIES](https://github.com/antoineVIVIES) | Taipei Time 
 
  > [steveh8758](https://github.com/steveh8758) | Taipei Time 
+
+## Special Thanks:
+
+ > [tcsenpai](https://github.com/tcsenpai) For dockerization of backend

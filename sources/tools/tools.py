@@ -49,20 +49,16 @@ class Tools():
     
     def set_allow_language_exec_bash(value: bool) -> None:
         self.allow_language_exec_bash = value 
-    
-    def check_config_dir_validity(self):
-        """Check if the config directory is valid."""
-        path = self.config['MAIN']['work_dir']
-        if path == "":
-            print("WARNING: Work directory not set in config.ini")
-            return False
-        if path.lower() == "none":
-            print("WARNING: Work directory set to none in config.ini")
-            return False
-        if not os.path.exists(path):
-            print(f"WARNING: Work directory {path} does not exist")
-            return False
-        return True
+
+    def safe_get_work_dir_path(self):
+        path = None
+        path = os.getenv('WORK_DIR', path)
+        if path is None or path == "":
+            path = self.config['MAIN']['work_dir'] if 'MAIN' in self.config and 'work_dir' in self.config['MAIN'] else None
+        if path is None or path == "":
+            print("No work directory specified, using default.")
+            path = self.create_work_dir()
+        return path
     
     def config_exists(self):
         """Check if the config file exists."""
@@ -73,11 +69,10 @@ class Tools():
         default_path = os.path.dirname(os.getcwd())
         if self.config_exists():
             self.config.read('./config.ini')
-            config_path = self.config['MAIN']['work_dir']
-            dir_path = default_path if not self.check_config_dir_validity() else config_path
+            workdir_path = self.safe_get_work_dir_path()
         else:
-            dir_path = default_path
-        return dir_path
+            workdir_path = default_path
+        return workdir_path
 
     @abstractmethod
     def execute(self, blocks:[str], safety:bool) -> str:

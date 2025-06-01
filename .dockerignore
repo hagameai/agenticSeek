@@ -3,10 +3,9 @@ __pycache__/
 *.py[cod]
 
 # Virtual environments
-venv/
-.venv/
+agentic_seek_env/
+.agentic_seek_env/
 
-# Environment variables (secrets)
 .env
 
 # Git metadata

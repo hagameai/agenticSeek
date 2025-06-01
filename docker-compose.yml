@@ -3,6 +3,7 @@ version: '3'
 services:
   redis:
     container_name: redis
+    profiles: ["core", "full"]
     image: docker.io/valkey/valkey:8-alpine
     command: valkey-server --save 30 1 --loglevel warning
     restart: unless-stopped
@@ -24,6 +25,7 @@ services:
 
   searxng:
     container_name: searxng
+    profiles: ["core", "full"]
     image: docker.io/searxng/searxng:latest
     restart: unless-stopped
     ports:
@@ -31,8 +33,8 @@ services:
     volumes:
       - ./searxng:/etc/searxng:rw,z
     environment:
-      - SEARXNG_BASE_URL=http://localhost:8080/
-      - SEARXNG_SECRET_KEY=$(openssl rand -hex 32)
+      - SEARXNG_BASE_URL=${SEARXNG_BASE_URL:-http://localhost:8080/}
+      - SEARXNG_SECRET_KEY=${SEARXNG_SECRET_KEY}
       - UWSGI_WORKERS=4
       - UWSGI_THREADS=4
     cap_add:
@@ -51,6 +53,7 @@ services:
 
   frontend:
     container_name: frontend
+    profiles: ["core", "full"]
     build:
       context: ./frontend
       dockerfile: Dockerfile.frontend
@@ -62,39 +65,38 @@ services:
     environment:
       - NODE_ENV=development
       - CHOKIDAR_USEPOLLING=true
-      - BACKEND_URL=http://backend:8000
+      - REACT_APP_BACKEND_URL=http://0.0.0.0:${BACKEND_PORT:-8000}
     networks:
       - agentic-seek-net
-  
-  # NOTE: backend service is not working yet due to issue with chromedriver on docker.
-  # Therefore backend is run on host machine.
-  # Open to pull requests to fix this.
 
-  #backend:
-  #  container_name: backend
-  #  build:
-  #    context: ./
-  #    dockerfile: Dockerfile.backend
-  #  stdin_open: true
-  #  tty: true
-  #  shm_size: 8g
-  #  ports:
-  #    - "8000:8000"
-  #  volumes:
-  #    - ./:/app
-  #  environment:
-  #    - NODE_ENV=development
-  #    - REDIS_URL=redis://redis:6379/0
-  #    - SEARXNG_URL=http://searxng:8080
-  #    - OLLAMA_URL=http://localhost:11434
-  #    - LM_STUDIO_URL=http://localhost:1234
-  #  extra_hosts:
-  #    - "host.docker.internal:host-gateway"
-  #  depends_on:
-  #    - redis
-  #    - searxng
-  #  networks:
-  #    - agentic-seek-net
+  backend:
+    container_name: backend
+    profiles: ["backend", "full"]
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    ports:
+      - ${BACKEND_PORT:-7777}:${BACKEND_PORT:-7777}
+      - ${OLLAMA_PORT:-11434}:${OLLAMA_PORT:-11434}
+      - ${LM_STUDIO_PORT:-1234}:${LM_STUDIO_PORT:-1234}
+      - ${CUSTOM_ADDITIONAL_LLM_PORT:-8000}:${CUSTOM_ADDITIONAL_LLM_PORT:-8000}
+    volumes:
+      - ./:/app
+      - ${WORK_DIR:-.}:/opt/workspace
+    command: python3 api.py
+    environment:
+      - SEARXNG_URL=${SEARXNG_BASE_URL:-http://searxng:8080}
+      - REDIS_URL=${REDIS_BASE_URL:-redis://redis:6379/0}
+      - WORK_DIR=/opt/workspace
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - DEEPSEEK_API_KEY=${DEEPSEEK_API_KEY}
+      - OPENROUTER_API_KEY=${OPENROUTER_API_KEY}
+      - TOGETHER_API_KEY=${TOGETHER_API_KEY}
+      - GOOGLE_API_KEY=${GOOGLE_API_KEY}
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+      - HUGGINGFACE_API_KEY=${HUGGINGFACE_API_KEY}
+      - DSK_DEEPSEEK_API_KEY=${DSK_DEEPSEEK_API_KEY}
+    network_mode: "host"
   
 volumes:
   redis-data:
