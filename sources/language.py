@@ -1,8 +1,6 @@
 from typing import List, Tuple, Type, Dict
 import re
 import langid
-import nltk
-from nltk.sentiment.vader import SentimentIntensityAnalyzer
 from transformers import MarianMTModel, MarianTokenizer
 
 from sources.utility import pretty_print, animate_thinking
