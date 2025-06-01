@@ -76,10 +76,13 @@ services:
       context: .
       dockerfile: Dockerfile.backend
     ports:
-      - ${BACKEND_PORT:-8000}:${BACKEND_PORT:-8000}
+      - ${BACKEND_PORT:-7777}:${BACKEND_PORT:-7777}
+      - ${OLLAMA_PORT:-11434}:${OLLAMA_PORT:-11434}
+      - ${LM_STUDIO_PORT:-1234}:${LM_STUDIO_PORT:-1234}
+      - ${CUSTOM_ADDITIONAL_LLM_PORT:-8000}:${CUSTOM_ADDITIONAL_LLM_PORT:-8000}
     volumes:
       - ./:/app
-      - ${WORK_DIR_HOST:-.}:/opt/workspace
+      - ${WORK_DIR:-.}:/opt/workspace
     command: python3 api.py
     environment:
       - SEARXNG_URL=${SEARXNG_BASE_URL:-http://searxng:8080}
@@ -91,6 +94,8 @@ services:
       - TOGETHER_API_KEY=${TOGETHER_API_KEY}
       - GOOGLE_API_KEY=${GOOGLE_API_KEY}
       - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+      - HUGGINGFACE_API_KEY=${HUGGINGFACE_API_KEY}
+      - DSK_DEEPSEEK_API_KEY=${DSK_DEEPSEEK_API_KEY}
     network_mode: "host"
   
 volumes:

@@ -1,10 +1,22 @@
 @echo off
 
-docker-compose up
-if %ERRORLEVEL% neq 0 (
-    echo Error: Failed to start containers. Check Docker logs with 'docker compose logs'.
-    echo Possible fixes: Ensure Docker Desktop is running or check if port 8080 is free.
-    exit /b 1
+if "%1"=="full" (
+    echo Starting full deployment...
+) else (
+    echo Starting partial deployment... (backend run on host), use "full" to run all services in containers
 )
 
-timeout /t 10 /nobreak >nul
+REM Stop all containers
+echo Stopping containers...
+docker stop $(docker ps -aq) >nul 2>&1
+
+REM Generate secret key
+for /f %%i in ('powershell -command "[System.Web.Security.Membership]::GeneratePassword(64,0)"') do set SEARXNG_SECRET_KEY=%%i
+
+if "%1"=="full" (
+    docker compose up -d backend
+    timeout /t 5 /nobreak >nul
+    docker compose --profile full up
+) else (
+    docker compose --profile core up
+)

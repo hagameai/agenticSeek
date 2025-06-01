@@ -4,7 +4,7 @@ import axios from 'axios';
 import './App.css';
 import { colors } from './colors';
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || 'http://0.0.0.0:8000';
+const BACKEND_URL = process.env.BACKEND_PORT || 'http://0.0.0.0:8000';
 
 function App() {
     const [query, setQuery] = useState('');

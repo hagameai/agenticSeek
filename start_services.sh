@@ -5,16 +5,31 @@ source .env
 command_exists() {
     command -v "$1" &> /dev/null
 }
+if [ -z "$WORK_DIR" ]; then
+    echo "Error: WORK_DIR environment variable is not set. Please set it in your .env file."
+    exit 1
+fi
+
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    dir_size_bytes=$(du -s -b "$WORK_DIR" 2>/dev/null | awk '{print $1}')
+else
+    dir_size_bytes=$(du -s --bytes "$WORK_DIR" 2>/dev/null | awk '{print $1}')
+fi
+
+max_size_bytes=$((2 * 1024 * 1024 * 1024))
+
+echo "Mounting $WORK_DIR ($dir_size_bytes bytes) to docker."
+
+if [ "$dir_size_bytes" -gt "$max_size_bytes" ]; then
+    echo "Error: WORK_DIR ($WORK_DIR) contains more than 2GB of data ($(du -sh "$WORK_DIR" 2>/dev/null | awk '{print $1}'))."
+    exit 1
+fi
 
 if [ "$1" = "full" ]; then
     echo "Starting full deployment with backend and all services..."
 else
-    echo "Starting core deployment with frontend and search services only..."
+    echo "Starting core deployment with frontend and search services only... use ./start_services.sh full to start backend as well"
 fi
-
-#
-# Check if Docker is installed é running
-#
 
 if ! command_exists docker; then
     echo "Error: Docker is not installed. Please install Docker first."
@@ -67,28 +82,6 @@ if [ ! -f "docker-compose.yml" ]; then
     echo "Error: docker-compose.yml not found in the current directory."
     exit 1
 fi
-
-# bundle based approach, commented out in favor of direct download for now
-# Download and extract Chrome bundle if not present
-#echo "Checking Chrome bundle..."
-#if [ ! -d "chrome_bundle/chrome136" ]; then
-#    echo "Chrome bundle not found. Downloading..."
-#    mkdir -p chrome_bundle
-#    curl -L https://github.com/Fosowl/agenticSeek/releases/download/utility/chrome136.zip -o /tmp/chrome136.zip
-#    if [ $? -ne 0 ]; then
-#        echo "Error: Failed to download Chrome bundle"
-#        exit 1
-#    fi
-#    unzip -q /tmp/chrome136.zip -d chrome_bundle/
-#    if [ $? -ne 0 ]; then
-#        echo "Error: Failed to extract Chrome bundle"
-#        exit 1
-#    fi
-#    rm /tmp/chrome136.zip
-#    echo "Chrome bundle downloaded and extracted successfully"
-#else
-#    echo "Chrome bundle already exists"
-#fi
 
 # Stop all running containers to ensure a clean state
 echo "Warning: stopping all docker containers (t-4 seconds)..."
