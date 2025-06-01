@@ -137,8 +137,6 @@ def create_driver(headless=False, stealth_mode=True, crx_path="./crx/nopecha.crx
     user_agent = get_random_user_agent()
     width, height = (1920, 1080)
     user_data_dir = tempfile.mkdtemp(prefix="chrome_profile_")
-    import os
-    print(f"Running as UID: {os.getuid()}")  # Will show 0 if root
     chrome_options.add_argument("--no-sandbox")
     chrome_options.add_argument('--disable-dev-shm-usage')
     profile_dir = f"/tmp/chrome_profile_{uuid.uuid4().hex[:8]}"
