@@ -89,8 +89,18 @@ sleep 4
 docker stop $(docker ps -a -q)
 echo "All containers stopped"
 
-# export searxng secret key
-export SEARXNG_SECRET_KEY=$(openssl rand -hex 32)
+# export searxng secret key (cross-platform)
+if command -v openssl &> /dev/null; then
+    export SEARXNG_SECRET_KEY=$(openssl rand -hex 32)
+else
+    # Fallback: use Python if openssl is not available
+    if command -v python3 &> /dev/null; then
+        export SEARXNG_SECRET_KEY=$(python3 -c "import secrets; print(secrets.token_hex(32))")
+    else
+        echo "Error: Neither openssl nor python is available to generate a secret key."
+        exit 1
+    fi
+fi
 
 if [ "$1" = "full" ]; then
     # First start backend and wait for it to be healthy
