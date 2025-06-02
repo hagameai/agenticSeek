@@ -52,8 +52,6 @@ mv .env.example .env
 
 ### Change the .env file content
 
-**API Key are totally optional for user who choose to run LLM locally. Which is the primary purpose of this project. Leave empty if you have sufficient hardware**
-
 ```sh
 SEARXNG_BASE_URL="http://127.0.0.1:8080"
 REDIS_BASE_URL="redis://redis:6379/0"
@@ -69,6 +67,8 @@ GOOGLE_API_KEY='optional'
 ANTHROPIC_API_KEY='optional'
 ```
 
+**API Key are totally optional for user who choose to run LLM locally. Which is the primary purpose of this project. Leave empty if you have sufficient hardware**
+
 The following environment variables configure your application's connections and API keys.  
 
 Update the `.env` file with your own values as needed:
@@ -79,6 +79,7 @@ Update the `.env` file with your own values as needed:
 - **OLLAMA_PORT**: Port number for the Ollama service.
 - **LM_STUDIO_PORT**: Port number for the LM Studio service.
 - **CUSTOM_ADDITIONAL_LLM_PORT**: Port for any additional custom LLM service.
+
 All API key environment variables below are **optional**. You only need to provide them if you plan to use external APIs instead of running LLMs locally.
 
 ### **Start Docker**
@@ -216,6 +217,8 @@ Start required services. This will start all services from the docker-compose.ym
 sudo ./start_services.sh full # MacOS
 start ./start_services.cmd full # Window
 ```
+
+**Warning:** This step will download and load all Docker images, which may take up to 30 minutes. After starting the services, please wait until the backend service is fully running (you should see backend: <info> in the log) before sending any messages. The backend services may take longer to start than others.
 
 Go to `http://localhost:3000/` and you should see the web interface.
 
