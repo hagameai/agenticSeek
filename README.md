@@ -542,4 +542,5 @@ We’re looking for developers to improve AgenticSeek! Check out open issues or 
 
 ## Special Thanks:
 
- > [tcsenpai](https://github.com/tcsenpai) For dockerization of backend
+ > [tcsenpai](https://github.com/tcsenpai) and [plitc](https://github.com/plitc) For helping with backend dockerization
+
