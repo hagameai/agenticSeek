@@ -5,9 +5,14 @@ import subprocess
 from sys import modules
 from typing import List, Tuple, Type, Dict
 
-from kokoro import KPipeline
-from IPython.display import display, Audio
-import soundfile as sf
+IMPORT_FOUND = True
+try:
+    from kokoro import KPipeline
+    from IPython.display import display, Audio
+    import soundfile as sf
+except ImportError:
+    print("Speech synthesis disabled. Please install the kokoro package.")
+    IMPORT_FOUND = False
 
 if __name__ == "__main__":
     from utility import pretty_print, animate_thinking
@@ -33,7 +38,7 @@ class Speech():
         }
         self.pipeline = None
         self.language = language
-        if enable:
+        if enable and IMPORT_FOUND:
             self.pipeline = KPipeline(lang_code=self.lang_map[language])
         self.voice = self.voice_map[language][voice_idx]
         self.speed = 1.2
@@ -57,7 +62,7 @@ class Speech():
             sentence (str): The text to convert to speech. Will be pre-processed.
             voice_idx (int, optional): Index of the voice to use from the voice map.
         """
-        if not self.pipeline:
+        if not self.pipeline or not IMPORT_FOUND:
             return
         if voice_idx >= len(self.voice_map[self.language]):
             pretty_print("Invalid voice number, using default voice", color="error")
@@ -159,6 +164,7 @@ class Speech():
 
 if __name__ == "__main__":
     # TODO add info message for cn2an, jieba chinese related import
+    IMPORT_FOUND = False
     sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
     speech = Speech()
     tosay_en = """
