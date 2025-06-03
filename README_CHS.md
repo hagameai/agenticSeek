@@ -1,7 +1,7 @@
-# AgenticSeek: Private, Local Manus Alternative.
+# AgenticSeek: 一款100%本地运行的Manus替代方案
 
 <p align="center">
-<img align="center" src="./media/whale_readme.jpg">
+<img align="center" src="./media/agentic_seek_logo.png" width="300" height="300" alt="Agentic Seek Logo">
 <p>
 
 [English](./README.md) | 中文 | [日本語](./README_JP.md) | [Português (Brasil)](./README_PTBR.md)
