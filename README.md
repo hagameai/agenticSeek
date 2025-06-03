@@ -144,9 +144,14 @@ headless_browser = True # leave unchanged unless using CLI on host.
 stealth_mode = True # Use undetected selenium to reduce browser detection
 ```
 
-Warning: Do *NOT* set provider_name to `openai` if using LM-studio for running LLMs. Set it to `lm-studio`.
+**Warning**:
 
-Note: Some provider (eg: lm-studio) require you to have `http://` in front of the IP. For example `http://127.0.0.1:1234`
+- The `config.ini` file format does not support comments. 
+Do not copy and paste the example configuration directly, as comments will cause errors.  Instead, manually modify the `config.ini` file with your desired settings, excluding any comments.
+
+- Do *NOT* set provider_name to `openai` if using LM-studio for running LLMs. Set it to `lm-studio`.
+
+- Some provider (eg: lm-studio) require you to have `http://` in front of the IP. For example `http://127.0.0.1:1234`
 
 **List of local providers**
 
