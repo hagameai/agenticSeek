@@ -1,7 +1,7 @@
 # AgenticSeek: 類似 Manus 但基於 Deepseek R1 Agents 的本地模型
 
 <p align="center">
-<img align="center" src="./media/whale_readme.jpg">
+<img align="center" src="./media/agentic_seek_logo.png" width="300" height="300" alt="Agentic Seek Logo">
 <p>
 
 [English](./README.md) | [中文](./README_CHS.md) | 繁體中文 | [日本語](./README_JP.md) | [Português (Brasil)](./README_PTBR.md)
