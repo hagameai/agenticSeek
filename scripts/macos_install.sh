@@ -4,16 +4,11 @@ echo "Starting installation for macOS..."
 
 set -e
 
-if ! command -v python3.10 &> /dev/null; then
-    echo "Error: Python 3.10 is not installed. Please install Python 3.10 and try again."
-    echo "You can install it using: sudo apt-get install python3.10 python3.10-dev python3.10-venv"
+# Check if uv is installed
+if ! command -v uv &> /dev/null; then
+    echo "Error: uv is not installed. Please install uv first."
+    echo "You can install it using: curl -LsSf https://astral.sh/uv/install.sh | sh"
     exit 1
-fi
-
-# Check if pip3.10 is available
-if ! python3.10 -m pip --version &> /dev/null; then
-    echo "Error: pip for Python 3.10 is not installed. Installing python3.10-pip..."
-    sudo apt-get install -y python3.10-pip || { echo "Failed to install python3.10-pip"; exit 1; }
 fi
 
 # Check if homebrew is installed
@@ -31,13 +26,26 @@ brew install --cask chromedriver
 # Install portaudio for pyAudio using Homebrew
 brew install portaudio
 
-# Upgrade pip for Python 3.10
-python3.10 -m pip install --upgrade pip || { echo "Failed to upgrade pip"; exit 1; }
-# Install and upgrade setuptools and wheel
-python3.10 -m pip install --upgrade setuptools wheel || { echo "Failed to install setuptools and wheel"; exit 1; }
-# Install Selenium for chromedriver
-python3.10 -m pip install selenium || { echo "Failed to install selenium"; exit 1; }
-# Install Python dependencies from requirements.txt
-python3.10 -m pip install -r requirements.txt --no-cache-dir || { echo "Failed to install requirements.txt"; exit 1; }
+# Initialize uv project if pyproject.toml doesn't exist
+if [ ! -f "pyproject.toml" ]; then
+    echo "Initializing uv project..."
+    uv init --python 3.10 || { echo "Failed to initialize uv project"; exit 1; }
+fi
+
+# Sync the project (creates venv and installs dependencies)
+echo "Setting up Python environment with uv..."
+uv sync --python 3.10 || { echo "Failed to sync uv project"; exit 1; }
+
+# Add specific packages
+echo "Adding Selenium..."
+uv add selenium || { echo "Failed to add selenium"; exit 1; }
+
+# Add dependencies from requirements.txt if it exists
+if [ -f "requirements.txt" ]; then
+    echo "Adding dependencies from requirements.txt..."
+    uv add -r requirements.txt || { echo "Failed to add requirements from requirements.txt"; exit 1; }
+fi
 
 echo "Installation complete for macOS!"
+echo "To activate the environment, run: source .venv/bin/activate"
+echo "Or run commands with: uv run <command>"
