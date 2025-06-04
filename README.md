@@ -52,12 +52,21 @@ cd agenticSeek
 mv .env.example .env
 ```
 
-### 2️ **Create a virtual env**
+## Step 2: Install UV Package Manager
 
-```sh
-python3 -m venv agentic_seek_env
-source agentic_seek_env/bin/activate
-# On Windows: agentic_seek_env\Scripts\activate
+### For Linux/macOS:
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+### For Windows:
+```powershell
+powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
+```
+
+## Step 3: Create Virtual Environment
+```bash
+uv venv
 ```
 
 ### 3️⃣ **Install package**
@@ -228,7 +237,7 @@ Next step: [Start services and run AgenticSeek](#Start-services-and-Run)
 
 Activate your python env if needed.
 ```sh
-source agentic_seek_env/bin/activate
+source .venv/bin/activate
 ```
 
 Start required services. This will start all services from the docker-compose.yml, including:
