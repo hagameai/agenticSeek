@@ -6,6 +6,8 @@
 *.egg-info
 cookies.json
 test_agent.py
+searxng/uwsgi.ini.new
+searxng/settings.yml.new
 config.ini
 .voices/
 experimental/
@@ -19,6 +21,7 @@ agentic_seek_env/*
 .env
 */.env
 dsk/
+chrome136/
 
 ### react ###
 .DS_*

@@ -19,6 +19,7 @@ import time
 import random
 import os
 import shutil
+import uuid
 import tempfile
 import markdownify
 import sys
@@ -42,7 +43,14 @@ def get_chrome_path() -> str:
         paths = ["/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
                  "/Applications/Google Chrome Beta.app/Contents/MacOS/Google Chrome Beta"]
     else:  # Linux
-        paths = ["/usr/bin/google-chrome", "/usr/bin/chromium-browser", "/usr/bin/chromium", "/opt/chrome/chrome", "/usr/local/bin/chrome"]
+        paths = ["/usr/bin/google-chrome",
+                 "/opt/chrome/chrome",
+                 "/usr/bin/chromium-browser",
+                 "/usr/bin/chromium",
+                 "/usr/local/bin/chrome",
+                 "/opt/google/chrome/chrome-headless-shell",
+                 #"/app/chrome_bundle/chrome136/chrome-linux64"
+                ]
 
     for path in paths:
         if os.path.exists(path) and os.access(path, os.X_OK):
@@ -75,6 +83,7 @@ def install_chromedriver() -> str:
     chromedriver_path = shutil.which("chromedriver")
     if not chromedriver_path:
         try:
+            print("ChromeDriver not found, attempting to install automatically...")
             chromedriver_path = chromedriver_autoinstaller.install()
         except Exception as e:
             raise FileNotFoundError(
@@ -120,17 +129,28 @@ def create_driver(headless=False, stealth_mode=True, crx_path="./crx/nopecha.crx
     chrome_options.binary_location = chrome_path
     
     if headless:
-        chrome_options.add_argument("--headless")
+        #chrome_options.add_argument("--headless")
+        chrome_options.add_argument("--headless=new")
         chrome_options.add_argument("--disable-gpu")
         chrome_options.add_argument("--disable-webgl")
     user_data_dir = tempfile.mkdtemp()
     user_agent = get_random_user_agent()
     width, height = (1920, 1080)
-    chrome_options.add_argument(f"--user-data-dir={user_data_dir}")
-    chrome_options.add_argument(f"--accept-lang={lang}-{lang.upper()},{lang};q=0.9")
-    chrome_options.add_argument("--timezone=Europe/Paris")
+    user_data_dir = tempfile.mkdtemp(prefix="chrome_profile_")
     chrome_options.add_argument("--no-sandbox")
-    chrome_options.add_argument("--disable-dev-shm-usage")
+    chrome_options.add_argument('--disable-dev-shm-usage')
+    profile_dir = f"/tmp/chrome_profile_{uuid.uuid4().hex[:8]}"
+    chrome_options.add_argument(f'--user-data-dir={profile_dir}')
+    chrome_options.add_argument(f"--accept-lang={lang}-{lang.upper()},{lang};q=0.9")
+    chrome_options.add_argument("--disable-extensions")
+    chrome_options.add_argument("--disable-background-timer-throttling")
+    chrome_options.add_argument("--timezone=Europe/Paris")
+    chrome_options.add_argument('--remote-debugging-port=9222')
+    chrome_options.add_argument('--disable-background-timer-throttling')
+    chrome_options.add_argument('--disable-backgrounding-occluded-windows')
+    chrome_options.add_argument('--disable-renderer-backgrounding')
+    chrome_options.add_argument('--disable-features=TranslateUI')
+    chrome_options.add_argument('--disable-ipc-flooding-protection')
     chrome_options.add_argument("--mute-audio")
     chrome_options.add_argument("--disable-notifications")
     chrome_options.add_argument("--autoplay-policy=user-gesture-required")
@@ -698,8 +718,6 @@ if __name__ == "__main__":
     
     input("press enter to continue")
     print("AntiCaptcha / Form Test")
-    browser.go_to("https://www.google.com/recaptcha/api2/demo")
-    time.sleep(50)
     browser.go_to("https://bot.sannysoft.com")
     time.sleep(5)
     #txt = browser.get_text()

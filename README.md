@@ -22,7 +22,7 @@
 
 * 📋 Plans & Executes Complex Tasks - From trip planning to complex projects — it can split big tasks into steps and get things done using multiple AI agents.
 
-* 🎙️ Voice-Enabled - Clean, fast, futuristic voice and speech to text allowing you to talk to it like it's your personal AI from a sci-fi movie
+* 🎙️ Voice-Enabled - Clean, fast, futuristic voice and speech to text allowing you to talk to it like it's your personal AI from a sci-fi movie. (In progress)
 
 ### **Demo**
 
@@ -32,19 +32,17 @@ https://github.com/user-attachments/assets/b8ca60e9-7b3b-4533-840e-08f9ac426316
 
 Disclaimer: This demo, including all the files that appear (e.g: CV_candidates.zip), are entirely fictional. We are not a corporation, we seek open-source contributors not candidates.
 
-> 🛠⚠️️ **Active Work in Progress** – Please note that Code/Bash is not dockerized yet but will be soon (see docker_deployement branch) - Do not deploy over network or production.
+> 🛠⚠️️ **Active Work in Progress**
 
-> 🙏 This project started as a side-project with zero roadmap and zero funding. It's grown way beyond what I expected by ending in GitHub Trending. Contributions, feedback, and patience are deeply appreciated.
+> 🙏 This project started as a side-project and has zero roadmap and zero funding. It's grown way beyond what I expected by ending in GitHub Trending. Contributions, feedback, and patience are deeply appreciated.
 
-## Installation
+## Prerequisites
 
 Make sure you have chrome driver, docker and python3.10 installed.
 
-We highly advice you use exactly python3.10 for the setup. Dependencies error might happen otherwise.
-
 For issues related to chrome driver, see the **Chromedriver** section.
 
-### 1️⃣ **Clone the repository and setup**
+### 1. **Clone the repository and setup**
 
 ```sh
 git clone https://github.com/Fosowl/agenticSeek.git
@@ -52,82 +50,57 @@ cd agenticSeek
 mv .env.example .env
 ```
 
-## Step 2: Install UV Package Manager
-
-### For Linux/macOS:
-```bash
-curl -LsSf https://astral.sh/uv/install.sh | sh
-```
-
-### For Windows:
-```powershell
-powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
-```
-
-## Step 3: Create Virtual Environment
-```bash
-uv venv
-```
-
-### 3️⃣ **Install package**
-
-Ensure Python, Docker and docker compose, and Google chrome are installed.
-
-We recommand Python 3.10.0.
-
-**Automatic Installation (Recommanded):**
-
-For Linux/Macos:
-```sh
-./install.sh
-```
-
-For windows:
+### 2. Change the .env file content
 
 ```sh
-./install.bat
+SEARXNG_BASE_URL="http://127.0.0.1:8080"
+REDIS_BASE_URL="redis://redis:6379/0"
+WORK_DIR="/Users/mlg/Documents/workspace_for_ai"
+OLLAMA_PORT="11434"
+LM_STUDIO_PORT="1234"
+CUSTOM_ADDITIONAL_LLM_PORT="11435"
+OPENAI_API_KEY='optional'
+DEEPSEEK_API_KEY='optional'
+OPENROUTER_API_KEY='optional'
+TOGETHER_API_KEY='optional'
+GOOGLE_API_KEY='optional'
+ANTHROPIC_API_KEY='optional'
 ```
 
-**Manually:**
+**API Key are totally optional for user who choose to run LLM locally. Which is the primary purpose of this project. Leave empty if you have sufficient hardware**
 
-**Note: For any OS, ensure the ChromeDriver you install matches your installed Chrome version. Run `google-chrome --version`. See known issues if you have chrome >135**
+The following environment variables configure your application's connections and API keys.  
 
-- *Linux*: 
+Update the `.env` file with your own values as needed:
 
-Update Package List: `sudo apt update`
+- **SEARXNG_BASE_URL**: Leave unchanged 
+- **REDIS_BASE_URL**: Leave unchanged 
+- **WORK_DIR**: Path to your working directory on your local machine. AgenticSeek will be able to read and interact with these files.
+- **OLLAMA_PORT**: Port number for the Ollama service.
+- **LM_STUDIO_PORT**: Port number for the LM Studio service.
+- **CUSTOM_ADDITIONAL_LLM_PORT**: Port for any additional custom LLM service.
 
-Install Dependencies: `sudo apt install -y alsa-utils portaudio19-dev python3-pyaudio libgtk-3-dev libnotify-dev libgconf-2-4 libnss3 libxss1`
+All API key environment variables below are **optional**. You only need to provide them if you plan to use external APIs instead of running LLMs locally.
 
-Install ChromeDriver matching your Chrome browser version:
-`sudo apt install -y chromium-chromedriver`
+### 3. **Start Docker**
 
-Install requirements: `pip3 install -r requirements.txt`
+Make sure Docker is installed and running on your system. You can start Docker using the following commands:
 
-- *Macos*:
+- **On Linux/macOS:**  
+    Open a terminal and run:
+    ```sh
+    sudo systemctl start docker
+    ```
+    Or launch Docker Desktop from your applications menu if installed.
 
-Update brew : `brew update`
+- **On Windows:**  
+    Start Docker Desktop from the Start menu.
 
-Install chromedriver : `brew install --cask chromedriver`
-
-Install portaudio: `brew install portaudio`
-
-Upgrade pip : `python3 -m pip install --upgrade pip`
-
-Upgrade wheel : : `pip3 install --upgrade setuptools wheel`
-
-Install requirements: `pip3 install -r requirements.txt`
-
-- *Windows*:
-
-Install pyreadline3 `pip install pyreadline3`
-
-Install portaudio manually (e.g., via vcpkg or prebuilt binaries) and then run: `pip install pyaudio`
-
-Download and install chromedriver manually from: https://sites.google.com/chromium.org/driver/getting-started
-
-Place chromedriver in a directory included in your PATH.
-
-Install requirements: `pip3 install -r requirements.txt`
+You can verify Docker is running by executing:
+```sh
+docker info
+```
+If you see information about your Docker installation, it is running correctly.
 
 ---
 
@@ -149,7 +122,7 @@ See below for a list of local supported provider.
 
 **Update the config.ini**
 
-Change the config.ini file to set the provider_name to a supported provider and provider_model to a LLM supported by your provider. We recommand reasoning model such as *Qwen* or *Deepseek*.
+Change the config.ini file to set the provider_name to a supported provider and provider_model to a LLM supported by your provider. We recommend reasoning model such as *Qwen* or *Deepseek*.
 
 See the **FAQ** at the end of the README for required hardware.
 
@@ -162,19 +135,23 @@ provider_server_address = 127.0.0.1:11434
 agent_name = Jarvis # name of your AI
 recover_last_session = True # whenever to recover the previous session
 save_session = True # whenever to remember the current session
-speak = True # text to speech
-listen = False # Speech to text, only for CLI
-work_dir =  /Users/mlg/Documents/workspace # The workspace for AgenticSeek.
+speak = False # text to speech
+listen = False # Speech to text, only for CLI, experimental
 jarvis_personality = False # Whenever to use a more "Jarvis" like personality (experimental)
 languages = en zh # The list of languages, Text to speech will default to the first language on the list
 [BROWSER]
-headless_browser = True # Whenever to use headless browser, recommanded only if you use web interface.
+headless_browser = True # leave unchanged unless using CLI on host.
 stealth_mode = True # Use undetected selenium to reduce browser detection
 ```
 
-Warning: Do *NOT* set provider_name to `openai` if using LM-studio for running LLMs. Set it to `lm-studio`.
+**Warning**:
 
-Note: Some provider (eg: lm-studio) require you to have `http://` in front of the IP. For example `http://127.0.0.1:1234`
+- The `config.ini` file format does not support comments. 
+Do not copy and paste the example configuration directly, as comments will cause errors.  Instead, manually modify the `config.ini` file with your desired settings, excluding any comments.
+
+- Do *NOT* set provider_name to `openai` if using LM-studio for running LLMs. Set it to `lm-studio`.
+
+- Some provider (eg: lm-studio) require you to have `http://` in front of the IP. For example `http://127.0.0.1:1234`
 
 **List of local providers**
 
@@ -195,6 +172,8 @@ Next step: [Start services and run AgenticSeek](#Start-services-and-Run)
 ---
 
 ## Setup to run with an API
+
+**Running with an API is optional, see above to run locally.**
 
 Set the desired provider in the `config.ini`. See below for a list of API providers.
 
@@ -221,9 +200,7 @@ Example: export `TOGETHER_API_KEY="xxxxx"`
 | togetherAI | No    | Use together AI API (non-private)                         |
 | google | No    | Use google gemini API (non-private)                         |
 
-*We advice against using gpt-4o or other closedAI models*, performance are poor for web browsing and task planning.
-
-Please also note that coding/bash might fail with gemini, it seem to ignore our prompt for format to respect, which are optimized for deepseek r1.
+Please note that coding/bash might fail with gemini, it seems to ignore our prompt for format to respect, which are optimized for deepseek r1. Model such are gpt-4o seem to perform poorly with our prompt as well.
 
 Next step: [Start services and run AgenticSeek](#Start-services-and-Run)
 
@@ -235,44 +212,44 @@ Next step: [Start services and run AgenticSeek](#Start-services-and-Run)
 
 ## Start services and Run
 
-Activate your python env if needed.
-```sh
-source .venv/bin/activate
-```
-
 Start required services. This will start all services from the docker-compose.yml, including:
     - searxng
     - redis (required by searxng)
     - frontend
+    - backend (if using `full`)
+
+```sh
+sudo ./start_services.sh full # MacOS
+start ./start_services.cmd full # Window
+```
+
+**Warning:** This step will download and load all Docker images, which may take up to 30 minutes. After starting the services, please wait until the backend service is fully running (you should see backend: <info> in the log) before sending any messages. The backend services may take longer to start than others.
+
+Go to `http://localhost:3000/` and you should see the web interface.
+
+**Optional:** Run with the CLI interface:
+
+To run with CLI interface you would have to install package on host:
+
+```sh
+./install.sh
+./install.bat # windows
+```
+
+Start services:
 
 ```sh
 sudo ./start_services.sh # MacOS
 start ./start_services.cmd # Window
 ```
 
-**Options 1:** Run with the CLI interface.
-
-```sh
-python3 cli.py
-```
-
-We advice you set `headless_browser` to False in the config.ini for CLI mode.
-
-**Options 2:** Run with the Web interface.
-
-Start the backend.
-
-```sh
-python3 api.py
-```
-
-Go to `http://localhost:3000/` and you should see the web interface.
+Then run : `python3 cli.py`
 
 ---
 
 ## Usage
 
-Make sure the services are up and running with `./start_services.sh` and run the AgenticSeek with `python3 cli.py` for CLI mode or `python3 api.py` then go to `localhost:3000` for web interface.
+Make sure the services are up and running with `./start_services.sh full` and go to `localhost:3000` for web interface.
 
 You can also use speech to text by setting `listen = True` in the config. Only for CLI mode.
 
@@ -368,6 +345,8 @@ Next step: [Start services and run AgenticSeek](#Start-services-and-Run)
 
 ## Speech to Text
 
+Warning: speech to text only work in CLI mode at the moment.
+
 Please note that currently speech to text only work in english.
 
 The speech-to-text functionality is disabled by default. To enable it, set the listen option to True in the config.ini file:
@@ -407,7 +386,6 @@ recover_last_session = False
 save_session = False
 speak = False
 listen = False
-work_dir =  /Users/mlg/Documents/ai_folder
 jarvis_personality = False
 languages = en zh
 [BROWSER]
@@ -434,8 +412,6 @@ stealth_mode = False
 - speak -> Enables voice output (True) or not (False).
 
 - listen -> listen to voice input (True) or not (False).
-
-- work_dir -> Folder the AI will have access to. eg: /Users/user/Documents/.
 
 - jarvis_personality -> Uses a JARVIS-like personality (True) or not (False). This simply change the prompt file.
 
@@ -550,7 +526,7 @@ Yes with Ollama, lm-studio or server providers, all speech to text, LLM and text
 **Q: Why should I use AgenticSeek when I have Manus?**
 
 This started as Side-Project we did out of interest about AI agents. What’s special about it is that we want to use local model and avoid APIs.
-We draw inspiration from Jarvis and Friday (Iron man movies) to make it "cool" but for functionnality we take more inspiration from Manus, because that's what people want in the first place: a local manus alternative.
+We draw inspiration from Jarvis and Friday (Iron man movies) to make it "cool" but for functionality we take more inspiration from Manus, because that's what people want in the first place: a local manus alternative.
 Unlike Manus, AgenticSeek prioritizes independence from external systems, giving you more control, privacy and avoid api cost.
 
 ## Contribute
@@ -568,3 +544,8 @@ We’re looking for developers to improve AgenticSeek! Check out open issues or 
  > [antoineVIVIES](https://github.com/antoineVIVIES) | Taipei Time 
 
  > [steveh8758](https://github.com/steveh8758) | Taipei Time 
+
+## Special Thanks:
+
+ > [tcsenpai](https://github.com/tcsenpai) and [plitc](https://github.com/plitc) For helping with backend dockerization
+

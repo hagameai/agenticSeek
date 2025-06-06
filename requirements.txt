@@ -17,7 +17,6 @@ playsound3>=1.0.0
 soundfile>=0.13.1
 transformers>=4.46.3
 torch>=2.4.1
-python-dotenv>=1.0.0
 ollama>=0.4.7
 scipy>=1.9.3
 soundfile>=0.13.1
@@ -41,6 +40,7 @@ fake_useragent>=2.1.0
 selenium_stealth>=1.0.6
 undetected-chromedriver>=3.5.5
 sentencepiece>=0.2.0
+together>=1.5.0
 tqdm>4
 openai
 sniffio

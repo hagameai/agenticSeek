@@ -23,7 +23,7 @@ class TestBrowserAgentParsing(unittest.TestCase):
             "https://thriveonai.com/15-ai-startups-in-japan-to-take-note-of",
             "www.google.com",
             "https://test.org/about?page=1",
-            "https://weatherstack.com/documentation",
+            "https://weatherstack.com/documentation"
         ]
         result = self.agent.extract_links(test_text)
         self.assertEqual(result, expected)
