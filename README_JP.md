@@ -50,15 +50,24 @@ cd agenticSeek
 mv .env.example .env
 ```
 
-### 2️ **仮想環境の作成**
+## 2️⃣ UVパッケージマネージャーのインストール
 
-```sh
-python3 -m venv agentic_seek_env
-source agentic_seek_env/bin/activate
-# Windowsの場合: agentic_seek_env\Scripts\activate
+### Linux/macOS:
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
-### 3️⃣ **パッケージのインストール**
+### Windows:
+```powershell
+powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
+```
+
+## 3️⃣ 仮想環境の作成
+```bash
+uv venv
+```
+
+### 4️⃣ **パッケージのインストール**
 
 Python、Dockerとdocker compose、Google Chromeがインストールされていることを確認してください。
 
@@ -237,7 +246,7 @@ APIキーをエクスポートします：`export <<PROVIDER>>_API_KEY="xxx"`
 
 必要に応じてPython環境をアクティブ化します。
 ```sh
-source agentic_seek_env/bin/activate
+source .venv/bin/activate
 ```
 
 必要なサービスを開始します。これにより、docker-compose.ymlからすべてのサービスが開始されます。これには以下が含まれます：

@@ -1,7 +1,7 @@
-# AgenticSeek: Private, Local Manus Alternative.
+# AgenticSeek: 一款100%本地运行的Manus替代方案
 
 <p align="center">
-<img align="center" src="./media/whale_readme.jpg">
+<img align="center" src="./media/agentic_seek_logo.png" width="300" height="300" alt="Agentic Seek Logo">
 <p>
 
 [English](./README.md) | 中文 | [日本語](./README_JP.md) | [Português (Brasil)](./README_PTBR.md)
@@ -46,15 +46,24 @@ cd agenticSeek
 mv .env.example .env
 ```
 
-### 2️ **建立虚拟环境**
+## 2️⃣ 安装 UV 包管理器
 
-```sh
-python3 -m venv agentic_seek_env
-source agentic_seek_env/bin/activate
-# On Windows: agentic_seek_env\Scripts\activate
+### Linux/macOS:
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
-### 3️⃣ **安装所需套件**
+### Windows:
+```powershell
+powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
+```
+
+## 3️⃣ 创建虚拟环境
+```bash
+uv venv
+```
+
+### 4️⃣ **安装所需套件**
 
 **自动安装:**
 
@@ -196,7 +205,7 @@ provider_server_address = 127.0.0.1:5000
 
 如果需要，请激活你的 Python 环境。
 ```sh
-source agentic_seek_env/bin/activate
+source .venv/bin/activate
 ```
 
 启动所需的服务。这将启动 `docker-compose.yml` 中的所有服务，包括：

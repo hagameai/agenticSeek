@@ -1,7 +1,7 @@
 # AgenticSeek: 類似 Manus 但基於 Deepseek R1 Agents 的本地模型
 
 <p align="center">
-<img align="center" src="./media/whale_readme.jpg">
+<img align="center" src="./media/agentic_seek_logo.png" width="300" height="300" alt="Agentic Seek Logo">
 <p>
 
 [English](./README.md) | [中文](./README_CHS.md) | 繁體中文 | [日本語](./README_JP.md) | [Português (Brasil)](./README_PTBR.md)
@@ -41,15 +41,24 @@ cd agenticSeek
 mv .env.example .env
 ```
 
-### 2️ **建立虛擬環境**
+## 2️⃣ 安裝 UV 套件管理器
 
-```sh
-python3 -m venv agentic_seek_env
-source agentic_seek_env/bin/activate
-# On Windows: agentic_seek_env\Scripts\activate
+### Linux/macOS:
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
-### 3️⃣ **安裝所需套件**
+### Windows:
+```powershell
+powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
+```
+
+## 3️⃣ 建立虛擬環境
+```bash
+uv venv
+```
+
+### 4️⃣ **安裝所需套件**
 
 **自動安裝:**
 
@@ -189,7 +198,7 @@ provider_server_address = 127.0.0.1:5000
 如果需要，請啟用你的 Python 環境。
 
 ```sh
-source agentic_seek_env/bin/activate
+source .venv/bin/activate
 ```
 
 啟動所需的服務。這將啟動 `docker-compose.yml` 中的所有服務，包括：
