@@ -42,7 +42,7 @@ Make sure you have chrome driver, docker and python3.10 installed.
 
 For issues related to chrome driver, see the **Chromedriver** section.
 
-### **Clone the repository and setup**
+### 1. **Clone the repository and setup**
 
 ```sh
 git clone https://github.com/Fosowl/agenticSeek.git
@@ -50,7 +50,7 @@ cd agenticSeek
 mv .env.example .env
 ```
 
-### Change the .env file content
+### 2. Change the .env file content
 
 ```sh
 SEARXNG_BASE_URL="http://127.0.0.1:8080"
@@ -82,7 +82,7 @@ Update the `.env` file with your own values as needed:
 
 All API key environment variables below are **optional**. You only need to provide them if you plan to use external APIs instead of running LLMs locally.
 
-### **Start Docker**
+### 3. **Start Docker**
 
 Make sure Docker is installed and running on your system. You can start Docker using the following commands:
 

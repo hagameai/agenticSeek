@@ -1,5 +1,5 @@
 <p align="center">
-<img align="center" src="./media/whale_readme.jpg">
+<img align="center" src="./media/agentic_seek_logo.png" width="300" height="300" alt="Agentic Seek Logo">
 <p>
 
 --------------------------------------------------------------------------------
@@ -57,15 +57,24 @@ cd agenticSeek
 mv .env.example .env
 ```
 
-### 2 **Créer un environnement virtuel**
+## 2️⃣ Installer le gestionnaire de paquets UV
 
-```sh
-python3 -m venv agentic_seek_env
-source agentic_seek_env/bin/activate     
-# Sur Windows: agentic_seek_env\Scripts\activate
+### Pour Linux/macOS:
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
-### 3️⃣ **Installation**
+### Pour Windows:
+```powershell
+powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
+```
+
+## 3️⃣ Créer un environnement virtuel
+```bash
+uv venv
+```
+
+### 4️⃣ **Installation**
 
 **Automatique:**
 
@@ -166,7 +175,7 @@ Remarque : Certains fournisseurs (ex : lm-studio) nécessitent `http://` devant 
 
 Activez votre environnement Python si nécessaire.
 ```sh
-source agentic_seek_env/bin/activate
+source .venv/bin/activate
 ```
 
 Démarrez les services requis. Cela lancera tous les services définis dans le fichier docker-compose.yml, y compris :

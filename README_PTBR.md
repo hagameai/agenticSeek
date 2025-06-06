@@ -63,17 +63,24 @@ cd agenticSeek
 mv .env.example .env
 ```
 
-### 2️⃣ Crie um ambiente virtual
+## 2️⃣ Instale o Gerenciador de Pacotes UV
 
+### Para Linux/macOS:
 ```bash
-python3.10 -m venv .venv
-# Linux/macOS:
-source .venv/bin/activate
-# Windows:
-.venv\Scripts\activate
+curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
-### 3️⃣ Instale o pacote
+### Para Windows:
+```powershell
+powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
+```
+
+## 3️⃣ Crie um Ambiente Virtual
+```bash
+uv venv
+```
+
+### 4️⃣ Instale o pacote
 
 #### Instalação Automática (Recomendada)
 
@@ -195,7 +202,11 @@ export OPENAI_API_KEY="sua_chave_aqui"
      .\start_services.cmd
      ```
 
-3. Escolha a interface:
+3. Ative o ambiente virtual e escolha a interface:
+
+   ```bash
+   source .venv/bin/activate
+   ```
 
    - **CLI**  
      ```bash
