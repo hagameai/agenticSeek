@@ -1,44 +1,48 @@
-# AgenticSeek: 一款100%本地运行的Manus替代方案
+# AgenticSeek：私有、本地的 Manus 替代方案
 
 <p align="center">
 <img align="center" src="./media/agentic_seek_logo.png" width="300" height="300" alt="Agentic Seek Logo">
 <p>
 
-[English](./README.md) | 中文 | [日本語](./README_JP.md) | [Português (Brasil)](./README_PTBR.md)
+    [English](./README.md) | 中文 | [繁體中文](./README_CHT.md) | [Français](./README_FR.md) | [日本語](./README_JP.md) | [Português (Brasil)](./README_PTBR.md)
 
-*一个 **100% 本地替代 Manus AI** 的方案，这款支持语音的 AI 助理能够自主浏览网页、编写代码和规划任务，同时将所有数据保留在您的设备上。专为本地推理模型量身打造，完全在您自己的硬件上运行，确保完全的隐私保护和零云端依赖。*
+*一个**100%本地运行的 Manus AI 替代品**，支持语音的 AI 助手，可自主浏览网页、编写代码、规划任务，所有数据仅保存在你的设备上。专为本地推理模型设计，完全在你的硬件上运行，确保隐私无忧，无需云端依赖。*
 
-[![Visit AgenticSeek](https://img.shields.io/static/v1?label=Website&message=AgenticSeek&color=blue&style=flat-square)](https://fosowl.github.io/agenticSeek.html) ![License](https://img.shields.io/badge/license-GPL--3.0-green) [![Discord](https://img.shields.io/badge/Discord-Join%20Us-7289DA?logo=discord&logoColor=white)](https://discord.gg/8hGDaME3TC) [![Twitter](https://img.shields.io/twitter/url/https/twitter.com/fosowl.svg?style=social&label=Update%20%40Fosowl)](https://x.com/Martin993886460)
+[![访问 AgenticSeek](https://img.shields.io/static/v1?label=Website&message=AgenticSeek&color=blue&style=flat-square)](https://fosowl.github.io/agenticSeek.html) ![License](https://img.shields.io/badge/license-GPL--3.0-green) [![Discord](https://img.shields.io/badge/Discord-Join%20Us-7289DA?logo=discord&logoColor=white)](https://discord.gg/8hGDaME3TC) [![Twitter](https://img.shields.io/twitter/url/https/twitter.com/fosowl.svg?style=social&label=Update%20%40Fosowl)](https://x.com/Martin993886460) [![GitHub stars](https://img.shields.io/github/stars/Fosowl/agenticSeek?style=social)](https://github.com/Fosowl/agenticSeek/stargazers)
 
 ### 为什么选择 AgenticSeek？
 
-* 🔒 完全本地化与隐私保护 - 所有功能都在您的设备上运行 — 无云端服务，无数据共享。您的文件、对话和搜索始终保持私密。
+* 🔒 完全本地 & 私有 —— 所有内容都在你的电脑上运行，无云端、无数据共享。你的文件、对话和搜索都保持私密。
 
-* 🌐 智能网页浏览 - AgenticSeek 能够自主浏览互联网 — 搜索、阅读、提取信息、填写网页表单 — 全程无需人工操作。
+* 🌐 智能网页浏览 —— AgenticSeek 可自主浏览互联网：搜索、阅读、提取信息、填写网页表单，全程免手动。
 
-* 💻 自主编码助手 - 需要代码？它可以编写、调试并运行 Python、C、Go、Java 等多种语言的程序 — 全程无需监督。
+* 💻 自动化编程助手 —— 需要代码？它能编写、调试并运行 Python、C、Go、Java 等程序，无需监督。
 
-* 🧠 智能代理选择 - 您提问，它会自动选择最适合该任务的代理。就像拥有一个随时待命的专家团队。
+* 🧠 智能代理选择 —— 你提问，它自动判断最合适的代理来完成任务。就像有一支专家团队随时待命。
 
-* 📋 规划与执行复杂任务 - 从旅行规划到复杂项目 — 它能将大型任务分解为步骤，并利用多个 AI 代理完成工作。
+* 📋 规划并执行复杂任务 —— 从旅行规划到复杂项目，可将大任务拆分为步骤，调用多个 AI 代理协作完成。
 
-* 🎙️ 语音功能 - 清晰、快速、未来感十足的语音与语音转文本功能，让您能像科幻电影中一样与您的个人 AI 助手对话。
+* 🎙️ 语音支持 —— 干净、快速、未来感的语音与语音转文本功能，让你像科幻电影中的 AI 一样与它对话。（开发中）
 
-https://github.com/user-attachments/assets/4bd5faf6-459f-4f94-bd1d-238c4b331469
+### **演示**
 
-> 🛠️ **目前还在开发阶段** – 欢迎任何贡献者加入我们！
+> *你能搜索 agenticSeek 项目，了解需要哪些技能，然后打开 CV_candidates.zip 并告诉我哪些最匹配该项目吗？*
 
----
+https://github.com/user-attachments/assets/b8ca60e9-7b3b-4533-840e-08f9ac426316
 
-## **安装**
+免责声明：本演示及出现的所有文件（如 CV_candidates.zip）均为虚构。我们不是公司，只寻求开源贡献者而非候选人。
 
-确保已安装了 Chrome driver，Docker 和 Python 3.10（或更新）。
+> 🛠⚠️️ **项目正在积极开发中**
 
-我们强烈建议您使用 Python 3.10 进行设置，否则可能会发生依赖错误。
+> 🙏 本项目起初只是一个副业，没有路线图也没有资金支持。它意外地登上了 GitHub Trending。非常感谢大家的贡献、反馈与耐心。
 
-有关于 Chrome driver 的问题，请参见 **Chromedriver** 部分。
+## 前置条件
 
-### 1️⃣ **复制储存库与设置环境变数**
+请确保已安装 chrome driver、docker 和 python3.10。
+
+如遇 chrome driver 相关问题，请参见 **Chromedriver** 部分。
+
+### 1. **克隆仓库并初始化**
 
 ```sh
 git clone https://github.com/Fosowl/agenticSeek.git
@@ -46,374 +50,337 @@ cd agenticSeek
 mv .env.example .env
 ```
 
-## 2️⃣ 安装 UV 包管理器
-
-### Linux/macOS:
-```bash
-curl -LsSf https://astral.sh/uv/install.sh | sh
-```
-
-### Windows:
-```powershell
-powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
-```
-
-## 3️⃣ 创建虚拟环境
-```bash
-uv venv
-```
-
-### 4️⃣ **安装所需套件**
-
-**自动安装:**
+### 2. 修改 .env 文件内容
 
 ```sh
-./install.sh
+SEARXNG_BASE_URL="http://127.0.0.1:8080"
+REDIS_BASE_URL="redis://redis:6379/0"
+WORK_DIR="/Users/mlg/Documents/workspace_for_ai"
+OLLAMA_PORT="11434"
+LM_STUDIO_PORT="1234"
+CUSTOM_ADDITIONAL_LLM_PORT="11435"
+OPENAI_API_KEY='optional'
+DEEPSEEK_API_KEY='optional'
+OPENROUTER_API_KEY='optional'
+TOGETHER_API_KEY='optional'
+GOOGLE_API_KEY='optional'
+ANTHROPIC_API_KEY='optional'
 ```
 
-** 若要让文本转语音（TTS）功能支持中文，你需要安装 jieba（中文分词库）和 cn2an（中文数字转换库）：**
+**API Key 完全可选，若你选择本地运行 LLM（本项目主要目的），可留空，只要硬件足够。**
 
+以下环境变量用于配置应用的连接和 API 密钥。
+
+根据需要更新 `.env` 文件：
+
+- **SEARXNG_BASE_URL**：保持不变
+- **REDIS_BASE_URL**：保持不变
+- **WORK_DIR**：本地工作目录路径，AgenticSeek 可读取和操作这些文件
+- **OLLAMA_PORT**：Ollama 服务端口
+- **LM_STUDIO_PORT**：LM Studio 服务端口
+- **CUSTOM_ADDITIONAL_LLM_PORT**：自定义 LLM 服务端口
+
+下方所有 API 密钥环境变量均为**可选**，仅在你打算使用外部 API 而非本地 LLM 时填写。
+
+### 3. **启动 Docker**
+
+确保已安装并运行 Docker。可通过以下命令启动：
+
+- **Linux/macOS：**  
+        打开终端运行：
+        ```sh
+        sudo systemctl start docker
+        ```
+        或在应用菜单启动 Docker Desktop。
+
+- **Windows：**  
+        在开始菜单启动 Docker Desktop。
+
+验证 Docker 是否运行：
+
+```sh
+docker info
 ```
-pip3 install jieba cn2an
-```
+如能看到 Docker 信息，则运行正常。
 
-**手动安装:**
+---
 
+## 本地运行 LLM 的设置
 
-**注意：对于任何操作系统，请确保您安装的 ChromeDriver 与您已安装的 Chrome 版本匹配。运行 `google-chrome --version`。如果您的 Chrome 版本 > 135，请参阅已知问题**
+**硬件要求：**
 
-- *Linux*:
+本地运行 LLM 需有足够硬件。至少需支持 Qwen/Deepseek 14B 的 GPU。详细模型/性能建议见 FAQ。
 
-更新软件包列表：`sudo apt update`
+**启动本地 provider**  
 
-安装依赖项：`sudo apt install -y alsa-utils portaudio19-dev python3-pyaudio libgtk-3-dev libnotify-dev libgconf-2-4 libnss3 libxss1`
-
-安装与您的 Chrome 浏览器版本匹配的 ChromeDriver：
-`sudo apt install -y chromium-chromedriver`
-
-安装 requirements：`pip3 install -r requirements.txt`
-
-- *Macos*:
-
-更新 brew：`brew update`
-
-安装 chromedriver：`brew install --cask chromedriver`
-
-安装 portaudio：`brew install portaudio`
-
-升级 pip：`python3 -m pip install --upgrade pip`
-
-升级 wheel：`pip3 install --upgrade setuptools wheel`
-
-安装 requirements：`pip3 install -r requirements.txt`
-
-- *Windows*:
-
-安装 pyreadline3：`pip install pyreadline3`
-
-手动安装 portaudio（例如，通过 vcpkg 或预编译的二进制文件），然后运行：`pip install pyaudio`
-
-从以下网址手动下载并安装 chromedriver：https://sites.google.com/chromium.org/driver/getting-started
-
-将 chromedriver 放置在包含在您的 PATH 中的目录中。
-
-安装 requirements：`pip3 install -r requirements.txt`
-
-
-
-## 在本地机器上运行 AgenticSeek
-
-**建议至少使用 Deepseek 14B 以上参数的模型，较小的模型难以使用助理功能并且很快就会忘记上下文之间的关系。**
-
-**本地运行助手**
-
-启动你的本地提供者，例如使用 ollama：
+以 ollama 为例，启动本地 provider：
 
 ```sh
 ollama serve
 ```
 
-请参阅下方支持的本地提供者列表。
+下方有本地支持的 provider 列表。
 
-**更新 config.ini**
+**修改 config.ini**
 
-修改 config.ini 文件以设置 provider_name 为支持的提供者，并将 provider_model 设置为该提供者支持的 LLM。我们推荐使用具有推理能力的模型，如 *Qwen* 或 *Deepseek*。
+将 config.ini 文件中的 provider_name 设置为支持的 provider，provider_model 设置为 provider 支持的 LLM。推荐推理模型如 *Qwen* 或 *Deepseek*。
 
-请参见 README 末尾的 **FAQ** 部分了解所需硬件。
+详细硬件要求见 README 末尾 FAQ。
 
 ```sh
 [MAIN]
-is_local = True # 无论是在本地运行还是使用远程提供者。
-provider_name = ollama # 或 lm-studio, openai 等..
-provider_model = deepseek-r1:14b # 选择适合您硬件的模型
+is_local = True # 是否本地运行
+provider_name = ollama # 或 lm-studio、openai 等
+provider_model = deepseek-r1:14b # 选择适合硬件的模型
 provider_server_address = 127.0.0.1:11434
-agent_name = Jarvis # 您的 AI 助手的名称
-recover_last_session = True # 是否恢复之前的会话
-save_session = True # 是否记住当前会话
-speak = True # 文本转语音
-listen = False # 语音转文本，仅适用于命令行界面
-work_dir = /Users/mlg/Documents/workspace # AgenticSeek 的工作空间。
-jarvis_personality = False # 是否使用更"贾维斯"风格的性格，不推荐在小型模型上使用
-languages = en zh # 语言列表，文本转语音将默认使用列表中的第一种语言
+agent_name = Jarvis # AI 名称
+recover_last_session = True # 是否恢复上次会话
+save_session = True # 是否保存当前会话
+speak = False # 语音输出
+listen = False # 语音输入，仅 CLI，实验性
+jarvis_personality = False # 是否使用 Jarvis 风格（实验性）
+languages = en zh # 语言列表，语音默认第一个
 [BROWSER]
-headless_browser = True # 是否使用无头浏览器，只有在使用网页界面时才推荐使用。
-stealth_mode = True # 使用无法检测的 selenium 来减少浏览器检测
+headless_browser = True # 除非 CLI，否则保持不变
+stealth_mode = True # 使用 undetected selenium 降低被检测概率
 ```
 
-警告：使用 LM-studio 运行 LLM 时，请*不要*将 provider_name 设置为 `openai`。请将其设置为 `lm-studio`。
+**警告：**
 
-注意：某些提供者（如 lm-studio）需要在 IP 前面加上 `http://`。例如 `http://127.0.0.1:1234`
+- `config.ini` 不支持注释。不要直接复制示例配置，否则注释会导致错误。请手动修改 config.ini，去除注释。
 
+- 若用 LM-studio 运行 LLM，provider_name 不要设为 `openai`，应设为 `lm-studio`。
 
+- 某些 provider（如 lm-studio）要求 IP 前加 `http://`，如 `http://127.0.0.1:1234`
 
-**本地提供者列表**
+**本地 provider 列表**
 
-| 提供者 | 本地? | 描述 |
-|-------------|--------|-------------------------------------------------------|
-| ollama | 是 | 使用 ollama 作为 LLM 提供者，轻松本地运行 LLM |
-| lm-studio | 是 | 使用 LM Studio 本地运行 LLM（将 `provider_name` 设置为 `lm-studio`）|
-| openai | 否 | 使用兼容的 API |
+| Provider  | 本地？ | 说明                                               |
+|-----------|--------|----------------------------------------------------|
+| ollama    | 是     | 使用 ollama 本地运行 LLM                           |
+| lm-studio | 是     | 使用 LM studio 本地运行 LLM（provider_name 设为 lm-studio）|
+| openai    | 是     | 使用 openai 兼容 API（如 llama.cpp server）        |
 
-下一步： [Start services and run AgenticSeek](#Start-services-and-Run)
+下一步：[启动服务并运行 AgenticSeek](#Start-services-and-Run)  
+
+*如遇问题见**已知问题**部分*
+
+*硬件无法本地运行 deepseek 时见**API 运行**部分*
+
+*详细配置说明见**Config**部分*
 
 ---
 
-## **Run with an API （透过 API 执行）**
+## 使用 API 运行设置
 
-设定 `config.ini`。
+**API 运行为可选，见上方本地运行方法。**
+
+在 `config.ini` 设置所需 provider。API provider 列表如下。
 
 ```sh
 [MAIN]
 is_local = False
-provider_name = openai
-provider_model = gpt-4o
-provider_server_address = 127.0.0.1:5000
+provider_name = google
+provider_model = gemini-2.0-flash
+provider_server_address = 127.0.0.1:5000 # 无关紧要
 ```
+警告：确保 config 中无多余空格。
 
-警告：确保 `config.ini` 没有行尾空格。
+导出 API key：`export <<PROVIDER>>_API_KEY="xxx"`
 
-如果使用基于本机的 openai-based api 则把 `is_local` 设定为 `True`。
+示例：`export TOGETHER_API_KEY="xxxxx"`
 
-同时更改你的 IP 为 openai-based api 的 IP。
+**API provider 列表**
+    
+| Provider  | 本地？ | 说明                                               |
+|-----------|--------|----------------------------------------------------|
+| openai    | 视情况 | 使用 ChatGPT API  |
+| deepseek  | 否     | Deepseek API（非私有）                            |
+| huggingface| 否    | Hugging-Face API（非私有）                        |
+| togetherAI | 否    | 使用 together AI API（非私有）                    |
+| google | 否    | 使用 google gemini API（非私有）                    |
 
-下一步： [Start services and run AgenticSeek](#Start-services-and-Run)
+注意：使用 gemini 时代码/bash 可能失败，模型对格式提示不敏感，优化针对 deepseek r1。gpt-4o 在本项目 prompt 下表现也较差。
+
+下一步：[启动服务并运行 AgenticSeek](#Start-services-and-Run)
+
+*如遇问题见**已知问题**部分*
+
+*详细配置说明见**Config**部分*
 
 ---
 
-## Start services and Run
-(启动服务并运行)
+## 启动服务并运行
 
-如果需要，请激活你的 Python 环境。
+启动所需服务。此操作会启动 docker-compose.yml 中的所有服务，包括：
+        - searxng
+        - redis（searxng 依赖）
+        - frontend
+        - backend（如用 `full`）
+
 ```sh
-source .venv/bin/activate
+./start_services.sh full # MacOS
+start ./start_services.cmd full # Windows
 ```
 
-启动所需的服务。这将启动 `docker-compose.yml` 中的所有服务，包括：
-- searxng
-- redis（由 redis 提供支持）
-- 前端
+**警告：** 此步骤会下载并加载所有 Docker 镜像，可能需 30 分钟。启动后请等待 backend 服务完全运行（日志中出现 backend: <info>），再发送消息。backend 启动比其他服务慢。
+
+访问 `http://localhost:3000/`，即可看到网页界面。
+
+**可选：使用 CLI 界面运行：**
+
+如需 CLI 界面，需在主机安装依赖：
 
 ```sh
-sudo ./start_services.sh # MacOS
+./install.sh
+./install.bat # windows
+```
+
+启动服务：
+
+```sh
+./start_services.sh # MacOS
 start ./start_services.cmd # Windows
 ```
 
-**选项 1:** 使用 CLI 界面运行。
-
-```sh
-python3 cli.py
-```
-
-**选项 2:** 使用 Web 界面运行。
-
-注意：目前我們建議您使用 CLI 界面。Web 界面仍在積極開發中。
-
-启动后端服务。
-
-```sh
-python3 api.py
-```
-
-访问 `http://localhost:3000/`，你应该会看到 Web 界面。
-
-请注意，目前 Web 界面不支持消息流式传输。
-
-
-*如果你不知道如何开始，请参阅 **Usage** 部分*
+然后运行：`python3 cli.py`
 
 ---
 
-## Usage （使用方法）
+## 使用方法
 
-为确保 agenticSeek 在中文环境下正常工作，请确保在 config.ini 中设置语言选项。
-languages = en zh
-更多信息请参阅 Config 部分
+确保服务已通过 `./start_services.sh full` 启动，并访问 `localhost:3000` 使用网页界面。
 
-确定所有的核心档案都启用了，也就是执行过这条命令 `./start_services.sh` 然后你就可以使用 `python3 cli.py` 来启动 AgenticSeek 了！
+CLI 模式下可通过设置 `listen = True` 启用语音转文本。
 
-```sh
-sudo ./start_services.sh
-python3 cli.py
-```
+退出时，只需说/输入 `goodbye`。
 
-当你看到执行后显示 `>>> `
-这表示一切运作正常，AgenticSeek 正在等待你给他任何指令。
-你也可以透过设定 `config.ini` 内的 `listen = True` 来启用语音转文字。
+以下为示例用法：
 
-要退出时，只要和他说 `goodbye` 就可以退出！
+> *用 python 写一个贪吃蛇游戏！*
 
-以下是一些用法：
+> *搜索法国雷恩的最佳咖啡馆，并将三家及其地址保存到 rennes_cafes.txt。*
 
-### Coding/Bash
+> *写一个 Go 程序计算阶乘，保存为 factorial.go 到你的工作区*
 
-> *在 Golang 中帮助我进行矩阵乘法*
+> *在 summer_pictures 文件夹中查找所有 JPG 文件，用今天日期重命名，并将重命名文件列表保存到 photos_list.txt*
 
-> *使用 nmap 扫描我的网路，找出是否有任何可疑装置连接*
+> *在线搜索 2024 年热门科幻电影，挑选三部今晚观看，保存到 movie_night.txt。*
 
-> *用 Python 制作一个贪食蛇游戏*
+> *搜索 2025 年最新 AI 新闻文章，选三篇，写 Python 脚本抓取标题和摘要，脚本保存为 news_scraper.py，摘要保存到 ai_news.txt（/home/projects）*
 
-### 网路搜寻
+> *周五，搜索免费股票价格 API，用 supersuper7434567@gmail.com 注册，然后写 Python 脚本每日获取特斯拉股价，结果保存到 stock_prices.csv*
 
-> *进行网路搜寻，找出日本从事尖端人工智慧研究的酷炫科技新创公司*
+*表单填写功能仍为实验性，可能失败。*
 
-> *你能在网路上找到谁创造了 AgenticSeek 吗？*
+输入查询后，AgenticSeek 会自动分配最佳代理执行任务。
 
-> *你能在哪个网站上找到便宜的 RTX 4090 吗？*
+由于目前为早期原型，代理路由系统可能无法总是正确分配代理。
 
-### 档案浏览与搜寻
+因此，建议明确表达需求及 AI 执行方式。例如需网页搜索时，不要说：
 
-> *嘿，你能找到我遗失的 million_dollars_contract.pdf 在哪里吗？*
+`你知道哪些适合独自旅行的国家吗？`
 
-> *告诉我我的磁碟还剩下多少空间*
+而应说：
 
-> *寻找并阅读 README.md，并按照安装说明进行操作*
-
-### 日常聊天
-
-> *告诉我关于法国的事*
-
-> *人生的意义是什么？*
-
-> *我应该在锻炼前还是锻炼后服用肌酸？*
-
-
-当你把指令送出后，AgenticSeek 会自动调用最能提供帮助的助理，去完成你交办的工作和指令。
-
-但也有可能出现怪怪的情况，或是你要找飞机机票，他跑去教你如何一步步做出一台飞机（开玩笑的，但真的可能出现），因为这是一个早期专案，我们会努力教导他、完善他的！
-
-所以我们希望你在使用时，能明确地表明你希望他要怎么做，下面给你一个范例！
-
-你该说：
-- 进行网络搜索，找出哪些国家最适合独自旅行
-
-
-而不是说：
-- 你知道哪些国家适合独自旅行？
+`请进行网页搜索，找出最适合独自旅行的国家`
 
 ---
 
+## **在自有服务器运行 LLM 的设置**  
 
----
+如有高性能电脑或服务器，可用自定义 llm server 远程运行 LLM。
 
-## **在本地执行属于你的 LLM 伺服器**
-
-如果你有一台功能强大的电脑或伺服器，但你想透过笔记型电脑使用它，那么你可以选择在远端伺服器上执行 LLM。
-
-### 1️⃣ **设定并启动伺服器脚本**
-
-在运行 AI 模型的「伺服器」上，取得 IP 位址
+在运行 AI 模型的“服务器”上获取 IP 地址：
 
 ```sh
-ip a | grep "inet " | grep -v 127.0.0.1 | awk '{print $2}' | cut -d/ -f1
+ip a | grep "inet " | grep -v 127.0.0.1 | awk '{print $2}' | cut -d/ -f1 # 本地 IP
+curl https://ipinfo.io/ip # 公网 IP
 ```
 
-注意：请在 Windows 或 MacOS，分别使用 `ipconfig` 与 `ifconfig` 来寻找 IP 位址。
+注：Windows/macOS 可用 ipconfig 或 ifconfig 查询 IP。
 
-**如果你希望使用基于 Openai 的服务，请按照 *透过 API 执行* 部分进行。**
-
-复制储存库并且进入 `server/` 资料夹。
+克隆仓库并进入 `server/` 文件夹：
 
 ```sh
 git clone --depth 1 https://github.com/Fosowl/agenticSeek.git
-cd agenticSeek/server/
+cd agenticSeek/llm_server/
 ```
 
-安装伺服器所需的套件：
+安装服务器依赖：
 
 ```sh
 pip3 install -r requirements.txt
 ```
 
-执行伺服器脚本。
+运行服务器脚本：
 
 ```sh
 python3 app.py --provider ollama --port 3333
 ```
 
-您可以选择使用 `ollama` 或 `llamacpp` 作为 LLM 的服务框架。
+可选择 `ollama` 或 `llamacpp` 作为 LLM 服务。
 
-### 2️⃣ **执行**
+在你的个人电脑上：
 
-在你的电脑上：
-
-- 更改 `config.ini`
-- `provider_name = server`
-- `provider_model = deepseek-r1:14b`
-- `provider_server_address = {你执行模型的电脑的 IP 位址}`
+修改 `config.ini`，将 `provider_name` 设为 `server`，`provider_model` 设为 `deepseek-r1:xxb`。
+`provider_server_address` 设为运行模型机器的 IP。
 
 ```sh
 [MAIN]
 is_local = False
 provider_name = server
-provider_model = deepseek-r1:14b
+provider_model = deepseek-r1:70b
 provider_server_address = x.x.x.x:3333
 ```
 
+下一步：[启动服务并运行 AgenticSeek](#Start-services-and-Run)  
 
 ---
 
-## 语音转文字
+## 语音转文本
 
-请注意，目前语音转文字功能仅支持英语。
+警告：目前仅 CLI 模式支持语音转文本。
 
-预设状况下，语音转文字功能是停用的。若要启用它，请在 `config.ini` 档案中，将 `listen` 选项设为 `True`：
+目前仅支持英文语音转文本。
+
+默认关闭语音转文本。启用方法：在 config.ini 设置 listen 为 True：
 
 ```
 listen = True
 ```
 
-启用后 AgenticSeek 会聆听你是否呼唤他，他才会开始听你说的话，你可以在 *config.ini* 内去设定，要怎么叫他。
+启用后，语音转文本会监听触发词（即 agent 名称），再开始处理输入。可通过修改 *config.ini* 的 `agent_name` 自定义：
 
 ```
 agent_name = Friday
 ```
 
-为了获得比较好的结果，我们建议使用常见的英文名称（如 “John” 或 “Emma”）作为他的名字。
+建议使用常见英文名如 "John" 或 "Emma" 作为 agent 名称。
 
-当你看到程式开始执行时，请大声说出他的名字，就可以唤醒 AgenticSeek 去聆听！（如：Friday）
+看到转录开始出现后，呼叫 agent 名称唤醒（如“Friday”）。
 
-清楚说出你的需求。
+清晰说出你的请求。
 
-用确认短句结束你说的话，以通知 AgenticSeek 继续。确认短句的范例包括：
+以确认短语结尾，表示系统可继续处理。例如：
 ```
 "do it", "go ahead", "execute", "run", "start", "thanks", "would ya", "please", "okay?", "proceed", "continue", "go on", "do that", "go it", "do you understand?"
 ```
 
-## Config
+## 配置说明
 
-Config 范例：
+配置示例：
 ```
 [MAIN]
 is_local = True
 provider_name = ollama
-provider_model = deepseek-r1:1.5b
+provider_model = deepseek-r1:32b
 provider_server_address = 127.0.0.1:11434
 agent_name = Friday
 recover_last_session = False
 save_session = False
 speak = False
 listen = False
-work_dir = /Users/mlg/Documents/ai_folder
 jarvis_personality = False
 languages = en zh
 [BROWSER]
@@ -421,160 +388,159 @@ headless_browser = False
 stealth_mode = False
 ```
 
-**说明**:
-- is_local
-- True：在本地运行。
-- False：在远端伺服器运行。
-- provider_name
-- 框架类型
-- `ollama`, `server`, `lm-studio`, `deepseek-api`
-- provider_model
-- 运行的模型
-- `deepseek-r1:1.5b`, `deepseek-r1:14b`
-- provider_server_address
-- 伺服器 IP
-- `127.0.0.1:11434`
-- agent_name
-- AgenticSeek 的名字，用作TTS的触发单词。
-- `Friday`
-- recover_last_session
-- True：从上个对话继续。
-- False：重启对话。
-- save_session
-- True：储存对话纪录。
-- False：不保存。
-- speak
-- True：启用语音输出。
-- False：关闭语音输出。
-- listen
-- True：启用语音输入。
-- False：关闭语音输入。
-- work_dir
-- AgenticSeek 拥有能存取与交互的工作目录。
-- jarvis_personality
-> 就是那个钢铁人的 JARVIS
-- True：启用 JARVIS 个性。
-- False：关闭 JARVIS 个性。
-- headless_browser
-- True：前景浏览器。（很酷，推荐使用他 XD）
-- False：背景执行浏览器。
-- stealth_mode
-- 隐私模式，但需要你自己安装反爬虫扩充功能。
-- languages
-- 支持的语言列表。用于代理路由系统。语言列表越长，下载的模型越多。
+**说明：**
 
-## 框架
+- is_local -> 本地运行（True）或远程服务器（False）
 
-下表显示了可用的框架：
+- provider_name -> 使用的 provider（如：`ollama`、`server`、`lm-studio`、`deepseek-api`）
 
-| 框架 | 本地? | 描述|
-|-|-|-|
-| ollama | 可 | 使用 ollama 框架去执行本地模型 |
-| server | 可 | 本地伺服器执行模型远端调用 |
-| lm-studio | 可 | 使用 LM Studio 在本地运行 LLM（设定provider_name为lm-studio）|
-| openai | 不可 | 使用 ChatGPT API（无法保证隐私）|
-| deepseek-api | 不可 | 使用 Deepseek API (无法保证隐私)|
-| huggingface | 不可 | 使用 Hugging-Face API (无法保证隐私)|
+- provider_model -> 使用的模型，如 deepseek-r1:32b
 
-若要选择框架，请变更 `config.ini` 文件：
+- provider_server_address -> 服务器地址，如 127.0.0.1:11434（本地），API 可随意
+
+- agent_name -> 代理名称，如 Friday，语音唤醒词
+
+- recover_last_session -> 是否恢复上次会话（True/False）
+
+- save_session -> 是否保存会话数据（True/False）
+
+- speak -> 是否启用语音输出（True/False）
+
+- listen -> 是否启用语音输入（True/False）
+
+- jarvis_personality -> 是否使用 JARVIS 风格（True/False），仅更换 prompt
+
+- languages -> 支持语言列表，供 LLM 路由使用，建议不要太多或太相似
+
+- headless_browser -> 是否无头浏览器（True/False）
+
+- stealth_mode -> 是否降低被检测概率，需手动安装 anticaptcha 扩展
+
+- languages -> 支持语言列表，代理路由系统需用，列表越长下载模型越多
+
+## Provider 列表
+
+下表为可用 provider：
+
+| Provider  | 本地？ | 说明                                               |
+|-----------|--------|----------------------------------------------------|
+| ollama    | 是     | 使用 ollama 本地运行 LLM                           |
+| server    | 是     | 在其他机器托管模型，本机调用                       |
+| lm-studio | 是     | 使用 LM studio 本地运行 LLM（provider_name 设为 lm-studio）|
+| openai    | 视情况 | 使用 ChatGPT API（非私有）或 openai 兼容 API       |
+| deepseek-api  | 否     | Deepseek API（非私有）                            |
+| huggingface| 否    | Hugging-Face API（非私有）                        |
+| togetherAI | 否    | 使用 together AI API（非私有）                    |
+| google | 否    | 使用 google gemini API（非私有）                    |
+
+选择 provider 时修改 config.ini：
 
 ```
-is_local = False
-provider_name = openai
-provider_model = gpt-4o
+is_local = True
+provider_name = ollama
+provider_model = deepseek-r1:32b
 provider_server_address = 127.0.0.1:5000
 ```
-`is_local`: 对于任何本地运行的 LLM 都应该为 True，否则为 False。
+`is_local`：本地 LLM 设为 True，否则 False。
 
-`provider_name`: 透过名称选择要使用的框架，请参阅上面的框架清单。
+`provider_name`：选择 provider 名称，见上表。
 
-`provider_model`: 设定 AgenticSeek 使用的模型。
+`provider_model`：设置代理使用的模型。
 
-`provider_server_address`: 如果不使用云端 API，则可以将其设定为任何内容。
+`provider_server_address`：如非 server provider，可随意。
 
-# Known issues （已知问题）
+# 已知问题
 
-## Chromedriver Issues
+## Chromedriver 问题
 
-**已知问题 #1:** *chromedriver mismatch*
+**已知错误 #1：** *chromedriver 不匹配*
 
 `Exception: Failed to initialize browser: Message: session not created: This version of ChromeDriver only supports Chrome version 113
 Current browser version is 134.0.6998.89 with binary path`
 
-如果你的浏览器和 chromedriver 版本不一样，就会发生这种情况。
+出现此问题是浏览器与 chromedriver 版本不匹配。
 
-你可以透过以下连结下载最新版本：
+需下载最新版本：
 
 https://developer.chrome.com/docs/chromedriver/downloads
 
-如果您使用的是 Chrome 版本 115 或更新版本，请前往：
+如用 Chrome 115 及以上，访问：
 
 https://googlechromelabs.github.io/chrome-for-testing/
 
-下载与你的作业系统相符的 chromedriver 版本。
+下载与你操作系统匹配的 chromedriver。
 
 ![alt text](./media/chromedriver_readme.png)
 
-如果有其他问题，请提供尽量详细的叙述到 Issues 上，尽可能包含当前环境和问题是怎么发生的。
+如本节不全请提交 issue。
+
+## 连接适配器问题
+
+```
+Exception: Provider lm-studio failed: HTTP request failed: No connection adapters were found for '127.0.0.1:11434/v1/chat/completions'
+```
+
+请确保 provider IP 前加 `http://`：
+
+`provider_server_address = http://127.0.0.1:11434`
+
+## SearxNG base URL 必须提供
+
+```
+raise ValueError("SearxNG base URL must be provided either as an argument or via the SEARXNG_BASE_URL environment variable.")
+ValueError: SearxNG base URL must be provided either as an argument or via the SEARXNG_BASE_URL environment variable.
+```
+
+可能未将 `.env.example` 重命名为 `.env`？也可导出 SEARXNG_BASE_URL：
+
+`export  SEARXNG_BASE_URL="http://127.0.0.1:8080"`
 
 ## FAQ
 
-**Q: 我需要什麼硬體？**  
+**Q: 需要什么硬件？**  
 
-| 模型大小  | GPU  | 備註                                               |
-|-----------|--------|-----------------------------------------------------------|
-| 7B        | 8GB Vram | ⚠️ 不推薦。性能較差，經常出現幻覺，規劃代理可能會失敗。 |
-| 14B        | 12 GB VRAM (例如 RTX 3060) | ✅ 適用於簡單任務。可能在網頁瀏覽和規劃任務上表現不佳。 |
-| 32B        | 24+ GB VRAM (例如 RTX 4090) | 🚀 大多數任務成功，但可能仍在任務規劃上有困難。 |
-| 70B+        | 48+ GB Vram (例如 mac studio) | 💪 表現優異。建議用於高級使用情境。 |
+| 模型规模  | GPU  | 说明                                               |
+|-----------|--------|----------------------------------------------------|
+| 7B        | 8GB 显存 | ⚠️ 不推荐。性能差，易幻觉，规划代理易失败。         |
+| 14B        | 12GB 显存（如 RTX 3060） | ✅ 简单任务可用，网页浏览和规划任务可能吃力。|
+| 32B        | 24GB+ 显存（如 RTX 4090） | 🚀 大多数任务成功，复杂规划仍有难度。        |
+| 70B+        | 48GB+ 显存（如 mac studio） | 💪 推荐，高级用例表现优异。                |
 
-**Q：为什么选择 Deepseek R1 而不是其他模型？**
+**Q: 为什么选 Deepseek R1？**  
 
-就其尺寸而言，Deepseek R1 在推理和使用方面表现出色。我们认为非常适合我们的需求，其他模型也很好用，但 Deepseek 是我们最后选定的模型。
+Deepseek R1 在推理和工具调用方面表现优异。我们认为它非常适合本项目，其他模型也可用，但 Deepseek 是首选。
 
-**Q：我在执行时 `cli.py` 时出现错误。我该怎么办？**
+**Q: 运行 `cli.py` 报错怎么办？**  
 
-1. 确保 Ollama 正在运行（ollama serve）
-2. 你 `config.ini` 内 `provider_name` 的框架选择正确。
-3. 依赖套件已安装
-4. 如果均无效，请随时提出 Issues，同样尽可能包含当前环境和问题是怎么发生的。
+确保本地服务（`ollama serve`）已启动，`config.ini` 配置正确，依赖已安装。如仍有问题欢迎提交 issue。
 
-**Q：它真的是 100% 本地运行吗？**
+**Q: 真能 100% 本地运行吗？**  
 
-是的，透过 Ollama 或其他框架，所有语音转文字、LLM 和文字转语音模型都在本地运行。
-*但你能选择非本地执行（OpenAI 或其他 API），同样也是可以的*
+是的，使用 Ollama、lm-studio 或 server provider 时，语音、LLM、语音转文本均本地运行。非本地（OpenAI 等 API）为可选。
 
+**Q: 有 Manus 为什么还要用 AgenticSeek？**
 
-**Q：我有 Manus 为甚么还要用 AgenticSeek？**
-
-这是我们因为兴趣做的一个小 Side-Project，他特别的点在于是一个全部本地化的模型，而且可以像钢铁人里面一样与 `Jarvis` 对话，听起来就超级酷的吧！随着 Manus 的进化，我们也相应的加入更多功能！
-
-**Q：它比 Manus 好在哪里？**
-
-不不不，AgenticSeek 和 Manus 是不同取向的东西，我们优先考虑的是本地执行和隐私，而不是基于云端。这是一个与 Manus 相比起来更有趣且易使用的方案！
-
-**Q: 是否支持中文以外的语言？**
-
-DeepSeek R1 天生会说中文
-
-但注意：代理路由系统只懂英文，所以必须通过 config.ini 的 languages 参数（如 languages = en zh）告诉系统：
-
-如果不设置中文？后果可能是：你让它写代码，结果跳出来个"医生代理"（虽然我们根本没有这个代理... 但系统会一脸懵圈！）
-
-实际上会下载一个小型翻译模型来协助任务分配
+本项目起初只是兴趣驱动的副业。特别之处在于主打本地模型，避免 API。
+灵感来自 Jarvis 和 Friday（钢铁侠），功能上更接近 Manus，因为大家最想要的是本地 manus 替代品。
+与 Manus 不同，AgenticSeek 更注重独立性、隐私和避免 API 成本。
 
 ## 贡献
 
-我们正在寻找开发者来改善 AgenticSeek！你可以在 Issues 查看未解决的问题或和我们讨论更酷的新功能！
+我们欢迎开发者改进 AgenticSeek！请查看 open issues 或讨论区。
+
+[贡献指南](./docs/CONTRIBUTING.md)
 
 [![Star History Chart](https://api.star-history.com/svg?repos=Fosowl/agenticSeek&type=Date)](https://www.star-history.com/#Fosowl/agenticSeek&Date)
 
-[Contribution guide](./docs/CONTRIBUTING.md)
+## 维护者：
 
-## 维护者:
+ > [Fosowl](https://github.com/Fosowl) | 巴黎时间 
 
- > [Fosowl](https://github.com/Fosowl) | 巴黎时间
+ > [antoineVIVIES](https://github.com/antoineVIVIES) | 台北时间 
 
- > [antoineVIVIES](https://github.com/antoineVIVIES) | Taipei Time 
+ > [steveh8758](https://github.com/steveh8758) | 台北时间 
 
- > [steveh8758](https://github.com/steveh8758) | 台北时间
+## 特别感谢：
+
+ > [tcsenpai](https://github.com/tcsenpai) 和 [plitc](https://github.com/plitc) 协助后端 docker 化
+
