@@ -1,48 +1,48 @@
-# AgenticSeek: プライベートなローカルManus代替
+# AgenticSeek: プライベートでローカルな Manus の代替
 
 <p align="center">
-<img align="center" src="./media/agentic_seek_logo.png" width="300" height="300" alt="Agentic Seek ロゴ">
+<img align="center" src="./media/agentic_seek_logo.png" width="300" height="300" alt="Agentic Seek Logo">
 <p>
 
-[English](./README.md) | [中文](./README_CHS.md) | [繁體中文](./README_CHT.md) | [Français](./README_FR.md) | 日本語 | [Português (Brasil)](./README_PTBR.md)
+    English | [中文](./README_CHS.md) | [繁體中文](./README_CHT.md) | [Français](./README_FR.md) | [日本語](./README_JP.md) | [Português (Brasil)](./README_PTBR.md)
 
-*Manus AIの**100%ローカルな代替**となるこの音声対応AIアシスタントは、自律的にウェブを閲覧し、コードを書き、タスクを計画しながら、すべてのデータをあなたのデバイスに保持します。ローカル推論モデルに合わせて調整されており、完全にあなたのハードウェア上で動作するため、完全なプライバシーとクラウドへの依存ゼロを保証します。*
+**100%ローカルで動作するManus AIの代替**となる音声対応AIアシスタントです。ウェブの自律的な閲覧、コードの作成、タスクの計画を行い、すべてのデータをあなたのデバイス上に保持します。ローカル推論モデル向けに最適化されており、完全なプライバシーとクラウド依存ゼロを実現します。
 
-[![AgenticSeekを訪問](https://img.shields.io/static/v1?label=ウェブサイト&message=AgenticSeek&color=blue&style=flat-square)](https://fosowl.github.io/agenticSeek.html) ![ライセンス](https://img.shields.io/badge/license-GPL--3.0-green) [![Discord](https://img.shields.io/badge/Discord-参加する-7289DA?logo=discord&logoColor=white)](https://discord.gg/8hGDaME3TC) [![Twitter](https://img.shields.io/twitter/url/https/twitter.com/fosowl.svg?style=social&label=更新%20%40Fosowl)](https://x.com/Martin993886460) [![GitHubスター](https://img.shields.io/github/stars/Fosowl/agenticSeek?style=social)](https://github.com/Fosowl/agenticSeek/stargazers)
+[![Visit AgenticSeek](https://img.shields.io/static/v1?label=Website&message=AgenticSeek&color=blue&style=flat-square)](https://fosowl.github.io/agenticSeek.html) ![License](https://img.shields.io/badge/license-GPL--3.0-green) [![Discord](https://img.shields.io/badge/Discord-Join%20Us-7289DA?logo=discord&logoColor=white)](https://discord.gg/8hGDaME3TC) [![Twitter](https://img.shields.io/twitter/url/https/twitter.com/fosowl.svg?style=social&label=Update%20%40Fosowl)](https://x.com/Martin993886460) [![GitHub stars](https://img.shields.io/github/stars/Fosowl/agenticSeek?style=social)](https://github.com/Fosowl/agenticSeek/stargazers)
 
 ### なぜAgenticSeekなのか？
 
-* 🔒 完全ローカル＆プライベート - すべてがあなたのマシン上で実行されます — クラウドなし、データ共有なし。あなたのファイル、会話、検索はプライベートに保たれます。
+* 🔒 完全ローカル＆プライベート - すべてがあなたのマシン上で動作。クラウドやデータ共有は一切なし。ファイル、会話、検索はすべてプライベートに保たれます。
 
-* 🌐 スマートなウェブブラウジング - AgenticSeekは自分でインターネットを閲覧できます — 検索、読み取り、情報抽出、ウェブフォーム入力 — すべてハンズフリーで。
+* 🌐 スマートなウェブブラウジング - AgenticSeekは自動でインターネットを検索・閲覧・情報抽出・フォーム入力までハンズフリーで実行します。
 
-* 💻 自律型コーディングアシスタント - コードが必要ですか？Python、C、Go、Javaなどでプログラムを書き、デバッグし、実行できます — すべて監視なしで。
+* 💻 自律型コーディングアシスタント - コードが必要ですか？Python、C、Go、Javaなどのプログラムを自動で作成・デバッグ・実行します。
 
-* 🧠 スマートエージェント選択 - あなたが尋ねると、タスクに最適なエージェントを自動的に見つけ出します。まるで専門家チームが助けてくれるようです。
+* 🧠 スマートエージェント選択 - あなたの要望に応じて最適なエージェントを自動で選択。まるで専門家チームが常にサポートしてくれるようです。
 
-* 📋 複雑なタスクの計画と実行 - 旅行計画から複雑なプロジェクトまで — 大きなタスクをステップに分割し、複数のAIエージェントを使って物事を成し遂げることができます。
+* 📋 複雑なタスクの計画と実行 - 旅行計画からプロジェクト管理まで、大きなタスクを分割し、複数のAIエージェントで実行します。
 
-* 🎙️ 音声対応 - クリーンで高速、未来的な音声と音声認識により、まるでSF映画のパーソナルAIのように話しかけることができます。
+* 🎙️ 音声対応 - 未来的で高速な音声認識＆音声合成。まるでSF映画のパーソナルAIのように会話できます（開発中）。
 
 ### **デモ**
 
-> *agenticSeekプロジェクトを検索し、必要なスキルを学び、その後CV_candidates.zipを開いて、プロジェクトに最も適した候補者を教えてください。*
+> *agenticSeekプロジェクトを検索し、必要なスキルを調べてからCV_candidates.zipを開き、プロジェクトに最も合う候補者を教えて*
 
 https://github.com/user-attachments/assets/b8ca60e9-7b3b-4533-840e-08f9ac426316
 
-免責事項：このデモは、表示されるすべてのファイル（例：CV_candidates.zip）を含め、完全に架空のものです。私たちは企業ではなく、候補者ではなくオープンソースの貢献者を求めています。
+注意: このデモや登場するファイル（例: CV_candidates.zip）はすべて架空のものです。私たちは企業ではなく、オープンソースの貢献者を募集しています。
 
-> 🛠️ **作業中** – 貢献者を募集中です！
+> 🛠⚠️️ **開発中のプロジェクトです**
 
-## インストール
+> 🙏 このプロジェクトはサイドプロジェクトとして始まり、ロードマップや資金はありません。GitHub Trending入りするほど成長しました。貢献・フィードバック・ご理解に感謝します。
 
-Chrome Driver、Docker、Python 3.10がインストールされていることを確認してください。
+## 前提条件
 
-セットアップにはPython 3.10を正確に使用することを強くお勧めします。そうでない場合、依存関係のエラーが発生する可能性があります。
+chrome driver、docker、python3.10がインストールされていることを確認してください。
 
-Chromeドライバーに関する問題については、**Chromedriver**セクションを参照してください。
+chrome driver関連の問題は**Chromedriver**セクションを参照してください。
 
-### 1️⃣ **リポジトリのクローンとセットアップ**
+### 1. **リポジトリのクローンとセットアップ**
 
 ```sh
 git clone https://github.com/Fosowl/agenticSeek.git
@@ -50,317 +50,279 @@ cd agenticSeek
 mv .env.example .env
 ```
 
-## 2️⃣ UVパッケージマネージャーのインストール
-
-### Linux/macOS:
-```bash
-curl -LsSf https://astral.sh/uv/install.sh | sh
-```
-
-### Windows:
-```powershell
-powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
-```
-
-## 3️⃣ 仮想環境の作成
-```bash
-uv venv
-```
-
-### 4️⃣ **パッケージのインストール**
-
-Python、Dockerとdocker compose、Google Chromeがインストールされていることを確認してください。
-
-Python 3.10.0を推奨します。
-
-**自動インストール（推奨）：**
-
-Linux/Macosの場合：
-```sh
-./install.sh
-```
-
-** テキスト読み上げ（TTS）機能で日本語をサポートするには、fugashi（日本語分かち書きライブラリ）をインストールする必要があります：**
-
-** 注意: 日本語のテキスト読み上げ（TTS）機能には多くの依存関係が必要で、問題が発生する可能性があります。mecabrcに関する問題が発生することがあります。現在のところ、この問題を修正する方法が見つかっていません。当面は日本語でのテキスト読み上げ機能を無効にすることをお勧めします。**
-
-必要なライブラリをインストールする場合は以下のコマンドを実行してください：
-
-```
-pip3 install --upgrade pyopenjtalk jaconv mojimoji unidic fugashi
-pip install unidic-lite
-python -m unidic download
-```
-
-Windowsの場合：
+### 2. .envファイルの内容を変更
 
 ```sh
-./install.bat
+SEARXNG_BASE_URL="http://127.0.0.1:8080"
+REDIS_BASE_URL="redis://redis:6379/0"
+WORK_DIR="/Users/mlg/Documents/workspace_for_ai"
+OLLAMA_PORT="11434"
+LM_STUDIO_PORT="1234"
+CUSTOM_ADDITIONAL_LLM_PORT="11435"
+OPENAI_API_KEY='optional'
+DEEPSEEK_API_KEY='optional'
+OPENROUTER_API_KEY='optional'
+TOGETHER_API_KEY='optional'
+GOOGLE_API_KEY='optional'
+ANTHROPIC_API_KEY='optional'
 ```
 
-**手動：**
+**APIキーはローカルでLLMを実行する場合は完全にオプションです。十分なハードウェアがある場合は空欄で構いません。**
 
-**注意：どのOSでも、インストールするChromeDriverがインストール済みのChromeバージョンと一致していることを確認してください。`google-chrome --version`を実行してください。Chrome >135の場合の既知の問題を参照してください。**
+以下の環境変数はアプリケーションの接続やAPIキーを設定します。必要に応じて`.env`ファイルを編集してください。
 
-- *Linux*:
+- **SEARXNG_BASE_URL**: 変更不要
+- **REDIS_BASE_URL**: 変更不要
+- **WORK_DIR**: ローカル作業ディレクトリのパス。AgenticSeekがこのディレクトリのファイルを読み書きします。
+- **OLLAMA_PORT**: Ollamaサービスのポート番号
+- **LM_STUDIO_PORT**: LM Studioサービスのポート番号
+- **CUSTOM_ADDITIONAL_LLM_PORT**: カスタムLLMサービスのポート番号
 
-パッケージリストの更新：`sudo apt update`
+APIキーは**すべてオプション**です。外部APIを使う場合のみ設定してください。
 
-依存関係のインストール：`sudo apt install -y alsa-utils portaudio19-dev python3-pyaudio libgtk-3-dev libnotify-dev libgconf-2-4 libnss3 libxss1`
+### 3. **Dockerの起動**
 
-Chromeブラウザのバージョンに一致するChromeDriverのインストール：
-`sudo apt install -y chromium-chromedriver`
+Dockerがインストールされ、起動していることを確認してください。以下のコマンドで起動できます。
 
-要件のインストール：`pip3 install -r requirements.txt`
+- **Linux/macOSの場合:**  
+        ターミナルで
+        ```sh
+        sudo systemctl start docker
+        ```
+        またはアプリケーションメニューからDocker Desktopを起動
 
-- *Macos*:
+- **Windowsの場合:**  
+        スタートメニューからDocker Desktopを起動
 
-brewの更新：`brew update`
-
-chromedriverのインストール：`brew install --cask chromedriver`
-
-portaudioのインストール：`brew install portaudio`
-
-pipのアップグレード：`python3 -m pip install --upgrade pip`
-
-wheelのアップグレード：`pip3 install --upgrade setuptools wheel`
-
-要件のインストール：`pip3 install -r requirements.txt`
-
-- *Windows*:
-
-pyreadline3のインストール：`pip install pyreadline3`
-
-portaudioの手動インストール（例：vcpkgまたはビルド済みバイナリ経由）後、実行：`pip install pyaudio`
-
-chromedriverの手動ダウンロードとインストール：https://sites.google.com/chromium.org/driver/getting-started
-
-PATHに含まれるディレクトリにchromedriverを配置します。
-
-要件のインストール：`pip3 install -r requirements.txt`
+Dockerが動作しているか確認するには
+```sh
+docker info
+```
+と入力し、情報が表示されればOKです。
 
 ---
 
-## マシン上でローカルにLLMを実行するためのセットアップ
+## ローカルでLLMを実行する場合のセットアップ
 
-**少なくともDeepseek 14Bの使用を推奨します。より小さなモデルは、特にウェブブラウジングのタスクで苦労します。**
+**ハードウェア要件:**
 
+ローカルでLLMを動かすには十分なハードウェアが必要です。最低でもQwen/Deepseek 14Bが動作するGPUが必要です。詳細はFAQを参照してください。
 
-**ローカルプロバイダーのセットアップ**
+**ローカルプロバイダーの起動例**  
 
-ローカルプロバイダーを開始します。例えばollamaの場合：
+例: ollamaを使う場合
 
 ```sh
 ollama serve
 ```
 
-サポートされているローカルプロバイダーのリストについては、以下を参照してください。
+対応プロバイダーは下記参照。
 
 **config.iniの更新**
 
-config.iniファイルを変更して、provider_nameをサポートされているプロバイダーに、provider_modelをプロバイダーがサポートするLLMに設定します。*Qwen*や*Deepseek*などの推論モデルを推奨します。
+config.iniファイルでprovider_nameをサポートされているプロバイダー名、provider_modelを対応モデルに設定してください。推論モデルは*Qwen*や*Deepseek*を推奨します。
 
-必要なハードウェアについては、READMEの最後にある**FAQ**を参照してください。
+FAQで必要なハードウェアを確認してください。
 
 ```sh
 [MAIN]
-is_local = True # ローカルで実行するか、リモートプロバイダーで実行するか。
-provider_name = ollama # またはlm-studio、openaiなど。
-provider_model = deepseek-r1:14b # ハードウェアに合ったモデルを選択してください
+is_local = True
+provider_name = ollama
+provider_model = deepseek-r1:14b
 provider_server_address = 127.0.0.1:11434
-agent_name = Jarvis # AIの名前
-recover_last_session = True # 前のセッションを復元するかどうか
-save_session = True # 現在のセッションを記憶するかどうか
-speak = True # テキスト読み上げ
-listen = False # 音声認識、CLIのみ
-work_dir =  /Users/mlg/Documents/workspace # AgenticSeekのワークスペース。
-jarvis_personality = False # より「Jarvis」らしい性格を使用するかどうか（実験的）
-languages = en zh # 言語のリスト、テキスト読み上げはリストの最初の言語にデフォルト設定されます
+agent_name = Jarvis
+recover_last_session = True
+save_session = True
+speak = False
+listen = False
+jarvis_personality = False
+languages = en zh
 [BROWSER]
-headless_browser = True # ヘッドレスブラウザを使用するかどうか、ウェブインターフェースを使用する場合のみ推奨。
-stealth_mode = True # undetected seleniumを使用してブラウザ検出を減らす
+headless_browser = True
+stealth_mode = True
 ```
 
-警告：LM-studioを使用してLLMを実行する場合、provider_nameを`openai`に設定しないでください。`lm-studio`に設定してください。
+**注意:**
 
-注意：一部のプロバイダー（例：lm-studio）では、IPの前に`http://`が必要です。例：`http://127.0.0.1:1234`
+- `config.ini`はコメントをサポートしません。例の設定をそのままコピペせず、コメントを除いて手動で編集してください。
+- LM-studioを使う場合、provider_nameは`lm-studio`にしてください（`openai`ではありません）。
+- 一部プロバイダー（例: lm-studio）はIPアドレスの前に`http://`が必要です（例: `http://127.0.0.1:1234`）。
 
-**ローカルプロバイダーのリスト**
+**ローカルプロバイダー一覧**
 
-| プロバイダー | ローカル？ | 説明                                                      |
+| プロバイダー  | ローカル? | 説明                                               |
 |-----------|--------|-----------------------------------------------------------|
-| ollama    | はい    | ollamaをLLMプロバイダーとして使用して、LLMをローカルで簡単に実行します |
-| lm-studio  | はい    | LM studioでLLMをローカル実行します（`provider_name`を`lm-studio`に設定）|
-| openai    | はい     |  openai互換API（例：llama.cppサーバー）を使用します  |
+| ollama    | はい    | ollamaでローカルLLMを簡単に実行 |
+| lm-studio  | はい    | LM studioでローカルLLMを実行（`provider_name`は`lm-studio`）|
+| openai    | はい/いいえ | openai互換API（例: llama.cppサーバー）  |
 
-次のステップ：[サービスの開始とAgenticSeekの実行](#サービスの開始と実行)
+次のステップ: [サービスの起動とAgenticSeekの実行](#Start-services-and-Run)  
 
-*問題が発生した場合は、**既知の問題**セクションを参照してください*
+*問題がある場合は**Known issues**セクション参照*
 
-*ハードウェアがローカルでdeepseekを実行できない場合は、**APIで実行**セクションを参照してください*
+*ローカルでdeepseekが動かない場合は**Run with an API**セクション参照*
 
-*詳細な設定ファイルの説明については、**設定**セクションを参照してください。*
+*詳細な設定は**Config**セクション参照*
 
 ---
 
-## APIで実行するためのセットアップ
+## APIで実行する場合のセットアップ
 
-`config.ini`で目的のプロバイダーを設定します。APIプロバイダーのリストについては、以下を参照してください。
+**API利用はオプションです。ローカル実行は上記参照。**
+
+`config.ini`で希望のプロバイダーを設定してください。APIプロバイダー一覧は下記参照。
 
 ```sh
 [MAIN]
 is_local = False
 provider_name = google
 provider_model = gemini-2.0-flash
-provider_server_address = 127.0.0.1:5000 # 関係ありません
+provider_server_address = 127.0.0.1:5000 # 任意
 ```
-警告：設定に末尾のスペースがないことを確認してください。
+注意: configに余計なスペースがないようにしてください。
 
-APIキーをエクスポートします：`export <<PROVIDER>>_API_KEY="xxx"`
+APIキーをエクスポート: `export <<PROVIDER>>_API_KEY="xxx"`
 
-例：`export TOGETHER_API_KEY="xxxxx"`
+例: `export TOGETHER_API_KEY="xxxxx"`
 
-**APIプロバイダーのリスト**
-
-| プロバイダー  | ローカル？ | 説明                                               |
+**APIプロバイダー一覧**
+    
+| プロバイダー  | ローカル? | 説明                                               |
 |-----------|--------|-----------------------------------------------------------|
-| openai    | 場合による  | ChatGPT APIを使用  |
-| deepseek-api  | いいえ     | Deepseek API（非プライベート）                            |
+| openai    | 場合による  | ChatGPT API  |
+| deepseek  | いいえ     | Deepseek API（非プライベート）                            |
 | huggingface| いいえ    | Hugging-Face API（非プライベート）                            |
-| togetherAI | いいえ    | together AI APIを使用（非プライベート）                         |
-| google | いいえ    | google gemini APIを使用（非プライベート）                         |
+| togetherAI | いいえ    | together AI API（非プライベート）                         |
+| google | いいえ    | google gemini API（非プライベート）                         |
 
-*gpt-4oや他のclosedAIモデルの使用は推奨しません*。ウェブブラウジングやタスク計画のパフォーマンスが悪いです。
+geminiではコーディングやbashが失敗する場合があります。deepseek r1向けに最適化されたプロンプトを無視する傾向があります。gpt-4oも同様にプロンプトとの相性が悪い場合があります。
 
-また、geminiではコーディング/bashが失敗する可能性があることに注意してください。deepseek r1用に最適化されたフォーマットのプロンプトを無視するようです。
+次のステップ: [サービスの起動とAgenticSeekの実行](#Start-services-and-Run)
 
-次のステップ：[サービスの開始とAgenticSeekの実行](#サービスの開始と実行)
+*問題がある場合は**Known issues**セクション参照*
 
-*問題が発生した場合は、**既知の問題**セクションを参照してください*
-
-*詳細な設定ファイルの説明については、**設定**セクションを参照してください。*
+*詳細な設定は**Config**セクション参照*
 
 ---
 
-## サービスの開始と実行
+## サービスの起動とAgenticSeekの実行
 
-必要に応じてPython環境をアクティブ化します。
-```sh
-source .venv/bin/activate
-```
-
-必要なサービスを開始します。これにより、docker-compose.ymlからすべてのサービスが開始されます。これには以下が含まれます：
+必要なサービスを起動します。docker-compose.ymlから以下のサービスが起動します:
         - searxng
-        - redis（searxngに必要）
+        - redis（searxng用）
         - frontend
+        - backend（`full`の場合）
 
 ```sh
-sudo ./start_services.sh # MacOS
-start ./start_services.cmd # Window
+./start_services.sh full # MacOS
+start ./start_services.cmd full # Windows
 ```
 
-**オプション1：** CLIインターフェースで実行します。
+**注意:** このステップで全Dockerイメージがダウンロード・展開されるため最大30分かかる場合があります。backendサービスが完全に起動するまで（ログにbackend: <info>が表示されるまで）待ってください。
+
+`http://localhost:3000/`にアクセスするとWebインターフェースが表示されます。
+
+**オプション:** CLIインターフェースで実行
+
+CLIで実行する場合はホストにパッケージをインストールしてください。
 
 ```sh
-python3 cli.py
+./install.sh
+./install.bat # windows
 ```
 
-CLIモードでは、config.iniで`headless_browser`をFalseに設定することをお勧めします。
-
-**オプション2：** Webインターフェースで実行します。
-
-バックエンドを開始します。
+サービス起動:
 
 ```sh
-python3 api.py
+./start_services.sh # MacOS
+start ./start_services.cmd # Windows
 ```
 
-`http://localhost:3000/`にアクセスすると、Webインターフェースが表示されます。
+その後 `python3 cli.py` を実行
 
 ---
 
-## 使用方法
+## 使い方
 
-`./start_services.sh`でサービスが起動していることを確認し、CLIモードの場合は`python3 cli.py`で、Webインターフェースの場合は`python3 api.py`を実行してから`localhost:3000`にアクセスしてAgenticSeekを実行します。
+`./start_services.sh full`でサービスが起動していることを確認し、Webインターフェースは`localhost:3000`です。
 
-設定で`listen = True`を設定することで、音声認識を使用することもできます。CLIモードのみ。
+CLIモードで音声認識を使う場合はconfigで`listen = True`にしてください。
 
-終了するには、単に`goodbye`と発言/入力します。
+終了するには「goodbye」と入力または発話してください。
 
-以下に使用例をいくつか示します：
+使用例:
 
-> *Pythonでスネークゲームを作って！*
+> *pythonでスネークゲームを作って！*
 
-> *フランスのレンヌでトップのカフェをウェブ検索し、3つのカフェのリストとその住所をrennes_cafes.txtに保存して。*
+> *フランス・レンヌの人気カフェをウェブ検索し、3つ選んで住所とともにrennes_cafes.txtに保存して。*
 
-> *数値の階乗を計算するGoプログラムを書いて、それをfactorial.goとしてワークスペースに保存して。*
+> *Go言語で階乗を計算するプログラムを書き、workspaceにfactorial.goとして保存して。*
 
-> *summer_picturesフォルダ内のすべてのJPGファイルを検索し、今日の日付で名前を変更し、名前変更されたファイルのリストをphotos_list.txtに保存して。*
+> *summer_picturesフォルダ内のJPGファイルをすべて検索し、今日の日付でリネームし、リストをphotos_list.txtに保存して。*
 
-> *2024年の人気のSF映画をオンラインで検索し、今夜観る映画を3つ選んで。リストをmovie_night.txtに保存して。*
+> *2024年の人気SF映画をウェブで調べ、今夜観る3本を選んでmovie_night.txtに保存して。*
 
-> *2025年の最新AIニュース記事をウェブで検索し、3つ選択して、それらのタイトルと要約をスクレイピングするPythonスクリプトを書いて。スクリプトをnews_scraper.pyとして、要約を/home/projectsのai_news.txtに保存して。*
+> *2025年の最新AIニュース記事をウェブ検索し、3つ選んでタイトルと要約をPythonスクリプトでスクレイピング。news_scraper.pyにスクリプト、ai_news.txtに要約を保存して。*
 
-> *フライデー、無料の株価APIをウェブで検索し、supersuper7434567@gmail.comで登録し、そのAPIを使用してテスラの日々の価格を取得するPythonスクリプトを書いて、結果をstock_prices.csvに保存して。*
+> *金曜日、無料の株価APIをウェブで探し、supersuper7434567@gmail.comで登録後、Teslaの日次株価を取得するPythonスクリプトを書き、stock_prices.csvに保存して。*
 
-*フォーム入力機能はまだ実験的であり、失敗する可能性があることに注意してください。*
+*フォーム入力機能は実験的で失敗する場合があります。*
 
 
+クエリを入力すると、AgenticSeekが最適なエージェントを自動で割り当てます。
 
-クエリを入力すると、AgenticSeekはタスクに最適なエージェントを割り当てます。
+初期プロトタイプのため、エージェントの割り当てが最適でない場合があります。
 
-これは初期のプロトタイプであるため、エージェントルーティングシステムがクエリに基づいて常に適切なエージェントを割り当てるとは限りません。
+そのため、AIにしてほしいことや手順を明確に伝えてください。例えばウェブ検索をさせたい場合は
 
-したがって、何をしたいのか、AIがどのように進むべきかについて非常に明確にする必要があります。たとえば、ウェブ検索を実行させたい場合は、次のように言わないでください：
+`Do you know some good countries for solo-travel?`
 
-`一人旅に適した良い国を知っていますか？`
+ではなく
 
-代わりに、次のように尋ねてください：
+`Do a web search and find out which are the best country for solo-travel`
 
-`ウェブ検索をして、一人旅に最適な国を見つけてください`
+のように依頼してください。
 
 ---
 
-## **独自のサーバーでLLMを実行するためのセットアップ**
+## **自分のサーバーでLLMを実行する場合**  
 
-強力なコンピューターまたは使用できるサーバーがあるが、ラップトップから使用したい場合は、カスタムLLMサーバーを使用してリモートサーバーでLLMを実行するオプションがあります。
+高性能なPCやサーバーを持っていて、ノートPCから利用したい場合は、カスタムLLMサーバーを使ってリモート実行できます。
 
-AIモデルを実行する「サーバー」で、IPアドレスを取得します。
+AIモデルを動かす「サーバー」でIPアドレスを取得
 
 ```sh
 ip a | grep "inet " | grep -v 127.0.0.1 | awk '{print $2}' | cut -d/ -f1 # ローカルIP
-curl https://ipinfo.io/ip # パブリックIP
+curl https://ipinfo.io/ip # グローバルIP
 ```
 
-注意：WindowsまたはmacOSの場合、それぞれipconfigまたはifconfigを使用してIPアドレスを見つけます。
+WindowsやmacOSの場合はipconfigやifconfigで確認
 
-リポジトリをクローンし、`server/`フォルダに入ります。
-
+リポジトリをクローンし、`server/`フォルダへ
 
 ```sh
 git clone --depth 1 https://github.com/Fosowl/agenticSeek.git
-cd agenticSeek/server/
+cd agenticSeek/llm_server/
 ```
 
-サーバー固有の要件をインストールします：
+サーバー用依存パッケージをインストール
 
 ```sh
 pip3 install -r requirements.txt
 ```
 
-サーバー スクリプトを実行します。
+サーバースクリプトを実行
 
 ```sh
 python3 app.py --provider ollama --port 3333
 ```
 
-LLMサービスとして`ollama`と`llamacpp`のどちらかを選択できます。
+LLMサービスは`ollama`または`llamacpp`から選択可能です。
 
+個人PC側では
 
-次に、個人のコンピュータで：
-
-`config.ini`ファイルを変更して、`provider_name`を`server`に、`provider_model`を`deepseek-r1:xxb`に設定します。
-`provider_server_address`をモデルを実行するマシンのIPアドレスに設定します。
+`config.ini`で`provider_name`を`server`、`provider_model`を`deepseek-r1:xxb`に設定。
+`provider_server_address`はサーバーのIPアドレスに設定。
 
 ```sh
 [MAIN]
@@ -370,41 +332,42 @@ provider_model = deepseek-r1:70b
 provider_server_address = x.x.x.x:3333
 ```
 
-
-次のステップ：[サービスの開始とAgenticSeekの実行](#サービスの開始と実行)
+次のステップ: [サービスの起動とAgenticSeekの実行](#Start-services-and-Run)  
 
 ---
 
-## 音声認識
+## 音声認識（Speech to Text）
 
-現在、音声認識は英語でのみ機能することに注意してください。
+注意: 現在音声認識はCLIモードのみ対応
 
-音声認識機能はデフォルトで無効になっています。有効にするには、config.iniファイルでlistenオプションをTrueに設定します：
+現状、音声認識は英語のみ対応です。
+
+デフォルトでは無効です。有効にするにはconfig.iniでlistenをTrueにしてください。
 
 ```
 listen = True
 ```
 
-有効にすると、音声認識機能は、入力を処理し始める前にトリガーキーワード（エージェントの名前）をリッスンします。*config.ini*ファイルで`agent_name`の値を更新することで、エージェントの名前をカスタマイズできます：
+有効時は、エージェント名（例: Friday）をトリガーワードとして発話すると認識が始まります。エージェント名は*config.ini*の`agent_name`で変更可能です。
 
 ```
 agent_name = Friday
 ```
 
-最適な認識のためには、エージェント名として「John」や「Emma」のような一般的な英語の名前を使用することをお勧めします。
+認識精度向上のため、"John"や"Emma"など一般的な英語名を推奨します。
 
-トランスクリプトが表示され始めたら、エージェントの名前を声に出して起動します（例：「Friday」）。
+トランスクリプトが表示され始めたら、エージェント名を発話して起動してください（例: "Friday"）。
 
-クエリをはっきりと話します。
+クエリを明瞭に話してください。
 
-システムに処理を進めるよう合図するために、確認フレーズでリクエストを終了します。確認フレーズの例は次のとおりです：
+リクエストの終了時に以下のような確認フレーズを発話してください:
 ```
 "do it", "go ahead", "execute", "run", "start", "thanks", "would ya", "please", "okay?", "proceed", "continue", "go on", "do that", "go it", "do you understand?"
 ```
 
-## 設定
+## 設定ファイル（Config）
 
-設定例：
+設定例:
 ```
 [MAIN]
 is_local = True
@@ -416,7 +379,6 @@ recover_last_session = False
 save_session = False
 speak = False
 listen = False
-work_dir =  /Users/mlg/Documents/ai_folder
 jarvis_personality = False
 languages = en zh
 [BROWSER]
@@ -424,54 +386,50 @@ headless_browser = False
 stealth_mode = False
 ```
 
-**説明**:
+**各項目の説明:**
 
-- is_local -> エージェントをローカルで実行する（True）か、リモートサーバーで実行する（False）か。
+- is_local -> ローカル実行（True）かリモート（False）か
 
-- provider_name -> 使用するプロバイダー（`ollama`、`server`、`lm-studio`、`deepseek-api`のいずれか）
+- provider_name -> 使用するプロバイダー名（`ollama`, `server`, `lm-studio`, `deepseek-api`など）
 
-- provider_model -> 使用するモデル、例：deepseek-r1:32b。
+- provider_model -> 使用モデル例: deepseek-r1:32b
 
-- provider_server_address -> サーバーアドレス、例：ローカルの場合は127.0.0.1:11434。非ローカルAPIの場合は何でも設定します。
+- provider_server_address -> サーバーアドレス例: 127.0.0.1:11434（ローカルの場合）。API利用時は任意。
 
-- agent_name -> エージェントの名前、例：Friday。TTSのトリガーワードとして使用されます。
+- agent_name -> エージェント名（例: Friday）。TTSのトリガーワード
 
-- recover_last_session -> 前回のセッションから再開する（True）かしない（False）か。
+- recover_last_session -> 前回セッションから再開（True）/しない（False）
 
-- save_session -> セッションデータを保存する（True）かしない（False）か。
+- save_session -> セッションデータ保存（True）/しない（False）
 
-- speak -> 音声出力を有効にする（True）かしない（False）か。
+- speak -> 音声出力有効（True）/無効（False）
 
-- listen -> 音声入力をリッスンする（True）かしない（False）か。
+- listen -> 音声入力有効（True）/無効（False）
 
-- work_dir -> AIがアクセスできるフォルダ。例：/Users/user/Documents/。
+- jarvis_personality -> JARVIS風パーソナリティ（True）/通常（False）。プロンプトファイルが変わります。
 
-- jarvis_personality -> JARVISのような性格を使用する（True）かしない（False）か。これは単にプロンプトファイルを変更します。
+- languages -> サポート言語リスト。エージェントルーティングに必要。多すぎる/似た言語は非推奨。
 
-- languages -> サポートされている言語のリスト。LLMルーターが正しく機能するために必要です。あまりにも多くの言語や類似した言語を入れすぎないようにしてください。
+- headless_browser -> ブラウザを非表示で実行（True）/表示（False）
 
-- headless_browser -> 表示ウィンドウなしでブラウザを実行する（True）かしない（False）か。
+- stealth_mode -> ボット検出回避。anticaptcha拡張の手動インストールが必要
 
-- stealth_mode -> ボット検出を困難にします。唯一の欠点は、anticaptcha拡張機能を手動でインストールする必要があることです。
+- languages -> サポート言語リスト。ルーティング用。多いほどモデルダウンロード数増加
 
-- languages -> サポートされている言語のリスト。エージェントルーティングシステムに必要です。言語リストが長いほど、ダウンロードされるモデルが多くなります。
+## プロバイダー一覧
 
-## プロバイダー
-
-以下の表は、利用可能なプロバイダーを示しています：
-
-| プロバイダー  | ローカル？ | 説明                                               |
+| プロバイダー  | ローカル? | 説明                                               |
 |-----------|--------|-----------------------------------------------------------|
-| ollama    | はい    | ollamaをLLMプロバイダーとして使用して、LLMをローカルで簡単に実行します |
-| server    | はい    | モデルを別のマシンでホストし、ローカルマシンで実行します |
-| lm-studio  | はい    | LM studioでLLMをローカル実行します（`lm-studio`）             |
-| openai    | 場合による  | ChatGPT API（非プライベート）またはopenai互換APIを使用  |
+| ollama    | はい    | ollamaでローカルLLMを簡単に実行 |
+| server    | はい    | 別マシンでモデルをホストし、ローカルから利用 |
+| lm-studio  | はい    | LM studioでローカルLLMを実行（`lm-studio`）             |
+| openai    | 場合による  | ChatGPT API（非プライベート）またはopenai互換API  |
 | deepseek-api  | いいえ     | Deepseek API（非プライベート）                            |
 | huggingface| いいえ    | Hugging-Face API（非プライベート）                            |
-| togetherAI | いいえ    | together AI APIを使用（非プライベート）                         |
-| google | いいえ    | google gemini APIを使用（非プライベート）                         |
+| togetherAI | いいえ    | together AI API（非プライベート）                         |
+| google | いいえ    | google gemini API（非プライベート）                         |
 
-プロバイダーを選択するには、config.iniを変更します：
+プロバイダーの選択はconfig.iniで
 
 ```
 is_local = True
@@ -479,101 +437,104 @@ provider_name = ollama
 provider_model = deepseek-r1:32b
 provider_server_address = 127.0.0.1:5000
 ```
-`is_local`: ローカルで実行されるLLMの場合はTrue、それ以外の場合はFalseである必要があります。
+`is_local`: ローカルLLMならTrue、それ以外はFalse
 
-`provider_name`: 使用するプロバイダーを名前で選択します。上記のプロバイダーリストを参照してください。
+`provider_name`: 上記リストから選択
 
-`provider_model`: エージェントが使用するモデルを設定します。
+`provider_model`: 使用モデル
 
-`provider_server_address`: サーバーアドレス。APIプロバイダーには使用されません。
+`provider_server_address`: serverプロバイダー以外は任意
 
 # 既知の問題
 
 ## Chromedriverの問題
 
-**既知のエラー #1:** *chromedriverの不一致*
+**既知のエラー #1:** *chromedriverのバージョン不一致*
 
 `Exception: Failed to initialize browser: Message: session not created: This version of ChromeDriver only supports Chrome version 113
 Current browser version is 134.0.6998.89 with binary path`
 
-これは、ブラウザとchromedriverのバージョンが一致しない場合に発生します。
+これはブラウザとchromedriverのバージョンが一致していない場合に発生します。
 
-最新バージョンをダウンロードするためにナビゲートする必要があります：
+最新版は下記からダウンロードしてください:
 
 https://developer.chrome.com/docs/chromedriver/downloads
 
-Chromeバージョン115以降を使用している場合は、以下にアクセスしてください：
+Chrome 115以降の場合は
 
 https://googlechromelabs.github.io/chrome-for-testing/
 
-そして、OSに一致するchromedriverバージョンをダウンロードします。
+からOSに合ったchromedriverをダウンロード
 
-![代替テキスト](./media/chromedriver_readme.png)
+![alt text](./media/chromedriver_readme.png)
 
-このセクションが不完全な場合は、問題を提起してください。
+このセクションが不十分な場合はissueを立ててください。
 
-##  接続アダプタの問題
+##  connection adaptersの問題
 
 ```
 Exception: Provider lm-studio failed: HTTP request failed: No connection adapters were found for '127.0.0.1:11434/v1/chat/completions'
 ```
 
-プロバイダーのIPアドレスの前に`http://`があることを確認してください：
+provider IPアドレスの前に`http://`を付けてください:
 
 `provider_server_address = http://127.0.0.1:11434`
 
-## SearxNGのベースURLを指定する必要があります
+## SearxNG base URLが必要
 
 ```
 raise ValueError("SearxNG base URL must be provided either as an argument or via the SEARXNG_BASE_URL environment variable.")
 ValueError: SearxNG base URL must be provided either as an argument or via the SEARXNG_BASE_URL environment variable.
 ```
 
-`.env.example`を`.env`として移動しなかった可能性がありますか？SEARXNG_BASE_URLをエクスポートすることもできます：
+`.env.example`を`.env`にリネームしていない場合に発生します。もしくは下記でエクスポート:
 
 `export  SEARXNG_BASE_URL="http://127.0.0.1:8080"`
 
 ## FAQ
 
-**Q: どのようなハードウェアが必要ですか？**
+**Q: どんなハードウェアが必要？**  
 
-| モデルサイズ | GPU        | コメント                                                                 |
-|-----------|------------|--------------------------------------------------------------------------|
-| 7B        | 8GB VRAM   | ⚠️ 非推奨。パフォーマンスが悪く、幻覚が頻繁に発生し、プランナーエージェントは失敗する可能性が高いです。 |
-| 14B       | 12GB VRAM（例：RTX 3060） | ✅ 簡単なタスクには使用可能。ウェブブラウジングや計画タスクで苦労する可能性があります。       |
-| 32B       | 24GB以上のVRAM（例：RTX 4090） | 🚀 ほとんどのタスクで成功しますが、タスク計画でまだ苦労する可能性があります。             |
-| 70B+      | 48GB以上のVRAM（例：mac studio） | 💪 素晴らしい。高度なユースケースに推奨されます。                                 |
+| モデルサイズ  | GPU  | コメント                                               |
+|-----------|--------|-----------------------------------------------------------|
+| 7B        | 8GB Vram | ⚠️ 推奨しません。性能が低く、幻覚やプランナー失敗が多発します。 |
+| 14B        | 12 GB VRAM (例: RTX 3060) | ✅ 簡単なタスクなら使用可。ウェブブラウジングや計画タスクは苦手。 |
+| 32B        | 24+ GB VRAM (例: RTX 4090) | 🚀 ほとんどのタスクで成功。計画タスクはやや苦手 |
+| 70B+        | 48+ GB Vram (例: mac studio) | 💪 高度な用途に最適。推奨 |
 
-**Q: なぜ他のモデルではなくDeepseek R1なのですか？**
+**Q: なぜDeepseek R1を推奨？**  
 
-Deepseek R1は、そのサイズに対して推論とツール使用に優れています。私たちのニーズに合っていると考えており、他のモデルも正常に動作しますが、Deepseekが私たちの主要な選択肢です。
+Deepseek R1は推論やツール利用に優れています。他モデルも使えますが、Deepseekが主力です。
 
-**Q: `cli.py`を実行するとエラーが発生します。どうすればよいですか？**
+**Q: `cli.py`実行時にエラーが出る場合は？**  
 
-ローカルが実行されていること（`ollama serve`）、`config.ini`がプロバイダーと一致していること、依存関係がインストールされていることを確認してください。それでも解決しない場合は、遠慮なく問題を提起してください。
+`ollama serve`が動作しているか、`config.ini`が正しいか、依存パッケージがインストールされているか確認してください。解決しない場合はissueを立ててください。
 
-**Q: 本当に100%ローカルで実行できますか？**
+**Q: 本当に100%ローカルで動作する？**  
 
-はい、Ollama、lm-studio、またはサーバープロバイダーを使用すると、すべての音声認識、LLM、テキスト読み上げモデルがローカルで実行されます。非ローカルオプション（OpenAIまたはその他のAPI）はオプションです。
+Ollama、lm-studio、serverプロバイダーなら音声認識・LLM・音声合成すべてローカルで動作します。API利用はオプションです。
 
-**Q: Manusがあるのに、なぜAgenticSeekを使うべきなのですか？**
+**Q: ManusがあるのにAgenticSeekを使う理由は？**
 
-これは、AIエージェントへの関心から始めたサイドプロジェクトです。特別なのは、ローカルモデルを使用し、APIを避けたいということです。
-私たちはJarvisとFriday（アイアンマン映画）からインスピレーションを得て「クール」にしましたが、機能性についてはManusからより多くのインスピレーションを得ています。なぜなら、それが人々が最初に望むもの、つまりローカルなManusの代替だからです。
-Manusとは異なり、AgenticSeekは外部システムからの独立性を優先し、より多くの制御、プライバシーを提供し、APIコストを回避します。
+このプロジェクトはローカルモデル利用とAPI回避を目的に始まりました。JarvisやFriday（アイアンマン）風の「かっこよさ」とManusの機能性を両立。Manusと違い外部依存を排除し、プライバシーとコスト削減を重視しています。
 
-## 貢献する
+## コントリビュート
 
-AgenticSeekを改善するための開発者を募集しています！オープンな問題やディスカッションを確認してください。
+AgenticSeekの改善にご協力ください！issueやディスカッションをチェック
 
-[貢献ガイド](./docs/CONTRIBUTING.md)
+[コントリビューションガイド](./docs/CONTRIBUTING.md)
 
-[![スター履歴チャート](https://api.star-history.com/svg?repos=Fosowl/agenticSeek&type=Date)](https://www.star-history.com/#Fosowl/agenticSeek&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=Fosowl/agenticSeek&type=Date)](https://www.star-history.com/#Fosowl/agenticSeek&Date)
 
-## メンテナー：
+## メンテナー:
 
- > [Fosowl](https://github.com/Fosowl) | パリ時間
+ > [Fosowl](https://github.com/Fosowl) | パリ時間 
 
- > [antoineVIVIES](https://github.com/antoineVIVIES) | Taipei Time 
+ > [antoineVIVIES](https://github.com/antoineVIVIES) | 台北時間 
 
- > [steveh8758](https://github.com/steveh8758) | 台北時間 |（常に忙しい）
+ > [steveh8758](https://github.com/steveh8758) | 台北時間 
+
+## Special Thanks:
+
+ > [tcsenpai](https://github.com/tcsenpai) および [plitc](https://github.com/plitc) バックエンドDocker化への貢献に感謝
+

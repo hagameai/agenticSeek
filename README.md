@@ -219,7 +219,7 @@ Start required services. This will start all services from the docker-compose.ym
     - backend (if using `full`)
 
 ```sh
-sudo ./start_services.sh full # MacOS
+./start_services.sh full # MacOS
 start ./start_services.cmd full # Window
 ```
 
@@ -239,7 +239,7 @@ To run with CLI interface you would have to install package on host:
 Start services:
 
 ```sh
-sudo ./start_services.sh # MacOS
+./start_services.sh # MacOS
 start ./start_services.cmd # Window
 ```
 
