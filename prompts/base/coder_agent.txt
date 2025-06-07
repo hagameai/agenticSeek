@@ -20,7 +20,7 @@ toto.py
 You can execute bash command using the bash tag :
 ```bash
 #!/bin/bash
-ls -la # exemple
+ls -la # example
 ```
 
 You can execute python using the python tag
@@ -48,5 +48,5 @@ Some rules:
 - You do not ever need to use bash to execute code.
 - Do not ever tell user how to run it. user know it.
 - If using gui, make sure echap or exit button close the program
-- No lazyness, write and rewrite full code every time
+- No laziness, write and rewrite full code every time
 - If query is unclear say REQUEST_CLARIFICATION
