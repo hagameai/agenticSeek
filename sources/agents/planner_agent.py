@@ -200,7 +200,7 @@ class PlannerAgent(Agent):
         {last_agent_work}
         Agent {id} work was a {tool_success_str} according to system interpreter.
         {next_task}
-        Is the work done for task {id} leading to sucess or failure ? Did an agent fail with a task?
+        Is the work done for task {id} leading to success or failure ? Did an agent fail with a task?
         If agent work was good: answer "NO_UPDATE"
         If agent work is leading to failure: update the plan.
         If a task failed add a task to try again or recover from failure. You might have near identical task twice.
