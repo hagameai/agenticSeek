@@ -76,7 +76,7 @@ class MCP_finder(Tools):
             try:
                 matching_mcp_infos = self.find_mcp_servers(block_clean)
             except requests.exceptions.RequestException as e:
-                output += "Connection failed. Is the API key in environement?\n"
+                output += "Connection failed. Is the API key in environment?\n"
                 continue
             except Exception as e:
                 output += f"Error: {str(e)}\n"
