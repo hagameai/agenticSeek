@@ -1,31 +1,31 @@
 import unittest
 from src.agents.smart_agent import SmartAgent
 
+
 class TestSmartAgent(unittest.TestCase):
     def setUp(self):
-        """Initialize a SmartAgent instance for testing."""
-        self.agent = SmartAgent(name="TestAgent")
+        """Set up test case environment"""
+        self.agent = SmartAgent()  # Initialize the SmartAgent for testing
 
     def test_agent_initialization(self):
-        """Test that the SmartAgent initializes with the correct name."""
-        self.assertEqual(self.agent.name, "TestAgent")
+        """Test if the SmartAgent initializes correctly"""
+        self.assertIsNotNone(self.agent, "SmartAgent should be initialized!")
+        self.assertEqual(self.agent.state, 'idle', "Agent should start in idle state!")
 
-    def test_agent_task_execution(self):
-        """Test that the SmartAgent can execute a given task."""
-        task = "Write a sample code."
-        result = self.agent.execute_task(task)
-        self.assertIsNotNone(result)
-        self.assertIn("code", result)
+    def test_agent_functionality(self):
+        """Test the core functionality of the SmartAgent"""
+        result = self.agent.perform_task('sample task')
+        self.assertTrue(result, "Agent should successfully perform the task!")
 
-    def test_agent_response_generation(self):
-        """Test that the SmartAgent generates appropriate responses."""
-        response = self.agent.generate_response("What is AI?")
-        self.assertIsInstance(response, str)
-        self.assertGreater(len(response), 0)
+    def test_agent_error_handling(self):
+        """Test the error handling of SmartAgent"""
+        with self.assertRaises(ValueError):
+            self.agent.perform_task(None)  # Expecting ValueError when task is None
 
     def tearDown(self):
-        """Clean up after each test case."""
-        del self.agent
+        """Clean up after tests"""
+        self.agent = None
+
 
 if __name__ == '__main__':
     unittest.main()
