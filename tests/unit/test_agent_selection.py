@@ -1,29 +1,36 @@
 import unittest
-from src.agents.advanced_agent import AdvancedAgent
+from src.agents.smart_agent import SmartAgent
+from src.agents.agent_registry import AgentRegistry
 
 class TestSmartAgentSelection(unittest.TestCase):
     def setUp(self):
-        """Set up the test case with an instance of AdvancedAgent."""
-        self.agent = AdvancedAgent()
+        """Set up for the tests."""
+        self.agent_registry = AgentRegistry()
+        self.agent = SmartAgent(self.agent_registry)
 
-    def test_agent_selection_valid_task(self):
-        """Test smart agent selection for a valid task."""
-        task = 'coding'
+    def test_agent_selection_based_on_task(self):
+        """Test that the correct agent is selected based on task."""
+        task = "coding"
         selected_agent = self.agent.select_agent(task)
-        self.assertIsNotNone(selected_agent, "Agent should be selected for valid task")
-        self.assertEqual(selected_agent.task_type, task, "Selected agent should match the task type")
+        self.assertEqual(selected_agent.name, "CodeAgent")
 
-    def test_agent_selection_invalid_task(self):
-        """Test smart agent selection for an invalid task."""
-        task = 'unknown_task'
-        selected_agent = self.agent.select_agent(task)
-        self.assertIsNone(selected_agent, "No agent should be selected for invalid task")
+    def test_agent_selection_with_empty_registry(self):
+        """Test agent selection when registry is empty."""
+        self.agent_registry.clear()  # Clear any agents
+        task = "coding"
+        with self.assertRaises(ValueError):
+            self.agent.select_agent(task)
 
-    def test_agent_selection_edge_case(self):
-        """Test smart agent selection with edge case input."""
-        task = ''  # empty task
+    def test_agent_selection_for_non_existent_task(self):
+        """Test agent selection for a task that does not exist."""
+        task = "non_existent_task"
         selected_agent = self.agent.select_agent(task)
-        self.assertIsNone(selected_agent, "No agent should be selected for empty task")
+        self.assertIsNone(selected_agent,
+                         "Expected None for non-existent task selection")
+
+    def tearDown(self):
+        """Clean up after each test."""
+        self.agent_registry.clear()
 
 if __name__ == '__main__':
     unittest.main()
