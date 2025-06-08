@@ -1,34 +1,28 @@
 import unittest
-from src.utils.task_utils import split_task_into_steps, execute_task_steps
+from src.utils.task_utils import split_task, execute_task
 
 class TestTaskPlannerUtilities(unittest.TestCase):
-
-    def test_split_task_into_steps(self):
-        # Test for valid input
+    def test_split_task_valid(self):
         task = "Prepare a presentation"
-        expected_steps = ["Research topic", "Create slides", "Practice delivery"]
-        self.assertEqual(split_task_into_steps(task), expected_steps)
+        expected = ["Prepare", "a", "presentation"]
+        result = split_task(task)
+        self.assertEqual(result, expected)
 
-        # Test for empty input
+    def test_split_task_empty(self):
         task = ""
-        expected_steps = []
-        self.assertEqual(split_task_into_steps(task), expected_steps)
+        expected = []
+        result = split_task(task)
+        self.assertEqual(result, expected)
 
-        # Test for non-standard task string
-        task = "Write report"
-        expected_steps = ["Gather data", "Analyze results", "Draft report", "Revise report"]
-        self.assertEqual(split_task_into_steps(task), expected_steps)
+    def test_execute_task_success(self):
+        task = "Prepare a presentation"
+        result = execute_task(task)
+        self.assertTrue(result)
 
-    def test_execute_task_steps(self):
-        # Test execution of valid steps
-        steps = ["Gather data", "Analyze results", "Draft report"]
-        results = execute_task_steps(steps)
-        self.assertTrue(results)  # Assuming the function returns True for success
-
-        # Test execution with no steps
-        steps = []
-        results = execute_task_steps(steps)
-        self.assertFalse(results)  # Assuming the function returns False for no steps
+    def test_execute_task_failure(self):
+        task = None
+        with self.assertRaises(ValueError):
+            execute_task(task)
 
 if __name__ == '__main__':
     unittest.main()
