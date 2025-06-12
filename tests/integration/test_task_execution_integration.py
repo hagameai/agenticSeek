@@ -1,36 +1,51 @@
 import pytest
-from sources.task_execution import execute_task  # Assuming execute_task is the main function to be tested
+from fastapi.testclient import TestClient
+from src.api.task_api import app
 
+@pytest.fixture(scope="module")
+def test_client():
+    """Fixture to initialize the test client for the FastAPI app."""
+    client = TestClient(app)
+    return client
 
-def test_execute_task_success():
-    """Test successful task execution."""
-    task_input = {'steps': ['Step 1', 'Step 2'], 'parameters': {}}
-    result = execute_task(task_input)
-    assert result['status'] == 'success'
-    assert 'output' in result
+# Test case for successful task execution
 
+def test_successful_task_execution(test_client):
+    """Test case to validate successful task execution."""
+    response = test_client.post("/execute_task", json={
+        "task_name": "example_task",
+        "parameters": {"param1": "value1"}
+    })
+    assert response.status_code == 200
+    assert response.json() == {"status": "success", "message": "Task executed successfully."}
 
-def test_execute_task_failure():
-    """Test task execution with invalid input."""
-    task_input = {'steps': [], 'parameters': {}}  # Invalid input
-    result = execute_task(task_input)
-    assert result['status'] == 'failure'
-    assert 'error' in result
+# Test case for unsuccessful task execution due to invalid input
 
+def test_unsuccessful_task_execution(test_client):
+    """Test case to validate unsuccessful task execution due to invalid input."""
+    response = test_client.post("/execute_task", json={
+        "task_name": "invalid_task",
+        "parameters": {"param1": "invalid_value"}
+    })
+    assert response.status_code == 400
+    assert response.json() == {"status": "error", "message": "Invalid task or parameters."}
 
-def test_execute_task_partial_success():
-    """Test task execution with some steps failing."""
-    task_input = {'steps': ['Step 1', 'Step 2', 'Step 3'], 'parameters': {}}
-    result = execute_task(task_input)
-    assert result['status'] in ['partial_success', 'success']
-    assert 'output' in result or 'partial_output' in result
+# Test case for missing task_name in request
 
+def test_missing_task_name(test_client):
+    """Test case to validate error when task_name is missing in the request."""
+    response = test_client.post("/execute_task", json={
+        "parameters": {"param1": "value1"}
+    })
+    assert response.status_code == 400
+    assert response.json() == {"status": "error", "message": "task_name is required."}
 
-@pytest.mark.parametrize('input_data, expected', [
-    ({'steps': ['Step 1'], 'parameters': {}}, 'success'),
-    ({'steps': ['Invalid Step'], 'parameters': {}}, 'failure'),
-])
-def test_execute_task_parametrized(input_data, expected):
-    """Parameterized test for task execution with different inputs."""
-    result = execute_task(input_data)
-    assert result['status'] == expected
+# Test case for missing parameters in request
+
+def test_missing_parameters(test_client):
+    """Test case to validate error when parameters are missing in the request."""
+    response = test_client.post("/execute_task", json={
+        "task_name": "example_task"
+    })
+    assert response.status_code == 400
+    assert response.json() == {"status": "error", "message": "parameters are required."}
