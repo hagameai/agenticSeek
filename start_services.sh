@@ -104,7 +104,7 @@ fi
 
 if [ "$1" = "full" ]; then
     # First start backend and wait for it to be healthy
-    echo "Full docker deployement. Starting backend service..."
+    echo "Full docker deployment. Starting backend service..."
     if ! $COMPOSE_CMD up -d backend; then
         echo "Error: Failed to start backend container."
         exit 1

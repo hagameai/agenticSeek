@@ -167,7 +167,7 @@ Next step: [Start services and run AgenticSeek](#Start-services-and-Run)
 
 *See the **Run with an API** section if your hardware can't run deepseek locally*
 
-*See the **Config** section for detailled config file explanation.*
+*See the **Config** section for detailed config file explanation.*
 
 ---
 
@@ -206,7 +206,7 @@ Next step: [Start services and run AgenticSeek](#Start-services-and-Run)
 
 *See the **Known issues** section if you are having issues*
 
-*See the **Config** section for detailled config file explanation.*
+*See the **Config** section for detailed config file explanation.*
 
 ---
 

@@ -1,6 +1,6 @@
 ##########
 # Dummy script to download the model
-# Because dowloading with hugging face does not seem to work, maybe I am doing something wrong?
+# Because downloading with hugging face does not seem to work, maybe I am doing something wrong?
 # AdaptiveClassifier.from_pretrained("adaptive-classifier/llm-router") ----> result in config.json not found
 # Therefore, I put all the files in llm_router and download the model file with this script, If you know a better way please raise an issue
 #########
