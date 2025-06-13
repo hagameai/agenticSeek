@@ -83,11 +83,12 @@ if [ ! -f "docker-compose.yml" ]; then
     exit 1
 fi
 
-# Stop all running containers to ensure a clean state
-echo "Warning: stopping all docker containers (t-4 seconds)..."
-sleep 4
-docker stop $(docker ps -a -q)
-echo "All containers stopped"
+# Stop only the backend container if it's running to ensure a clean state
+if docker ps --format '{{.Names}}' | grep -q '^backend$'; then
+    echo "New start: (re)starting backend container..."
+    docker stop backend
+    echo "Backend container stopped."
+fi
 
 # export searxng secret key (cross-platform)
 if command -v openssl &> /dev/null; then
