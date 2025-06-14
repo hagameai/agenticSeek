@@ -1,0 +1,327 @@
+{
+  "version": "1.0",
+  "project_info": {
+    "name": "agenticSeek",
+    "description": "AgenticSeek is a project that uses AI to seek information, functioning as a local alternative to Manus AI, with capabilities for autonomous browsing, coding, and task planning.",
+    "repository_url": "git@github.com-hagame:hagameai/agenticSeek.git",
+    "technology_stack": [
+      "Python",
+      "FastAPI",
+      "Docker",
+      "JavaScript",
+      "React",
+      "Node.js",
+      "PostgreSQL",
+      "dotenv"
+    ],
+    "project_type": "AI-driven application",
+    "development_status": "active"
+  },
+  "core_features": [
+    {
+      "feature_name": "Local AI Assistant",
+      "description": "A fully local AI that autonomously browses the web, writes code, and plans tasks while ensuring data privacy.",
+      "implementation_status": "completed",
+      "related_files": [
+        "api.py",
+        "cli.py",
+        "llm_router/"
+      ]
+    },
+    {
+      "feature_name": "Smart Agent Selection",
+      "description": "Automatically selects the best agent for specific tasks based on user input.",
+      "implementation_status": "in_progress",
+      "related_files": [
+        "sources/agents/"
+      ]
+    },
+    {
+      "feature_name": "Task Planning and Execution",
+      "description": "Capable of splitting complex tasks into manageable steps and executing them autonomously.",
+      "implementation_status": "planned",
+      "related_files": [
+        "sources/interaction.py",
+        "sources/memory.py"
+      ]
+    }
+  ],
+  "implementation_plan": {
+    "phases": [
+      {
+        "phase": "Phase 1",
+        "description": "Establish core functionalities including browsing, coding, and task execution.",
+        "tasks": [
+          "Implement API endpoints",
+          "Develop core agents",
+          "Create task planner"
+        ],
+        "estimated_files": 10
+      },
+      {
+        "phase": "Phase 2",
+        "description": "Enhance agent capabilities and improve user interface.",
+        "tasks": [
+          "Refine agents",
+          "Add frontend components",
+          "Improve documentation"
+        ],
+        "estimated_files": 8
+      },
+      {
+        "phase": "Phase 3",
+        "description": "Develop smart agent selection and enhance task execution.",
+        "tasks": [
+          "Implement smart agent functionality",
+          "Create comprehensive tests for advanced agent",
+          "Document advanced agent's usage and behavior"
+        ],
+        "estimated_files": 4
+      },
+      {
+        "phase": "Phase 3",
+        "description": "Develop and integrate task planning and execution features.",
+        "tasks": [
+          "Implement task execution logic",
+          "Develop integration tests for task execution",
+          "Update documentation for task planning"
+        ],
+        "estimated_files": 5
+      },
+      {
+        "phase": "Phase 4",
+        "description": "Expand testing coverage for agent interactions and functionalities.",
+        "tasks": [
+          "Develop integration tests for smart agent selection",
+          "Implement unit tests for all agent functionalities"
+        ],
+        "estimated_files": 5,
+        "completed_files": 1
+      },
+      {
+        "phase": "Phase 4",
+        "description": "Enhance testing coverage for agent functionalities.",
+        "tasks": [
+          "Create unit tests for performance metrics",
+          "Develop integration tests for agent interactions"
+        ],
+        "estimated_files": 3
+      },
+      {
+        "phase": "Phase 3",
+        "description": "Develop smart agent selection and enhance task execution.",
+        "tasks": [
+          "Implement smart agent functionality",
+          "Create comprehensive tests for smart agent",
+          "Document smart agent's usage and behavior"
+        ],
+        "estimated_files": 4
+      },
+      {
+        "phase": "Phase 4",
+        "description": "Expand testing coverage for smart agent functionalities.",
+        "tasks": [
+          "Develop integration tests for smart agent selection"
+        ],
+        "estimated_files": 2
+      },
+      {
+        "phase": "Phase 3",
+        "description": "Develop and integrate task planning and execution features.",
+        "tasks": [
+          "Implement task execution logic",
+          "Develop integration tests for task execution",
+          "Update documentation for task planning"
+        ],
+        "estimated_files": 5
+      },
+      {
+        "phase": "Phase 5",
+        "description": "Develop task execution logic and testing.",
+        "tasks": [
+          "Implement task execution based on steps",
+          "Create tests for task execution"
+        ],
+        "estimated_files": 3
+      },
+      {
+        "phase": "Phase 5",
+        "description": "Expand testing coverage for task execution and planning.",
+        "tasks": [
+          "Create additional integration tests for task execution",
+          "Develop unit tests for task planner utilities"
+        ],
+        "estimated_files": 3
+      },
+      {
+        "phase": "Phase 5",
+        "description": "Develop task execution logic and testing.",
+        "tasks": [
+          "Implement task execution based on steps",
+          "Create tests for task execution"
+        ],
+        "estimated_files": 3
+      },
+      {
+        "phase": "Phase 3",
+        "description": "Further enhance smart agent selection capabilities.",
+        "tasks": [
+          "Implement advanced selection strategies",
+          "Integrate user feedback into selection process"
+        ],
+        "estimated_files": 3
+      },
+      {
+        "phase": "Phase 5",
+        "description": "Expand testing coverage for agent functionalities.",
+        "tasks": [
+          "Create unit tests for agent selection logic",
+          "Create unit tests for task execution logic"
+        ],
+        "estimated_files": 4
+      },
+      {
+        "phase": "Phase 3",
+        "description": "Implement core agent functionalities and management logic.",
+        "tasks": [
+          "Develop agent management features",
+          "Create tests for agent utilities"
+        ],
+        "estimated_files": 5
+      },
+      {
+        "phase": "Phase 6",
+        "description": "Expand testing coverage for agent functionalities.",
+        "tasks": [
+          "Develop integration tests for task execution",
+          "Create unit tests for smart agent functionalities"
+        ],
+        "estimated_files": 5
+      },
+      {
+        "phase": "Phase 5",
+        "description": "Develop additional tests for task planning and execution.",
+        "tasks": [
+          "Create unit tests for task planner utilities.",
+          "Develop further integration tests for task planning."
+        ],
+        "estimated_files": 3
+      }
+    ],
+    "next_priorities": [
+      "Complete smart agent selection feature",
+      "Improve error handling in API",
+      "Expand test coverage"
+    ]
+  },
+  "recommended_structure": {
+    "src/": {
+      "description": "Main source code directory",
+      "file_types": [
+        "*.py",
+        "*.js"
+      ],
+      "subdirectories": {
+        "agents/": "AI agents for various tasks",
+        "api/": "API endpoints and handlers",
+        "utils/": "Utility functions and helpers"
+      },
+      "priority": "high"
+    },
+    "docs/": {
+      "description": "Documentation files including guides and API references.",
+      "file_types": [
+        "*.md",
+        "*.rst"
+      ],
+      "subdirectories": {},
+      "priority": "medium"
+    },
+    "tests/": {
+      "description": "Test files for unit and integration tests.",
+      "file_types": [
+        "test_*.py",
+        "*_test.py"
+      ],
+      "subdirectories": {
+        "unit/": "Unit tests for isolated components",
+        "integration/": "Integration tests for combined functionality"
+      },
+      "priority": "high"
+    }
+  },
+  "development_guidelines": {
+    "coding_standards": [
+      "Follow PEP 8 for Python",
+      "Use consistent naming conventions"
+    ],
+    "file_naming_conventions": "Use lowercase_with_underscores for filenames",
+    "commit_message_format": "conventional_commits",
+    "testing_requirements": "Ensure all new features are covered by tests"
+  },
+  "suggested_next_files": [
+    {
+      "file_path": "tests/unit/test_task_execution.py",
+      "purpose": "Unit tests for task execution logic",
+      "priority": "medium",
+      "dependencies": []
+    },
+    {
+      "file_path": "tests/unit/test_agent_interaction_utils.py",
+      "purpose": "Unit tests for utility functions in agent interactions",
+      "priority": "medium",
+      "dependencies": [
+        "src/utils/agent_interaction_utils.py"
+      ]
+    },
+    {
+      "file_path": "src/utils/agent_manager.py",
+      "purpose": "Class for managing multiple agents",
+      "priority": "medium",
+      "dependencies": []
+    },
+    {
+      "file_path": "tests/unit/test_agent_utilities.py",
+      "purpose": "Unit tests for agent utilities",
+      "priority": "high",
+      "dependencies": [
+        "src/utils/agent_utilities.py"
+      ]
+    },
+    {
+      "file_path": "tests/integration/test_task_execution_integration.py",
+      "purpose": "Integration tests for task execution functionality.",
+      "priority": "medium",
+      "dependencies": []
+    },
+    {
+      "file_path": "docs/agents_overview.md",
+      "purpose": "Overview documentation for all available agents.",
+      "priority": "medium",
+      "dependencies": []
+    },
+    {
+      "file_path": "tests/unit/test_smart_agent.py",
+      "purpose": "Unit tests for smart agent functionalities.",
+      "priority": "high",
+      "dependencies": []
+    },
+    {
+      "file_path": "docs/task_execution_guide.md",
+      "purpose": "Documentation for task execution functionality.",
+      "priority": "low",
+      "dependencies": []
+    },
+    {
+      "file_path": "tests/integration/test_agent_interaction_integration.py",
+      "purpose": "Integration tests for agent interactions.",
+      "priority": "medium",
+      "dependencies": []
+    },
+    {
+      "file_path": "tests/unit/test_task_planner_utilities.py",
+      "purpose": "Unit tests for task planner utility functions.",
+      "priority": "medium"
+    }
+  ]
+}
